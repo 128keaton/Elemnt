@@ -60,6 +60,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	}
 
+	@IBAction func returnToHome(segue: UIStoryboardSegue){
+		
+	}
 	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return 0
 	}

@@ -71,20 +71,22 @@ class DetailViewController: UIViewController {
 	{
 		//fix for gradient wierdness when rotating
 
-		DispatchQueue.init(label: "128keaton",
-		                   qos: .background,
-		                   target: nil).async {
+		if self.detailItem != nil && self.colors != nil{
+			DispatchQueue.init(label: "128keaton",
+			                   qos: .background,
+			                   target: nil).async {
 
-			let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.view.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
-			self.imageView.tintColor = color
+				let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.view.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
+				self.imageView.tintColor = color
 
-			DispatchQueue.main.sync {
-				let realColor = self.imageView.tintColor
-				UIView.animate(withDuration: 0.3, animations: {
-					self.view.backgroundColor = realColor
+				DispatchQueue.main.sync {
+					let realColor = self.imageView.tintColor
+					UIView.animate(withDuration: 0.3, animations: {
+						self.view.backgroundColor = realColor
 
-				               })
+					               })
 
+				}
 			}
 		}
 

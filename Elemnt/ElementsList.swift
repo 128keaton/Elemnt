@@ -144,12 +144,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showDetail" {
-			let indexPath = self.tableView.indexPathForSelectedRow
-			let wtf = dataArray?[(indexPath?.row)!]
-			let swift = NSString(string: wtf!)
-			print(swift)
+			var name: NSString?
+				let indexPath = self.tableView.indexPathForSelectedRow
+			if searchController.isActive == true && searchController.searchBar.text != "" {
+				
+				let rawName = filteredArray?[(indexPath?.row)!]
+				name = NSString(string: rawName!)
+			} else {
+				let rawName = dataArray?[(indexPath?.row)!]
+				name = NSString(string: rawName!)
+			}
+			
 
-			if let element = dataDictionary?.object(forKey: swift) {
+			if let element = dataDictionary?.object(forKey: name!) {
 				(segue.destination.childViewControllers[0] as! DetailViewController).detailItem = element as? NSDictionary
 			}
 

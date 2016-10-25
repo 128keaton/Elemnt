@@ -62,4 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
 }
+//why this isnt an option, I don't know
+class SplitViewController: UISplitViewController {
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		preferredDisplayMode = .allVisible
+	}
+}
+
 

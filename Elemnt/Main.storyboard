@@ -93,7 +93,7 @@
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
-                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                <splitViewController id="H1p-Uh-vWS" customClass="SplitViewController" customModule="Elemnt" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
@@ -378,6 +378,6 @@
         <image name="sorted-alphabetically" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xG2-vW-an4"/>
+        <segue reference="OkG-CV-zVo"/>
     </inferredMetricsTieBreakers>
 </document>

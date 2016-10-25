@@ -28,9 +28,9 @@ class DetailViewController: UIViewController {
 					element[key as! String] = value
 				}
 
-				if element["image"] != nil {
+				
 					textView.text = element["desc"] as! String!
-					elementImage.getFrom(data: element["image"] as! Data, contentMode: .scaleAspectFit)
+					elementImage.image = UIImage(named: "\(detail["name"]).JPG")
 
 					DispatchQueue.init(label: "128keaton",
 					                   qos: .background,
@@ -50,11 +50,14 @@ class DetailViewController: UIViewController {
 							//SUPER NESTING!
 						}
 					}
-				}
+				
 
 			}
 		}
 	}
+
+
+	
 	@IBAction func showSelectionMenu(){
 		let alertView = UIAlertController(title: "Share or report?", message: "", preferredStyle: .actionSheet)
 		let reportAction = UIAlertAction(title: "Report incorrect", style: .default, handler: { action in

@@ -23,7 +23,7 @@ class EleSpell: UIViewController {
 		let string = removeSpecialCharsFromString(text: string)
 		Alamofire.request("http://periodictable.com/MSP/ElementBanners?preset=" + string).responseString { response in
 
-			let document = HTMLDocument(string: response.result.value!)
+			let document = HTMLDocument(string: (response.result.value?.replacingOccurrences(of: " " , with: "%20"))!)
 			let bigTable = document.nodes(matchingSelector: "table")
 			if bigTable.indices.contains(3) {
 				let validTable = bigTable[3]
@@ -131,3 +131,5 @@ class EleSpell: UIViewController {
 	}
 
 }
+
+

@@ -263,8 +263,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx3-6d-RyQ">
                                 <rect key="frame" x="117" y="439" width="141" height="53"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="I1Q-5o-fOc"/>
-                                    <constraint firstAttribute="width" constant="141" id="loR-TL-66d"/>
+                                    <constraint firstAttribute="width" constant="141" id="SYf-i2-Glb"/>
+                                    <constraint firstAttribute="height" constant="53" id="lPS-zA-V3y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Spell"/>
@@ -293,7 +293,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courtesy of Theodore Gray, periodictable.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-ys-fez">
                                 <rect key="frame" x="10" y="638" width="355" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="svh-Kc-1Zp"/>
+                                    <constraint firstAttribute="height" constant="21" id="WDr-2s-WDV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -309,23 +309,22 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1He-Tt-JS2" firstAttribute="centerX" secondItem="ctC-ys-fez" secondAttribute="centerX" id="0R3-Bj-3ak"/>
-                            <constraint firstItem="lW2-AX-32q" firstAttribute="top" secondItem="ctC-ys-fez" secondAttribute="bottom" constant="8" symbolic="YES" id="1Hs-iT-wF4"/>
                             <constraint firstItem="76f-oT-EyV" firstAttribute="top" secondItem="bJh-uW-wh6" secondAttribute="bottom" constant="20" id="2Qn-9g-6di"/>
                             <constraint firstItem="cif-TN-63C" firstAttribute="centerY" secondItem="aJz-PS-F4E" secondAttribute="centerY" id="3X4-hv-vq1"/>
-                            <constraint firstItem="ctC-ys-fez" firstAttribute="top" secondItem="1He-Tt-JS2" secondAttribute="bottom" constant="36" id="A2T-co-c8I"/>
-                            <constraint firstItem="1He-Tt-JS2" firstAttribute="top" secondItem="Vx3-6d-RyQ" secondAttribute="bottom" constant="80" id="AdE-Jm-qRV"/>
+                            <constraint firstItem="1He-Tt-JS2" firstAttribute="top" secondItem="Vx3-6d-RyQ" secondAttribute="bottom" constant="80" id="8X2-3y-qo8"/>
                             <constraint firstItem="76f-oT-EyV" firstAttribute="leading" secondItem="cif-TN-63C" secondAttribute="leading" id="HdM-v6-c2m"/>
                             <constraint firstItem="76f-oT-EyV" firstAttribute="trailing" secondItem="cif-TN-63C" secondAttribute="trailing" id="PGq-VK-3ah"/>
                             <constraint firstItem="q0u-w2-NbZ" firstAttribute="leading" secondItem="76f-oT-EyV" secondAttribute="leading" id="PnL-i2-BSX"/>
                             <constraint firstItem="76f-oT-EyV" firstAttribute="trailing" secondItem="aJz-PS-F4E" secondAttribute="trailingMargin" id="Qem-bj-QFF"/>
-                            <constraint firstItem="cif-TN-63C" firstAttribute="centerX" secondItem="Vx3-6d-RyQ" secondAttribute="centerX" id="Rko-cW-2tO"/>
+                            <constraint firstItem="ctC-ys-fez" firstAttribute="top" secondItem="1He-Tt-JS2" secondAttribute="bottom" constant="36" id="RI1-Sg-CiW"/>
                             <constraint firstItem="q0u-w2-NbZ" firstAttribute="trailing" secondItem="76f-oT-EyV" secondAttribute="trailing" id="ZfP-Ql-e3X"/>
-                            <constraint firstItem="Vx3-6d-RyQ" firstAttribute="centerX" secondItem="1He-Tt-JS2" secondAttribute="centerX" id="c9c-fh-mVW"/>
+                            <constraint firstItem="Vx3-6d-RyQ" firstAttribute="centerX" secondItem="1He-Tt-JS2" secondAttribute="centerX" id="fR0-cN-0qX"/>
                             <constraint firstItem="76f-oT-EyV" firstAttribute="leading" secondItem="aJz-PS-F4E" secondAttribute="leadingMargin" id="n9I-Qw-ZYF"/>
-                            <constraint firstItem="ctC-ys-fez" firstAttribute="leading" secondItem="aJz-PS-F4E" secondAttribute="leadingMargin" constant="-6" id="tVo-5t-RkR"/>
+                            <constraint firstItem="ctC-ys-fez" firstAttribute="centerX" secondItem="1He-Tt-JS2" secondAttribute="centerX" id="nec-Hl-o3G"/>
+                            <constraint firstItem="Vx3-6d-RyQ" firstAttribute="centerX" secondItem="cif-TN-63C" secondAttribute="centerX" id="pFL-7I-zbW"/>
+                            <constraint firstItem="ctC-ys-fez" firstAttribute="leading" secondItem="aJz-PS-F4E" secondAttribute="leadingMargin" constant="-6" id="smw-KK-jOO"/>
                             <constraint firstItem="q0u-w2-NbZ" firstAttribute="top" secondItem="76f-oT-EyV" secondAttribute="bottom" constant="20" id="uH4-hh-2DN"/>
-                            <constraint firstItem="Vx3-6d-RyQ" firstAttribute="top" secondItem="cif-TN-63C" secondAttribute="bottom" constant="91" id="x9z-df-hTL"/>
+                            <constraint firstItem="lW2-AX-32q" firstAttribute="top" secondItem="ctC-ys-fez" secondAttribute="bottom" constant="8" symbolic="YES" id="wr2-4T-Sen"/>
                         </constraints>
                     </view>
                     <connections>

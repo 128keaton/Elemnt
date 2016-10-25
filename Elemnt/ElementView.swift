@@ -30,13 +30,13 @@ class DetailViewController: UIViewController {
 
 				
 					textView.text = element["desc"] as! String!
-					elementImage.image = UIImage(named: "\(detail["name"]).JPG")
+					elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
 
 					DispatchQueue.init(label: "128keaton",
 					                   qos: .background,
 					                   target: nil).async {
-						self.colors = self.imageView.image?.getColors()
-
+						self.colors = UIImage(named: "\(detail["name"]!).JPG")?.getColors()
+												
 						let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.view.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
 						self.imageView.tintColor = color
 

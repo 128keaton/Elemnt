@@ -21,9 +21,9 @@ class EleSpell: UIViewController {
 	var imageURLS: [String]? = []
 	func parseURL(string: String) {
 		let string = removeSpecialCharsFromString(text: string)
-		Alamofire.request("http://periodictable.com/MSP/ElementBanners?preset=" + string).responseString { response in
+		Alamofire.request("http://periodictable.com/MSP/ElementBanners?preset=" + string.replacingOccurrences(of: " ", with: "%20")).responseString { response in
 
-			let document = HTMLDocument(string: (response.result.value?.replacingOccurrences(of: " " , with: "%20"))!)
+			let document = HTMLDocument(string: response.result.value!)
 			let bigTable = document.nodes(matchingSelector: "table")
 			if bigTable.indices.contains(3) {
 				let validTable = bigTable[3]

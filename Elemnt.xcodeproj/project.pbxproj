@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A33D9F61DBFD02000D5A601 /* ElementDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */; };
 		8A5FAE601DBEDD4200E3972D /* EleSpell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */; };
 		8A5FAEE01DBFABF700E3972D /* Actinium.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAE641DBFABF600E3972D /* Actinium.JPG */; };
 		8A5FAEE11DBFABF700E3972D /* Aluminum.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAE651DBFABF600E3972D /* Aluminum.JPG */; };
@@ -144,6 +145,7 @@
 /* Begin PBXFileReference section */
 		51037C4583EF53DE3C4DC71A /* Pods-Elemnt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elemnt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Elemnt/Pods-Elemnt.release.xcconfig"; sourceTree = "<group>"; };
 		866DCECA0F55311EACDDDCDC /* Pods-Elemnt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elemnt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Elemnt/Pods-Elemnt.debug.xcconfig"; sourceTree = "<group>"; };
+		8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementDataView.swift; sourceTree = "<group>"; };
 		8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleSpell.swift; sourceTree = "<group>"; };
 		8A5FAE641DBFABF600E3972D /* Actinium.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Actinium.JPG; sourceTree = "<group>"; };
 		8A5FAE651DBFABF600E3972D /* Aluminum.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aluminum.JPG; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				8A8569B61DBD5BEC00815BF5 /* AboutView.swift */,
 				8A66C7161DBD57DA00341493 /* ElementsList.swift */,
 				8A66C7131DBD57BD00341493 /* ElementView.swift */,
+				8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */,
 				8A66C71E1DBD57F700341493 /* Assets.xcassets */,
 				8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */,
 				8A66C7151DBD57DA00341493 /* Info.plist */,
@@ -749,6 +752,7 @@
 				8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */,
 				8A66C7141DBD57BD00341493 /* ElementView.swift in Sources */,
 				8AAA2A9D1DBD707700E1F79E /* ZRPIView.swift in Sources */,
+				8A33D9F61DBFD02000D5A601 /* ElementDataView.swift in Sources */,
 				8A5FAE601DBEDD4200E3972D /* EleSpell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,11 +9,16 @@
 import UIKit
 import ChameleonFramework
 
-class DetailViewController: UIViewController {
+class DetailViewController: UITableViewController {
 
 	@IBOutlet var textArea: UITextView!
 	@IBOutlet var imageView: UIImageView!
 
+	@IBOutlet var colorView: UIView!
+	@IBOutlet var atomicWeight: UILabel!
+	@IBOutlet var density: UILabel!
+	@IBOutlet var boilingPoint: UILabel!
+	@IBOutlet var meltingPoint: UILabel!
 	var colors: UIImageColors!
 
 	var imageData: Data!
@@ -32,6 +37,12 @@ class DetailViewController: UIViewController {
 					textView.text = element["desc"] as! String!
 					elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
 
+				let data = element["data"] as! [String: String]
+				atomicWeight.text = data["atomicWeight"]
+				density.text = data["density"]
+				boilingPoint.text = data["boilingPoint"]
+				meltingPoint.text = data["meltingPoint"]
+				
 					DispatchQueue.init(label: "128keaton",
 					                   qos: .background,
 					                   target: nil).async {
@@ -43,7 +54,7 @@ class DetailViewController: UIViewController {
 						DispatchQueue.main.sync {
 							let realColor = self.imageView.tintColor
 							UIView.animate(withDuration: 0.3, animations: {
-								self.view.backgroundColor = realColor
+								self.colorView.backgroundColor = realColor
 
 							               })
 							//CAUSE NESTING BRAH
@@ -68,8 +79,12 @@ class DetailViewController: UIViewController {
 			self.share()
 			self.dismiss(animated: true, completion: nil)
 		})
+		let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: { action in
+			self.dismiss(animated: true, completion: nil)
+		})
 		alertView.addAction(reportAction)
 		alertView.addAction(shareAction)
+		alertView.addAction(cancelAction)
 		self.present(alertView, animated: true, completion: nil)
 	}
 

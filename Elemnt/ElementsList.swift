@@ -16,7 +16,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	var dataDictionary: NSMutableDictionary?
 	var dataArray: [String]? = []
-
+	var sortedArray: [String]? = []
 
 	var filteredNameArray: [String]? = []
 	var filteredNumberArray: [String]? = []
@@ -39,6 +39,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		searchController.searchBar.placeholder = "112"
 		searchController.searchBar.sizeToFit()
 		searchController.searchBar.barStyle = .black
+		searchController.searchBar.delegate = self
 		searchController.searchBar.scopeButtonTitles = ["Number", "Title"]
 
 		definesPresentationContext = true
@@ -67,24 +68,49 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		return 0
 	}
 	func filterContentForSearchText(searchText: String, scope: DataMode) {
+		
+				let predicate = NSPredicate(format: "SELF beginswith[c] %@", searchText)
 		filteredNameArray = dataArray?.filter({ (element) -> Bool in
-			return element.lowercased().contains(searchText.lowercased())
+			return predicate.evaluate(with: element)
 		                                      })
 
 		filteredNumberArray = dataArray?.filter({ (element) -> Bool in
-			return String(getAtomicNumber(forValue: element)).contains(searchText)
+			return predicate.evaluate(with: String(getAtomicNumber(forValue: element)))
 		                                        })
 		
+	
+
+		
+		
 		if scope == .Alphabetically {
-			filteredArray = filteredNameArray
+		  filteredArray = filteredNameArray
 		} else {
 			filteredArray = filteredNumberArray
 		}
 
+		
 
 		self.tableView.reloadData()
 
 
+	}
+	
+	@IBAction func showActionMenu(){
+		let actionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+		let spellFunction = UIAlertAction(title: "Spell in elements", style: .default, handler: { (UIAlertAction) in
+				self.performSegue(withIdentifier: "showSpell", sender: self)
+		})
+		let aboutFunction = UIAlertAction(title: "About Elemnt", style: .default, handler: { (UIAlertAction) in
+			self.performSegue(withIdentifier: "showAbout", sender: self)
+		})
+		let cancelFunction = UIAlertAction(title: "Cancel", style: .destructive, handler: { (UIAlertAction) in
+			self.dismiss(animated: true, completion: nil)
+		})
+		
+		actionMenu.addAction(spellFunction)
+		actionMenu.addAction(aboutFunction)
+		actionMenu.addAction(cancelFunction)
+		self.present(actionMenu, animated: true, completion: nil)
 	}
 	@IBAction func resort(sender: UIBarButtonItem) {
 		//stupid, I know, but LAAAAZY
@@ -99,6 +125,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	}
 	func setupData(mode: DataMode) {
 		dataArray?.removeAll()
+		sortedArray?.removeAll()
 		if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
 			dataDictionary = NSMutableDictionary(contentsOfFile: path)
 		}
@@ -108,12 +135,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			dataArray?.append(name as! String)
 		}
 		if mode == .Alphabetically {
-			dataArray = dataArray?.sorted(by: { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending })
+			sortedArray = dataArray?.sorted(by: { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending })
 
 		} else {
 
 
-			dataArray = dataArray?.sorted(by: { self.getAtomicNumber(forValue: $0) < self.getAtomicNumber(forValue: $1) })
+			sortedArray = dataArray?.sorted(by: { self.getAtomicNumber(forValue: $0) < self.getAtomicNumber(forValue: $1) })
 
 		}
 		self.tableView.reloadData()
@@ -151,7 +178,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 				let rawName = filteredArray?[(indexPath?.row)!]
 				name = NSString(string: rawName!)
 			} else {
-				let rawName = dataArray?[(indexPath?.row)!]
+				let rawName = sortedArray?[(indexPath?.row)!]
 				name = NSString(string: rawName!)
 			}
 			
@@ -183,7 +210,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			print(self.filteredArray?.count ?? 0)
 			return (self.filteredArray?.count)!
 		}
-		return self.dataArray!.count
+		return self.sortedArray!.count
 	}
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		//because I LOVE SPEED
@@ -201,7 +228,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			let rawName = filteredArray?[indexPath.row]
 			name = NSString(string: rawName!)
 		} else {
-			let rawName = dataArray?[indexPath.row]
+			let rawName = sortedArray?[indexPath.row]
 			name = NSString(string: rawName!)
 		}
 

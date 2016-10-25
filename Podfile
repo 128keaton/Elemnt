@@ -6,5 +6,8 @@ target 'Elemnt' do
   use_frameworks!
   # Pods for Element Story
 	pod 'ChameleonFramework'
-
+	pod 'Agrume', :git => 'https://github.com/JanGorman/Agrume.git'
+	pod 'HTMLReader'
+	pod 'Alamofire'
+	pod 'SwiftyJSON'
 end

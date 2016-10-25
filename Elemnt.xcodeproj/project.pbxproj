@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A5FAE601DBEDD4200E3972D /* EleSpell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */; };
 		8A66C7141DBD57BD00341493 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66C7131DBD57BD00341493 /* ElementView.swift */; };
 		8A66C7181DBD57DA00341493 /* ElementsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66C7161DBD57DA00341493 /* ElementsList.swift */; };
 		8A66C71B1DBD57E700341493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C7191DBD57E700341493 /* LaunchScreen.storyboard */; };
@@ -18,12 +19,14 @@
 		8A8569B41DBD5BAD00815BF5 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8569B31DBD5BAD00815BF5 /* data.plist */; };
 		8A8569B51DBD5BCA00815BF5 /* ElementItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C6F01DBD576C00341493 /* ElementItemCell.xib */; };
 		8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8569B61DBD5BEC00815BF5 /* AboutView.swift */; };
+		8AAA2A9D1DBD707700E1F79E /* ZRPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */; };
 		C2218B5DE797ADA8C77668A4 /* Pods_Elemnt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		51037C4583EF53DE3C4DC71A /* Pods-Elemnt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elemnt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Elemnt/Pods-Elemnt.release.xcconfig"; sourceTree = "<group>"; };
 		866DCECA0F55311EACDDDCDC /* Pods-Elemnt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elemnt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Elemnt/Pods-Elemnt.debug.xcconfig"; sourceTree = "<group>"; };
+		8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleSpell.swift; sourceTree = "<group>"; };
 		8A66C6EF1DBD576C00341493 /* ElementItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementItemCell.swift; sourceTree = "<group>"; };
 		8A66C6F01DBD576C00341493 /* ElementItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementItemCell.xib; sourceTree = "<group>"; };
 		8A66C6F31DBD576C00341493 /* UIImageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageColors.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8569B31DBD5BAD00815BF5 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		8A8569B61DBD5BEC00815BF5 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZRPIView.swift; sourceTree = "<group>"; };
 		BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elemnt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,6 +68,7 @@
 		8A66C6DE1DBD575D00341493 = {
 			isa = PBXGroup;
 			children = (
+				8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */,
 				8A66C6E51DBD576C00341493 /* Elemnt */,
 				8A66C6F91DBD578000341493 /* Products */,
 				6FF1E70EACFE17319D3C13D2 /* Pods */,
@@ -83,6 +88,7 @@
 				8A66C7161DBD57DA00341493 /* ElementsList.swift */,
 				8A66C7131DBD57BD00341493 /* ElementView.swift */,
 				8A66C71E1DBD57F700341493 /* Assets.xcassets */,
+				8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */,
 				8A66C7151DBD57DA00341493 /* Info.plist */,
 			);
 			path = Elemnt;
@@ -262,6 +268,8 @@
 				8A8569B01DBD587D00815BF5 /* AppDelegate.swift in Sources */,
 				8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */,
 				8A66C7141DBD57BD00341493 /* ElementView.swift in Sources */,
+				8AAA2A9D1DBD707700E1F79E /* ZRPIView.swift in Sources */,
+				8A5FAE601DBEDD4200E3972D /* EleSpell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,11 +368,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Elemnt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.128keaton.Elemnt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keatonburleson.elementstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -412,10 +420,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Elemnt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.128keaton.Elemnt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keatonburleson.elementstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,9 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elemnt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXo-ti-Fwo">
-                                <rect key="frame" x="70" y="275" width="235" height="117"/>
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="nuW-lh-2rQ"/>
+                                    <constraint firstAttribute="height" constant="200" id="nuW-lh-2rQ"/>
+                                    <constraint firstAttribute="width" constant="375" id="wck-hv-Cfd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,13 +45,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FTY-Ua-cOG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="47" id="1uj-yg-UcM"/>
-                            <constraint firstItem="HXo-ti-Fwo" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="235:667" id="96A-Xa-Y8j"/>
                             <constraint firstItem="HXo-ti-Fwo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="AoL-zy-nea"/>
-                            <constraint firstItem="HXo-ti-Fwo" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="54" id="ZRy-nE-iQY"/>
                             <constraint firstAttribute="bottom" secondItem="FTY-Ua-cOG" secondAttribute="bottom" constant="20" symbolic="YES" id="dM0-p5-SYU"/>
                             <constraint firstItem="FTY-Ua-cOG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fGl-8p-Jb9"/>
-                            <constraint firstItem="HXo-ti-Fwo" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="255" id="ofX-5a-quJ"/>
                             <constraint firstItem="HXo-ti-Fwo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qdb-3j-4le"/>
+                            <constraint firstItem="HXo-ti-Fwo" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="v3l-SB-tjN"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -55,7 +55,39 @@ class DetailViewController: UIViewController {
 			}
 		}
 	}
+	@IBAction func showSelectionMenu(){
+		let alertView = UIAlertController(title: "Share or report?", message: "", preferredStyle: .actionSheet)
+		let reportAction = UIAlertAction(title: "Report incorrect", style: .default, handler: { action in
+			self.report()
+			self.dismiss(animated: true, completion: nil)
+		})
+		let shareAction = UIAlertAction(title: "Share", style: .default, handler: { action in
+			self.share()
+			self.dismiss(animated: true, completion: nil)
+		})
+		alertView.addAction(reportAction)
+		alertView.addAction(shareAction)
+		self.present(alertView, animated: true, completion: nil)
+	}
 
+	func report(){
+		
+	}
+	func share() {
+		let textToShare = "Check out " + (self.detailItem["name"] as! String) + " on Elemnt!"
+		let image = UIImage(data: self.detailItem["image"] as! Data)
+
+		let objectsToShare = [textToShare, image!] as [Any]
+		let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+
+		activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+
+
+		activityVC.popoverPresentationController?.sourceView = self.view
+		self.present(activityVC, animated: true, completion: nil)
+
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -71,7 +103,7 @@ class DetailViewController: UIViewController {
 	{
 		//fix for gradient wierdness when rotating
 
-		if self.detailItem != nil && self.colors != nil{
+		if self.detailItem != nil && self.colors != nil {
 			DispatchQueue.init(label: "128keaton",
 			                   qos: .background,
 			                   target: nil).async {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8A33D9F61DBFD02000D5A601 /* ElementDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */; };
+		8A49D09A1DC0348B0064B454 /* GlobalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49D0991DC0348B0064B454 /* GlobalExtensions.swift */; };
+		8A49D09C1DC03C520064B454 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A49D09B1DC03C520064B454 /* data.plist */; };
 		8A5FAE601DBEDD4200E3972D /* EleSpell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */; };
 		8A5FAEE01DBFABF700E3972D /* Actinium.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAE641DBFABF600E3972D /* Actinium.JPG */; };
 		8A5FAEE11DBFABF700E3972D /* Aluminum.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAE651DBFABF600E3972D /* Aluminum.JPG */; };
@@ -127,7 +129,6 @@
 		8A5FAF591DBFABF700E3972D /* Yttrium.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAEDD1DBFABF600E3972D /* Yttrium.JPG */; };
 		8A5FAF5A1DBFABF700E3972D /* Zinc.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAEDE1DBFABF700E3972D /* Zinc.JPG */; };
 		8A5FAF5B1DBFABF700E3972D /* Zirconium.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAEDF1DBFABF700E3972D /* Zirconium.JPG */; };
-		8A5FAF611DBFAE7000E3972D /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAF601DBFAE7000E3972D /* data.plist */; };
 		8A66C7141DBD57BD00341493 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66C7131DBD57BD00341493 /* ElementView.swift */; };
 		8A66C7181DBD57DA00341493 /* ElementsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66C7161DBD57DA00341493 /* ElementsList.swift */; };
 		8A66C71B1DBD57E700341493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C7191DBD57E700341493 /* LaunchScreen.storyboard */; };
@@ -146,6 +147,8 @@
 		51037C4583EF53DE3C4DC71A /* Pods-Elemnt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elemnt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Elemnt/Pods-Elemnt.release.xcconfig"; sourceTree = "<group>"; };
 		866DCECA0F55311EACDDDCDC /* Pods-Elemnt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elemnt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Elemnt/Pods-Elemnt.debug.xcconfig"; sourceTree = "<group>"; };
 		8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementDataView.swift; sourceTree = "<group>"; };
+		8A49D0991DC0348B0064B454 /* GlobalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalExtensions.swift; sourceTree = "<group>"; };
+		8A49D09B1DC03C520064B454 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleSpell.swift; sourceTree = "<group>"; };
 		8A5FAE641DBFABF600E3972D /* Actinium.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Actinium.JPG; sourceTree = "<group>"; };
 		8A5FAE651DBFABF600E3972D /* Aluminum.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aluminum.JPG; sourceTree = "<group>"; };
@@ -265,20 +268,19 @@
 		8A5FAEDD1DBFABF600E3972D /* Yttrium.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yttrium.JPG; sourceTree = "<group>"; };
 		8A5FAEDE1DBFABF700E3972D /* Zinc.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Zinc.JPG; sourceTree = "<group>"; };
 		8A5FAEDF1DBFABF700E3972D /* Zirconium.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Zirconium.JPG; sourceTree = "<group>"; };
-		8A5FAF601DBFAE7000E3972D /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		8A66C6EF1DBD576C00341493 /* ElementItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementItemCell.swift; sourceTree = "<group>"; };
 		8A66C6F01DBD576C00341493 /* ElementItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementItemCell.xib; sourceTree = "<group>"; };
 		8A66C6F31DBD576C00341493 /* UIImageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageColors.swift; sourceTree = "<group>"; };
 		8A66C6F81DBD578000341493 /* Elemnt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elemnt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A66C7131DBD57BD00341493 /* ElementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
 		8A66C7151DBD57DA00341493 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A66C7161DBD57DA00341493 /* ElementsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementsList.swift; sourceTree = "<group>"; };
+		8A66C7161DBD57DA00341493 /* ElementsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementsList.swift; sourceTree = "<group>"; usesTabs = 1; };
 		8A66C7191DBD57E700341493 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A66C71A1DBD57E700341493 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8A66C71E1DBD57F700341493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8569B61DBD5BEC00815BF5 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZRPIView.swift; sourceTree = "<group>"; };
+		8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZRPIView.swift; path = ../ZRPIView.swift; sourceTree = "<group>"; };
 		BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elemnt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -431,7 +433,6 @@
 		8A66C6DE1DBD575D00341493 = {
 			isa = PBXGroup;
 			children = (
-				8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */,
 				8A66C6E51DBD576C00341493 /* Elemnt */,
 				8A66C6F91DBD578000341493 /* Products */,
 				6FF1E70EACFE17319D3C13D2 /* Pods */,
@@ -442,7 +443,7 @@
 		8A66C6E51DBD576C00341493 /* Elemnt */ = {
 			isa = PBXGroup;
 			children = (
-				8A5FAF601DBFAE7000E3972D /* data.plist */,
+				8A49D09B1DC03C520064B454 /* data.plist */,
 				8A5FAE631DBFABE900E3972D /* Element Images */,
 				8A66C71D1DBD57EF00341493 /* Storyboards */,
 				8A8569B21DBD596700815BF5 /* Custom Cells */,
@@ -479,6 +480,8 @@
 		8A8569B11DBD596200815BF5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */,
+				8A49D0991DC0348B0064B454 /* GlobalExtensions.swift */,
 				8A66C6F31DBD576C00341493 /* UIImageColors.swift */,
 			);
 			name = Libraries;
@@ -648,7 +651,7 @@
 				8A5FAF0E1DBFABF700E3972D /* Iodine.JPG in Resources */,
 				8A5FAEF91DBFABF700E3972D /* Curium.JPG in Resources */,
 				8A5FAF091DBFABF700E3972D /* Hassium.JPG in Resources */,
-				8A5FAF611DBFAE7000E3972D /* data.plist in Resources */,
+				8A49D09C1DC03C520064B454 /* data.plist in Resources */,
 				8A5FAEF11DBFABF700E3972D /* Carbon.JPG in Resources */,
 				8A5FAEF51DBFABF700E3972D /* Chromium.JPG in Resources */,
 				8A5FAF0F1DBFABF700E3972D /* Iridium.JPG in Resources */,
@@ -749,6 +752,7 @@
 				8A8569AE1DBD585900815BF5 /* ElementItemCell.swift in Sources */,
 				8A66C7181DBD57DA00341493 /* ElementsList.swift in Sources */,
 				8A8569B01DBD587D00815BF5 /* AppDelegate.swift in Sources */,
+				8A49D09A1DC0348B0064B454 /* GlobalExtensions.swift in Sources */,
 				8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */,
 				8A66C7141DBD57BD00341493 /* ElementView.swift in Sources */,
 				8AAA2A9D1DBD707700E1F79E /* ZRPIView.swift in Sources */,

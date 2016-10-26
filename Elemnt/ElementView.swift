@@ -35,7 +35,7 @@ class DetailViewController: UITableViewController {
 
 				
 					textView.text = element["desc"] as! String!
-					elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
+				elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
 
 				let data = element["data"] as! [String: String]
 				atomicWeight.text = data["atomicWeight"]
@@ -48,9 +48,9 @@ class DetailViewController: UITableViewController {
 					                   target: nil).async {
 						self.colors = UIImage(named: "\(detail["name"]!).JPG")?.getColors()
 												
-						let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.view.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
+						let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
 						self.imageView.tintColor = color
-
+	
 						DispatchQueue.main.sync {
 							let realColor = self.imageView.tintColor
 							UIView.animate(withDuration: 0.3, animations: {
@@ -68,16 +68,16 @@ class DetailViewController: UITableViewController {
 	}
 
 
-	
+	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 0.1
+	}
 	@IBAction func showSelectionMenu(){
 		let alertView = UIAlertController(title: "Share or report?", message: "", preferredStyle: .actionSheet)
 		let reportAction = UIAlertAction(title: "Report incorrect", style: .default, handler: { action in
 			self.report()
-			self.dismiss(animated: true, completion: nil)
 		})
 		let shareAction = UIAlertAction(title: "Share", style: .default, handler: { action in
 			self.share()
-			self.dismiss(animated: true, completion: nil)
 		})
 		let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: { action in
 			self.dismiss(animated: true, completion: nil)
@@ -92,8 +92,9 @@ class DetailViewController: UITableViewController {
 		
 	}
 	func share() {
+		
 		let textToShare = "Check out " + (self.detailItem["name"] as! String) + " on Elemnt!"
-		let image = UIImage(data: self.detailItem["image"] as! Data)
+		let image = self.imageView.image
 
 		let objectsToShare = [textToShare, image!] as [Any]
 		let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -126,14 +127,14 @@ class DetailViewController: UITableViewController {
 			                   qos: .background,
 			                   target: nil).async {
 
-				let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.view.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
+				let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
 				self.imageView.tintColor = color
 
 				DispatchQueue.main.sync {
 					let realColor = self.imageView.tintColor
 					UIView.animate(withDuration: 0.3, animations: {
 						self.view.backgroundColor = realColor
-
+						self.colorView.backgroundColor = realColor
 					               })
 
 				}

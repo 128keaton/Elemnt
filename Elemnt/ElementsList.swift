@@ -89,7 +89,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		} else {
 			filteredArray = filteredNumberArray
 		}
-
+	
 
 
 		self.tableView.reloadData()
@@ -130,15 +130,18 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	func parseURL() {
 		var newElementsDictionary: [String: Any]! = [:]
 		
-		for element in self.dataArray!{
+		for i in 0..<10{
 
-		let number = self.getAtomicNumber(forValue: element)
+	//	let number = self.getAtomicNumber(forValue: element)
 		var stringNumber: String!
-		if number < 100 {
-			stringNumber = String("0\(number)")
+		if i < 100 && i > 9 {
+			stringNumber = String("0\(i)")
+		} else if i <= 9 {
+			stringNumber = String("00\(i)")
+			print(stringNumber)
 		} else {
-			stringNumber = String(number)
-		}
+			stringNumber = String(i)
+	   }
 		let requestURL = "http://periodictable.com/Elements/\(stringNumber!)/index.html"
 		print(requestURL)
 		Alamofire.request(requestURL).responseString { response in
@@ -209,8 +212,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 				actualDescription = actualDescription?.replacingOccurrences(of: "Full technical data\n", with: "")
 				actualDescription = actualDescription?.replacingOccurrences(of: ".Scroll down to see examples of \(elementName!).", with: "")
-				//		print("Element: \(elementName!).\nDescription: \(actualDescription!)")
-				let elementDictionary = ["name": elementName!, "desc": actualDescription!, "data" : dataDictionary, "number" : number] as [String: Any]
+						print("Element: \(elementName!).\nDescription: \(actualDescription!)")
+				let elementDictionary = ["name": elementName!, "desc": actualDescription!, "data" : dataDictionary, "number" : i] as [String: Any]
 				newElementsDictionary[elementName!] = elementDictionary
 				let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
 				let path = paths.appending("/test.plist")
@@ -255,7 +258,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			sortedArray = dataArray?.sorted(by: { self.getAtomicNumber(forValue: $0) < self.getAtomicNumber(forValue: $1) })
 
 		}
-	
+
 		print(self.dataArray?.count ?? 0)
 		self.tableView.reloadData()
 	}
@@ -265,9 +268,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 		let dictionary = self.dataDictionary?.object(forKey: key) as! [String: Any]
 
-		let number = Int(dictionary["number"] as! String)
+		let number = Int(dictionary["number"] as! NSNumber)
 
-		return number!
+		return number
 
 
 	}
@@ -351,7 +354,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		if let element = dataDictionary?.object(forKey: name!) {
 			let element = element as! NSDictionary
 			cell.number?.text = "\(element["number"]!)"
-			cell.elementImage?.image = UIImage(named: "\(name!).JPG")
+			cell.elementImage?.loadImageNamed(name: name! as String)
 
 		}
 
@@ -362,22 +365,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 }
 
-extension UIImageView {
-	func getFrom(data: Data, contentMode: UIViewContentMode) {
 
-
-		let backgroundQueue = DispatchQueue(label: "128keaton",
-		                                    qos: .background,
-		                                    target: nil)
-
-		backgroundQueue.sync(execute: {
-			self.contentMode = contentMode
-			self.image = UIImage(data: data)
-
-		                     })
-
-	}
-}
 
 extension MasterViewController: UISearchResultsUpdating {
 	@available(iOS 8.0, *)
@@ -402,21 +390,3 @@ extension MasterViewController: UISearchResultsUpdating {
 	}
 }
 
-// from https://gist.github.com/klein-artur/025a0fa4f167a648d9ea
-extension UIColor {
-	func getComplementaryColor() -> UIColor {
-
-		let ciColor = CIColor(color: self)
-
-		// get the current values and make the difference from white:
-			let compRed: CGFloat = 1.0 - ciColor.red
-		let compGreen: CGFloat = 1.0 - ciColor.green
-		let compBlue: CGFloat = 1.0 - ciColor.blue
-
-		return UIColor(red: compRed, green: compGreen, blue: compBlue, alpha: 1.0)
-	}
-}
-enum DataMode {
-	case Alphabetically
-	case Numerically
-}

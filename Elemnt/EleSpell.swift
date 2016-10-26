@@ -20,12 +20,13 @@ class EleSpell: UIViewController {
 
 	var imageURLS: [String]? = []
 	func parseURL(string: String) {
+		print("parsine \(string)")
 		let string = removeSpecialCharsFromString(text: string)
 		Alamofire.request("http://periodictable.com/MSP/ElementBanners?preset=" + string.replacingOccurrences(of: " ", with: "%20")).responseString { response in
-
+			print("requesting")
 			let document = HTMLDocument(string: response.result.value!)
 			let bigTable = document.nodes(matchingSelector: "table")
-			if bigTable.indices.contains(3) {
+			if (bigTable.atIndex(index: 3) != nil) || string != ""{
 				let validTable = bigTable[3]
 				let innerTable = validTable.firstNode(matchingSelector: "table")
 				let imageRows = innerTable?.nodes(matchingSelector: "td")
@@ -119,13 +120,17 @@ class EleSpell: UIViewController {
 
 		agrume = Agrume(image: self.stitchImages(images: self.images!, isVertical: false), backgroundBlurStyle: .dark)
 		agrume.useActionMenu = true
-		agrume.showFrom(self, backgroundSnapshotVC: nil)
+		if(UIDevice.current.userInterfaceIdiom == .phone){
+			agrume.showFrom(self, backgroundSnapshotVC: self)
+		}else{
+			agrume.showFrom(self, backgroundSnapshotVC: self)
+		}
 
 		agrume.didTapActivityButton = { [unowned self] image in
 			self.shouldShare(image: image)
 		}
 		self.images?.removeAll()
-
+		self.imageURLS?.removeAll()
 
 
 	}

@@ -11,7 +11,7 @@ import UIKit
 class ElementItemCell: UITableViewCell {
 	@IBOutlet var number: UILabel?
 	@IBOutlet var name: UILabel?
-	@IBOutlet var elementImage: UIImageView?
+	@IBOutlet var elementImage: AsyncImageView?
 	
 	
 }

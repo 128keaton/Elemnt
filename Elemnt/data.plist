@@ -2,6 +2,186 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Oxygen</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 15.9994</string>
+			<key>boilingPoint</key>
+			<string> -182.9 °C</string>
+			<key>density</key>
+			<string> 1.429 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -218.3 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>At -183.0DegreeC oxygen is a beautiful pale blue liquid, but at room temperature it is a colorless gas. It&apos;s only 21% of the atmosphere--the 21% we all need if we want to live more than a few minutes longer</string>
+		<key>name</key>
+		<string>Oxygen</string>
+		<key>number</key>
+		<integer>8</integer>
+	</dict>
+	<key>Nitrogen</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 14.0067</string>
+			<key>boilingPoint</key>
+			<string> -195.79 °C</string>
+			<key>density</key>
+			<string> 1.251 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -210.1 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Colorless nitrogen gas makes up 78% of the atmosphere, but here we see it in liquid form at -196DegreeC.  It is boiling off, creating a visible vapor--not of steam, but of water condensed from the surrounding air</string>
+		<key>name</key>
+		<string>Nitrogen</string>
+		<key>number</key>
+		<integer>7</integer>
+	</dict>
+	<key>Lithium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 6.941</string>
+			<key>boilingPoint</key>
+			<string> 1342 °C</string>
+			<key>density</key>
+			<string> 0.535 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 180.54 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The lightest metal, lithium easily floats on water, which it reacts with, skittering around releasing hydrogen gas. It&apos;s soft enough to cut with hand shears, leaving marks such as you see on this sample</string>
+		<key>name</key>
+		<string>Lithium</string>
+		<key>number</key>
+		<integer>3</integer>
+	</dict>
+	<key>Hydrogen</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 1.00794</string>
+			<key>boilingPoint</key>
+			<string> -252.87 °C</string>
+			<key>density</key>
+			<string> 0.0899 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -259.14 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>By weight, 75% of the visible universe is hydrogen, a colorless gas. In space, vast quantities interact with starlight to create spectacular sights such as the Eagle Nebula (seen by the Hubble Space Telescope). Scroll down to see examples of Hydrogen.</string>
+		<key>name</key>
+		<string>Hydrogen</string>
+		<key>number</key>
+		<integer>1</integer>
+	</dict>
+	<key>Helium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 4.002602</string>
+			<key>boilingPoint</key>
+			<string> -268.93 °C</string>
+			<key>density</key>
+			<string> 0.1785 g/l*</string>
+			<key>meltingPoint</key>
+			<string> N/A*</string>
+		</dict>
+		<key>desc</key>
+		<string>Ordinarily a colorless, inert gas, helium glows pale peach when an electric current runs through it.  A glass blower bent a tube to the shape of the letters He and filled it with pure helium.  I lit it with high voltage</string>
+		<key>name</key>
+		<string>Helium</string>
+		<key>number</key>
+		<integer>2</integer>
+	</dict>
+	<key>Fluorine</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 18.9984032</string>
+			<key>boilingPoint</key>
+			<string> -188.12 °C</string>
+			<key>density</key>
+			<string> 1.696 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -219.6 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Fluorine is a pale yellow gas that reacts violently with virtually everything, including glass.  There&apos;s probably some in this fused quartz bulb (if it hasn&apos;t eaten its way out yet)</string>
+		<key>name</key>
+		<string>Fluorine</string>
+		<key>number</key>
+		<integer>9</integer>
+	</dict>
+	<key>Carbon</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 12.0107</string>
+			<key>boilingPoint</key>
+			<string> 4027 °C*</string>
+			<key>density</key>
+			<string> 2.26 g/cm3*</string>
+			<key>meltingPoint</key>
+			<string> 3550 °C*</string>
+		</dict>
+		<key>desc</key>
+		<string>A diamond is forever, unless you heat it too much and it burns up into carbon dioxide gas.  Graphite is also pure carbon and widely used in pencils, but not nearly as pretty.  In this poster, pretty trumps practical</string>
+		<key>name</key>
+		<string>Carbon</string>
+		<key>number</key>
+		<integer>6</integer>
+	</dict>
+	<key>Beryllium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 9.012182</string>
+			<key>boilingPoint</key>
+			<string> 2470 °C</string>
+			<key>density</key>
+			<string> 1.848 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1287 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This pure broken crystal of refined beryllium ordinarily would be melted down and turned into strong, lightweight parts for missiles and spacecraft.  It is expensive and toxic, but unbeatable when cost is no object</string>
+		<key>name</key>
+		<string>Beryllium</string>
+		<key>number</key>
+		<integer>4</integer>
+	</dict>
+	<key>Boron</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 10.811</string>
+			<key>boilingPoint</key>
+			<string> 4000 °C</string>
+			<key>density</key>
+			<string> 2.46 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2075 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Boron is found in the common mineral borax, but is rarely seen in pure form, as in these polycrystalline lumps.  While extremely hard, boron is too brittle in pure form to have any practical applications</string>
+		<key>name</key>
+		<string>Boron</string>
+		<key>number</key>
+		<integer>5</integer>
+	</dict>
 	<key>Actinium</key>
 	<dict>
 		<key>data</key>
@@ -136,7 +316,7 @@
 			<string> 302 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Astatine occurs in vanishingly small quantities in the natural decay chains of uranium and thorium minerals.  You can't see any of it in this rock, but a few atoms are (probably) there from time to time</string>
+		<string>Astatine occurs in vanishingly small quantities in the natural decay chains of uranium and thorium minerals.  You can&apos;t see any of it in this rock, but a few atoms are (probably) there from time to time</string>
 		<key>name</key>
 		<string>Astatine</string>
 		<key>number</key>
@@ -156,7 +336,7 @@
 			<string> 727 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Barium makes many people think of enemas, unfortunately. They're recalling barium sulfate, an excellent x-ray contrast medium.  Barium in pure form is a metal, used as a "getter" in high-vacuum components</string>
+		<string>Barium makes many people think of enemas, unfortunately. They&apos;re recalling barium sulfate, an excellent x-ray contrast medium.  Barium in pure form is a metal, used as a &quot;getter&quot; in high-vacuum components</string>
 		<key>name</key>
 		<string>Barium</string>
 		<key>number</key>
@@ -216,7 +396,7 @@
 			<string> N/A</string>
 		</dict>
 		<key>desc</key>
-		<string>Bohrium is not boring, it's just named after Niels Bohr, who figured out the electron structure of atoms and thus explained the periodic table. (OK, bohrium, with a half-life under half a second, actually is boring.)Scroll down to see examples of Bohrium.</string>
+		<string>Bohrium is not boring, it&apos;s just named after Niels Bohr, who figured out the electron structure of atoms and thus explained the periodic table. (OK, bohrium, with a half-life under half a second, actually is boring.)Scroll down to see examples of Bohrium.</string>
 		<key>name</key>
 		<string>Bohrium</string>
 		<key>number</key>
@@ -256,7 +436,7 @@
 			<string> 321.07 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Fish are not normally cast out of pure cadmium, but if you're making a periodic table poster, why not?  The hint of yellow is a bit of cadmium oxide, a favorite pigment of the impressionist painters, notably Monet</string>
+		<string>Fish are not normally cast out of pure cadmium, but if you&apos;re making a periodic table poster, why not?  The hint of yellow is a bit of cadmium oxide, a favorite pigment of the impressionist painters, notably Monet</string>
 		<key>name</key>
 		<string>Cadmium</string>
 		<key>number</key>
@@ -316,7 +496,7 @@
 			<string> 798 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Cerium is one of the least expensive rare earths and is the major component of "mischmetal", used in lighter flints because it catches fire easily when struck.  Larger blocks are used for sparking special effects</string>
+		<string>Cerium is one of the least expensive rare earths and is the major component of &quot;mischmetal&quot;, used in lighter flints because it catches fire easily when struck.  Larger blocks are used for sparking special effects</string>
 		<key>name</key>
 		<string>Cerium</string>
 		<key>number</key>
@@ -436,7 +616,7 @@
 			<string> 1084.62 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Copper is incredibly useful in industry for wiring, heat sinks and coins, and in brass and bronze alloys.  But this sample is completely useless; it's simply a pretty hand-hammered ball, pleasant to hold and behold</string>
+		<string>Copper is incredibly useful in industry for wiring, heat sinks and coins, and in brass and bronze alloys.  But this sample is completely useless; it&apos;s simply a pretty hand-hammered ball, pleasant to hold and behold</string>
 		<key>name</key>
 		<string>Copper</string>
 		<key>number</key>
@@ -616,7 +796,7 @@
 			<string> N/A</string>
 		</dict>
 		<key>desc</key>
-		<string>Uranium and thorium minerals produce francium in vanishingly small quantities via their natural radioisotope decay chains.  At most a few atoms at a time exist in a rock like this, and you can't see any of them.  Scroll down to see examples of Francium.</string>
+		<string>Uranium and thorium minerals produce francium in vanishingly small quantities via their natural radioisotope decay chains.  At most a few atoms at a time exist in a rock like this, and you can&apos;t see any of them.  Scroll down to see examples of Francium.</string>
 		<key>name</key>
 		<string>Francium</string>
 		<key>number</key>
@@ -736,7 +916,7 @@
 			<string> N/A</string>
 		</dict>
 		<key>desc</key>
-		<string>Hassium is named for Hessen, the state in Germany that is home to the institute at which it was discovered.  It has a half-life of a few seconds, which is to say there's never been much of it, and isn't any right...now</string>
+		<string>Hassium is named for Hessen, the state in Germany that is home to the institute at which it was discovered.  It has a half-life of a few seconds, which is to say there&apos;s never been much of it, and isn&apos;t any right...now</string>
 		<key>name</key>
 		<string>Hassium</string>
 		<key>number</key>
@@ -796,7 +976,7 @@
 			<string> 113.7 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Iodine sublimates into a beautiful violet vapor when heated: There's a torch under the plate in this photo. Iodine and iodine solutions were used as disinfectants before better antiseptic agents were found</string>
+		<string>Iodine sublimates into a beautiful violet vapor when heated: There&apos;s a torch under the plate in this photo. Iodine and iodine solutions were used as disinfectants before better antiseptic agents were found</string>
 		<key>name</key>
 		<string>Iodine</string>
 		<key>number</key>
@@ -1036,7 +1216,7 @@
 			<string> -38.83 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Mercury is the only metal element liquid at room temperature.  It would be great fun to play with if it weren't so poisonous.  This pool was shaped by carefully bending the black-painted foil it was resting on</string>
+		<string>Mercury is the only metal element liquid at room temperature.  It would be great fun to play with if it weren&apos;t so poisonous.  This pool was shaped by carefully bending the black-painted foil it was resting on</string>
 		<key>name</key>
 		<string>Mercury</string>
 		<key>number</key>
@@ -1256,7 +1436,7 @@
 			<string> 1768.3 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Pure platinum mesh, like mosquito netting except more expensive, is one example of platinum's use as labware impervious to nearly all chemical attack.  It is also used in coins, which are similarly expensive</string>
+		<string>Pure platinum mesh, like mosquito netting except more expensive, is one example of platinum&apos;s use as labware impervious to nearly all chemical attack.  It is also used in coins, which are similarly expensive</string>
 		<key>name</key>
 		<string>Platinum</string>
 		<key>number</key>
@@ -1376,7 +1556,7 @@
 			<string> 1572 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Protactinium occurs in vanishingly small quantities in the natural decay chains of uranium and thorium minerals.  At most a few atoms at a time exist in a rock like this, and you can't see any of them.  Scroll down to see examples of Protactinium.</string>
+		<string>Protactinium occurs in vanishingly small quantities in the natural decay chains of uranium and thorium minerals.  At most a few atoms at a time exist in a rock like this, and you can&apos;t see any of them.  Scroll down to see examples of Protactinium.</string>
 		<key>name</key>
 		<string>Protactinium</string>
 		<key>number</key>
@@ -1416,7 +1596,7 @@
 			<string> -71 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Radon is an invisible, radioactive gas, thus hard to photograph.  This granite ball reminds us that the source of most radon in people's basements is the decay of traces of uranium and thorium in granite bedrock</string>
+		<string>Radon is an invisible, radioactive gas, thus hard to photograph.  This granite ball reminds us that the source of most radon in people&apos;s basements is the decay of traces of uranium and thorium in granite bedrock</string>
 		<key>name</key>
 		<string>Radon</string>
 		<key>number</key>
@@ -1436,7 +1616,7 @@
 			<string> 3186 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>This is quite a lot of rhenium, and it's not clear why anyone would make such a thick, heavy bar of it.  Typical uses involve thin wires, fine powders, or chemical compounds, not half-inch-square solid bars</string>
+		<string>This is quite a lot of rhenium, and it&apos;s not clear why anyone would make such a thick, heavy bar of it.  Typical uses involve thin wires, fine powders, or chemical compounds, not half-inch-square solid bars</string>
 		<key>name</key>
 		<string>Rhenium</string>
 		<key>number</key>
@@ -1476,7 +1656,7 @@
 			<string> N/A</string>
 		</dict>
 		<key>desc</key>
-		<string>Roentgenium is named for Wilhelm Conrad Ro"ntgen, who discovered x-rays.  His element is highly radioactive, but disappointingly it does not, despite its name, emit x-rays when it decays</string>
+		<string>Roentgenium is named for Wilhelm Conrad Ro&quot;ntgen, who discovered x-rays.  His element is highly radioactive, but disappointingly it does not, despite its name, emit x-rays when it decays</string>
 		<key>name</key>
 		<string>Roentgenium</string>
 		<key>number</key>
@@ -1536,7 +1716,7 @@
 			<string> N/A</string>
 		</dict>
 		<key>desc</key>
-		<string>Rutherfordium, half-life 65 seconds, is one of two elements in a row named after an Ernest (Rutherford in this case).  Sorry, I can't say much more about it--except that none is likely to exist right now</string>
+		<string>Rutherfordium, half-life 65 seconds, is one of two elements in a row named after an Ernest (Rutherford in this case).  Sorry, I can&apos;t say much more about it--except that none is likely to exist right now</string>
 		<key>name</key>
 		<string>Rutherfordium</string>
 		<key>number</key>
@@ -1656,7 +1836,7 @@
 			<string> 961.78 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Silver has been used in coins since antiquity: This tetradrachm is from Greece, 261BC and is about 95% pure.  In 0 AD this coin was older than the United States is today.  Was it in someone's collection then?Scroll down to see examples of Silver.</string>
+		<string>Silver has been used in coins since antiquity: This tetradrachm is from Greece, 261BC and is about 95% pure.  In 0 AD this coin was older than the United States is today.  Was it in someone&apos;s collection then?Scroll down to see examples of Silver.</string>
 		<key>name</key>
 		<string>Silver</string>
 		<key>number</key>
@@ -1716,7 +1896,7 @@
 			<string> 115.21 °C*</string>
 		</dict>
 		<key>desc</key>
-		<string>Sulfur is one of the few elements found pure in nature.  This "native" sulfur is probably of volcanic origin.  Also called brimstone, it oxidizes and is responsible for the characteristic smell of many volcanoes</string>
+		<string>Sulfur is one of the few elements found pure in nature.  This &quot;native&quot; sulfur is probably of volcanic origin.  Also called brimstone, it oxidizes and is responsible for the characteristic smell of many volcanoes</string>
 		<key>name</key>
 		<string>Sulfur</string>
 		<key>number</key>
@@ -1736,7 +1916,7 @@
 			<string> 3017 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Tiny amounts of tantalum are used in the capacitors in all high tech devices.  This slab would be enough for thousands of cell phones and laptop computers.  It's also used for medical implants like skull plates</string>
+		<string>Tiny amounts of tantalum are used in the capacitors in all high tech devices.  This slab would be enough for thousands of cell phones and laptop computers.  It&apos;s also used for medical implants like skull plates</string>
 		<key>name</key>
 		<string>Tantalum</string>
 		<key>number</key>
@@ -1816,7 +1996,7 @@
 			<string> 304 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Thallium was used in a few murders before people caught on to its characteristic symptoms.  This sizable lump could do in quite a few people, but isn't it pretty?  The colors are from layers of thallium oxide</string>
+		<string>Thallium was used in a few murders before people caught on to its characteristic symptoms.  This sizable lump could do in quite a few people, but isn&apos;t it pretty?  The colors are from layers of thallium oxide</string>
 		<key>name</key>
 		<string>Thallium</string>
 		<key>number</key>
@@ -2176,7 +2356,7 @@
 			<string> 1855 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>This spectacular crystal bar of pure zirconium was created by thermal decomposition of zirconium iodide. Important in the nuclear industry, zirconium's latest application is in body-piercing jewelry</string>
+		<string>This spectacular crystal bar of pure zirconium was created by thermal decomposition of zirconium iodide. Important in the nuclear industry, zirconium&apos;s latest application is in body-piercing jewelry</string>
 		<key>name</key>
 		<string>Zirconium</string>
 		<key>number</key>

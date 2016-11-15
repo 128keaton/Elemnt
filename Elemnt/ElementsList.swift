@@ -23,7 +23,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	var filteredNameArray: [String]? = []
 	var filteredNumberArray: [String]? = []
 	var filteredArray: [String]? = []
-	var settingsDictionary: [String: String] = [:]
+	var settingsDictionary: [String: Any] = ["enableSpelling": 0, "version": 0]
 
 	let searchController = UISearchController(searchResultsController: nil)
 
@@ -51,6 +51,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 		setupData(mode: .Alphabetically)
 
+		downloadSettings()
 
 	}
 	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
@@ -75,11 +76,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		let predicate = NSPredicate(format: "SELF beginswith[c] %@", searchText)
 		filteredNameArray = dataArray?.filter({ (element) -> Bool in
 			return predicate.evaluate(with: element)
-		                                      })
+		})
 
 		filteredNumberArray = dataArray?.filter({ (element) -> Bool in
 			return predicate.evaluate(with: String(getAtomicNumber(forValue: element)))
-		                                        })
+		})
 
 
 
@@ -90,17 +91,26 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		} else {
 			filteredArray = filteredNumberArray
 		}
-	
+
 
 
 		self.tableView.reloadData()
 
 
 	}
-	func downloadSettings(){
-		Alamofire.request("https://httpbin.org/get").responsePropertyList{ response in
-		  if let plist = response.result.value {
-				print("JSON: \(JSON)")
+	func downloadSettings() {
+		if let settings = UserDefaults.standard.object(forKey: "settings"){
+			settingsDictionary = settings as! [String: Any]
+		}
+		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/settings.plist").responsePropertyList { response in
+			debugPrint(response)
+			if let plist = response.result.value {
+				if (plist as! [String: Any])["version"] as! NSNumber != (self.settingsDictionary["version"]) as! NSNumber {
+					self.settingsDictionary = plist as! [String: Any]
+					UserDefaults.standard.set(self.settingsDictionary, forKey: "settings")
+					UserDefaults.standard.synchronize()
+
+				}
 			}
 		}
 	}
@@ -109,15 +119,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		let actionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 		let spellFunction = UIAlertAction(title: "Spell in elements", style: .default, handler: { (UIAlertAction) in
 			self.performSegue(withIdentifier: "showSpell", sender: self)
-		                                  })
+		})
 		let aboutFunction = UIAlertAction(title: "About Elemnt", style: .default, handler: { (UIAlertAction) in
 			self.performSegue(withIdentifier: "showAbout", sender: self)
-		                                  })
+		})
 		let cancelFunction = UIAlertAction(title: "Cancel", style: .destructive, handler: { (UIAlertAction) in
 			self.dismiss(animated: true, completion: nil)
-		                                   })
+		})
 
-		actionMenu.addAction(spellFunction)
+		if settingsDictionary["enableSpelling"] as! NSNumber != 0{
+				actionMenu.addAction(spellFunction)
+		}
 		actionMenu.addAction(aboutFunction)
 		actionMenu.addAction(cancelFunction)
 		actionMenu.popoverPresentationController?.sourceView = self.view
@@ -137,105 +149,105 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	func parseURL() {
 		var newElementsDictionary: [String: Any]! = [:]
-		
-		for i in 0..<10{
 
-	//	let number = self.getAtomicNumber(forValue: element)
-		var stringNumber: String!
-		if i < 100 && i > 9 {
-			stringNumber = String("0\(i)")
-		} else if i <= 9 {
-			stringNumber = String("00\(i)")
-			print(stringNumber)
-		} else {
-			stringNumber = String(i)
-	   }
-		let requestURL = "http://periodictable.com/Elements/\(stringNumber!)/index.html"
-		print(requestURL)
-		Alamofire.request(requestURL).responseString { response in
+		for i in 0..<10 {
 
-			let document = HTMLDocument(string: response.result.value!)
+			//	let number = self.getAtomicNumber(forValue: element)
+			var stringNumber: String!
+			if i < 100 && i > 9 {
+				stringNumber = String("0\(i)")
+			} else if i <= 9 {
+				stringNumber = String("00\(i)")
+				print(stringNumber)
+			} else {
+				stringNumber = String(i)
+			}
+			let requestURL = "http://periodictable.com/Elements/\(stringNumber!)/index.html"
+			print(requestURL)
+			Alamofire.request(requestURL).responseString { response in
 
-			let firstTable = document.firstNode(matchingSelector: "table")
+				let document = HTMLDocument(string: response.result.value!)
 
-			let ourRow = firstTable?.nodes(matchingSelector: "tr")
+				let firstTable = document.firstNode(matchingSelector: "table")
 
-
-			let rowTest = ourRow?[10].nodes(matchingSelector: "td")[3]
-
-			let h1 = rowTest?.firstNode(matchingSelector: "h1")
-			let elementName = h1?.textContent
-
-			//	let dataTable = rowTest?.firstNode(matchingSelector: "table")?.nodes(matchingSelector: "tr")
-
-			if elementName != nil {
-				let undescription = rowTest?.textContent
-				var frmt = "Full technical data\n"
-
-				let range = undescription?.range(of: frmt)
-				let removable = undescription?.substring(to: (range?.lowerBound)!)
-				var actualDescription = (undescription?.replacingOccurrences(of: removable!, with: ""))
+				let ourRow = firstTable?.nodes(matchingSelector: "tr")
 
 
+				let rowTest = ourRow?[10].nodes(matchingSelector: "td")[3]
 
-				frmt = "\nDensity"
-				//print(undescription)
+				let h1 = rowTest?.firstNode(matchingSelector: "h1")
+				let elementName = h1?.textContent
 
-				var atomicWeight = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "")
-				if let atomicWeightRange = atomicWeight?.range(of: "Density"){
-					atomicWeight = atomicWeight?.substring(to: atomicWeightRange.lowerBound)
-				}
-				print(atomicWeight!)
+				//	let dataTable = rowTest?.firstNode(matchingSelector: "table")?.nodes(matchingSelector: "tr")
 
-				var density = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "")
-				if let densityRange = density?.range(of: "Melting"){
-					density = density?.substring(to: densityRange.lowerBound)
-				
-				}
+				if elementName != nil {
+					let undescription = rowTest?.textContent
+					var frmt = "Full technical data\n"
 
-				print(density!)
-				var meltingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: "g/cm3", with: "")
-
-				if let meltingPointRange = meltingPoint?.range(of: "Boiling"){
-					meltingPoint = meltingPoint?.substring(to: meltingPointRange.lowerBound)
-				}
-				print(meltingPoint!)
+					let range = undescription?.range(of: frmt)
+					let removable = undescription?.substring(to: (range?.lowerBound)!)
+					var actualDescription = (undescription?.replacingOccurrences(of: removable!, with: ""))
 
 
-		
-				
-				var boilingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: meltingPoint!, with: "").replacingOccurrences(of: "g/cm3", with: "")
 
-				if let boilingPointRange = boilingPoint?.range(of: "\nFull technical data\n"){
+					frmt = "\nDensity"
+					//print(undescription)
+
+					var atomicWeight = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "")
+					if let atomicWeightRange = atomicWeight?.range(of: "Density") {
+						atomicWeight = atomicWeight?.substring(to: atomicWeightRange.lowerBound)
+					}
+					print(atomicWeight!)
+
+					var density = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "")
+					if let densityRange = density?.range(of: "Melting") {
+						density = density?.substring(to: densityRange.lowerBound)
+
+					}
+
+					print(density!)
+					var meltingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: "g/cm3", with: "")
+
+					if let meltingPointRange = meltingPoint?.range(of: "Boiling") {
+						meltingPoint = meltingPoint?.substring(to: meltingPointRange.lowerBound)
+					}
+					print(meltingPoint!)
+
+
+
+
+					var boilingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: meltingPoint!, with: "").replacingOccurrences(of: "g/cm3", with: "")
+
+					if let boilingPointRange = boilingPoint?.range(of: "\nFull technical data\n") {
 						boilingPoint = boilingPoint?.substring(to: boilingPointRange.lowerBound)
+					}
+
+
+
+
+					print(boilingPoint!)
+
+
+					let dataDictionary = ["atomicWeight": atomicWeight?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "\(elementName)\n", with: "").replacingOccurrences(of: "Atomic Weight", with: "").replacingOccurrences(of: "\n", with: ""), "density": density?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Density", with: "").replacingOccurrences(of: "\n", with: ""), "meltingPoint": meltingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Melting Point", with: "").replacingOccurrences(of: "\n", with: ""), "boilingPoint": boilingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Boiling Point", with: "").replacingOccurrences(of: "\n", with: "")]
+
+					actualDescription = actualDescription?.replacingOccurrences(of: "Full technical data\n", with: "")
+					actualDescription = actualDescription?.replacingOccurrences(of: ".Scroll down to see examples of \(elementName!).", with: "")
+					print("Element: \(elementName!).\nDescription: \(actualDescription!)")
+					let elementDictionary = ["name": elementName!, "desc": actualDescription!, "data": dataDictionary, "number": i] as [String: Any]
+					newElementsDictionary[elementName!] = elementDictionary
+					let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+					let path = paths.appending("/test.plist")
+
+					let testDict = NSDictionary(dictionary: newElementsDictionary)
+
+
+					testDict.write(toFile: path, atomically: true)
+
 				}
-			
-	
 
 
-				print(boilingPoint!)
-
-
-				let dataDictionary = ["atomicWeight" : atomicWeight?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "\(elementName)\n", with: "").replacingOccurrences(of: "Atomic Weight", with: "").replacingOccurrences(of: "\n", with: ""), "density" : density?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Density", with: "").replacingOccurrences(of: "\n", with: ""), "meltingPoint" : meltingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Melting Point", with: "").replacingOccurrences(of: "\n", with: ""), "boilingPoint" : boilingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Boiling Point", with: "").replacingOccurrences(of: "\n", with: "")]
-
-				actualDescription = actualDescription?.replacingOccurrences(of: "Full technical data\n", with: "")
-				actualDescription = actualDescription?.replacingOccurrences(of: ".Scroll down to see examples of \(elementName!).", with: "")
-						print("Element: \(elementName!).\nDescription: \(actualDescription!)")
-				let elementDictionary = ["name": elementName!, "desc": actualDescription!, "data" : dataDictionary, "number" : i] as [String: Any]
-				newElementsDictionary[elementName!] = elementDictionary
-				let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-				let path = paths.appending("/test.plist")
-				
-				let testDict = NSDictionary(dictionary: newElementsDictionary)
-				
-				
-				testDict.write(toFile: path, atomically: true)
 
 			}
-
-
-
-		}
 
 		}
 

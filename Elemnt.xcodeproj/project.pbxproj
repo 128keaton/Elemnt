@@ -139,7 +139,7 @@
 		8A8569B01DBD587D00815BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */; };
 		8A8569B51DBD5BCA00815BF5 /* ElementItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C6F01DBD576C00341493 /* ElementItemCell.xib */; };
 		8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8569B61DBD5BEC00815BF5 /* AboutView.swift */; };
-		8AAA2A9D1DBD707700E1F79E /* ZRPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */; };
+		8A8FCD401DDBC9E700D9FA93 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */; };
 		C2218B5DE797ADA8C77668A4 /* Pods_Elemnt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */; };
 /* End PBXBuildFile section */
 
@@ -280,7 +280,7 @@
 		8A66C71E1DBD57F700341493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8569B61DBD5BEC00815BF5 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZRPIView.swift; path = ../ZRPIView.swift; sourceTree = "<group>"; };
+		8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = SOURCE_ROOT; };
 		BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elemnt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -451,6 +451,7 @@
 				8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */,
 				8A8569B61DBD5BEC00815BF5 /* AboutView.swift */,
 				8A66C7161DBD57DA00341493 /* ElementsList.swift */,
+				8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */,
 				8A66C7131DBD57BD00341493 /* ElementView.swift */,
 				8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */,
 				8A66C71E1DBD57F700341493 /* Assets.xcassets */,
@@ -480,7 +481,6 @@
 		8A8569B11DBD596200815BF5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				8AAA2A9C1DBD707700E1F79E /* ZRPIView.swift */,
 				8A49D0991DC0348B0064B454 /* GlobalExtensions.swift */,
 				8A66C6F31DBD576C00341493 /* UIImageColors.swift */,
 			);
@@ -534,7 +534,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				TargetAttributes = {
 					8A66C6F71DBD578000341493 = {
 						CreatedOnToolsVersion = 8.0;
@@ -636,6 +636,7 @@
 				8A5FAF021DBFABF700E3972D /* Fluorine.JPG in Resources */,
 				8A5FAF3A1DBFABF700E3972D /* Rutherfordium.JPG in Resources */,
 				8A5FAF351DBFABF700E3972D /* Rhenium.JPG in Resources */,
+				8A8FCD401DDBC9E700D9FA93 /* settings.plist in Resources */,
 				8A5FAEE01DBFABF700E3972D /* Actinium.JPG in Resources */,
 				8A5FAF4E1DBFABF700E3972D /* Tungsten.JPG in Resources */,
 				8A5FAF221DBFABF700E3972D /* Niobium.JPG in Resources */,
@@ -755,7 +756,6 @@
 				8A49D09A1DC0348B0064B454 /* GlobalExtensions.swift in Sources */,
 				8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */,
 				8A66C7141DBD57BD00341493 /* ElementView.swift in Sources */,
-				8AAA2A9D1DBD707700E1F79E /* ZRPIView.swift in Sources */,
 				8A33D9F61DBFD02000D5A601 /* ElementDataView.swift in Sources */,
 				8A5FAE601DBEDD4200E3972D /* EleSpell.swift in Sources */,
 			);
@@ -816,6 +816,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 866DCECA0F55311EACDDDCDC /* Pods-Elemnt.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -874,6 +875,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51037C4583EF53DE3C4DC71A /* Pods-Elemnt.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;

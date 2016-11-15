@@ -140,14 +140,15 @@ public class AsyncImageView: UIImageView {
 		return UIGraphicsGetImageFromCurrentImageContext()!
 	}
 }
-// from: http://stackoverflow.com/questions/29605708/best-way-to-check-if-object-is-out-of-bounds-in-array
-
 extension Array {
-	func atIndex(index: Int) -> Any? {
-		if index < 0 || index > self.count - 1 {
+	
+	// Safely lookup an index that might be out of bounds,
+	// returning nil if it does not exist
+	func get(index: Int) ->Element? {
+		if 0 <= index && index < count {
+			return self[index]
+		} else {
 			return nil
 		}
-		return self[index]
 	}
 }
-

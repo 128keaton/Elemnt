@@ -23,6 +23,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	var filteredNameArray: [String]? = []
 	var filteredNumberArray: [String]? = []
 	var filteredArray: [String]? = []
+	var settingsDictionary: [String: String] = [:]
 
 	let searchController = UISearchController(searchResultsController: nil)
 
@@ -95,6 +96,13 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		self.tableView.reloadData()
 
 
+	}
+	func downloadSettings(){
+		Alamofire.request("https://httpbin.org/get").responsePropertyList{ response in
+		  if let plist = response.result.value {
+				print("JSON: \(JSON)")
+			}
+		}
 	}
 
 	@IBAction func showActionMenu() {

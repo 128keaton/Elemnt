@@ -20,13 +20,14 @@ class EleSpell: UIViewController {
 
 	var imageURLS: [String]? = []
 	func parseURL(string: String) {
-		print("parsine \(string)")
 		let string = removeSpecialCharsFromString(text: string)
+		print("parsine \(string)")
+		
 		Alamofire.request("http://periodictable.com/MSP/ElementBanners?preset=" + string.replacingOccurrences(of: " ", with: "%20")).responseString { response in
 			print("requesting")
 			let document = HTMLDocument(string: response.result.value!)
 			let bigTable = document.nodes(matchingSelector: "table")
-			if (bigTable.atIndex(index: 3) != nil) || string != ""{
+			if bigTable.get(index: 3) != nil &&  string != "" && string.contains("!") != true {
 				let validTable = bigTable[3]
 				let innerTable = validTable.firstNode(matchingSelector: "table")
 				let imageRows = innerTable?.nodes(matchingSelector: "td")

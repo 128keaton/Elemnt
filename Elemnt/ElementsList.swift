@@ -111,17 +111,29 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		}
 	}
 	func downloadElements() -> NSMutableDictionary {
-		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/settings.plist").responsePropertyList { response in
-			debugPrint(response)
+		var dictionary: NSMutableDictionary?
+		
+		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/remote_data.plist").responsePropertyList { response in
+		
 			if let plist = response.result.value {
-				if (plist as! [String: Any])["version"] as! NSNumber != (self.settingsDictionary["version"]) as! NSNumber {
-					self.settingsDictionary = plist as! [String: Any]
-					UserDefaults.standard.set(self.settingsDictionary, forKey: "settings")
-					UserDefaults.standard.synchronize()
+				print("downloading data")
+				dictionary = plist as? NSMutableDictionary
+				
 					
+				
+			}else{
+				if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
+					dictionary = NSMutableDictionary(contentsOfFile: path)
 				}
 			}
 		}
+		if dictionary == nil{
+			if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
+				dictionary = NSMutableDictionary(contentsOfFile: path)
+			}
+		}
+		return dictionary!
+		
 	}
 	
 
@@ -271,10 +283,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	func setupData(mode: DataMode) {
 		dataArray?.removeAll()
 		sortedArray?.removeAll()
-		if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
-			dataDictionary = NSMutableDictionary(contentsOfFile: path)
-		}
-
+	
+		self.dataDictionary = self.downloadElements()
+		
 		for name in (dataDictionary?.allKeys)! {
 
 			dataArray?.append(name as! String)

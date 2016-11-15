@@ -16,7 +16,7 @@
 			<string> -218.3 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>At -183.0DegreeC oxygen is a beautiful pale blue liquid, but at room temperature it is a colorless gas. It&apos;s only 21% of the atmosphere--the 21% we all need if we want to live more than a few minutes longer</string>
+		<string>At -183.0°C oxygen is a beautiful pale blue liquid, but at room temperature it is a colorless gas. It&apos;s only 21% of the atmosphere--the 21% we all need if we want to live more than a few minutes longer</string>
 		<key>name</key>
 		<string>Oxygen</string>
 		<key>number</key>
@@ -36,7 +36,7 @@
 			<string> -210.1 °C</string>
 		</dict>
 		<key>desc</key>
-		<string>Colorless nitrogen gas makes up 78% of the atmosphere, but here we see it in liquid form at -196DegreeC.  It is boiling off, creating a visible vapor--not of steam, but of water condensed from the surrounding air</string>
+		<string>Colorless nitrogen gas makes up 78% of the atmosphere, but here we see it in liquid form at -196°C.  It is boiling off, creating a visible vapor--not of steam, but of water condensed from the surrounding air</string>
 		<key>name</key>
 		<string>Nitrogen</string>
 		<key>number</key>

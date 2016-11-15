@@ -91,11 +91,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		} else {
 			filteredArray = filteredNumberArray
 		}
-
-
-
 		self.tableView.reloadData()
-
 
 	}
 	func downloadSettings() {
@@ -114,6 +110,20 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			}
 		}
 	}
+	func downloadElements() -> NSMutableDictionary {
+		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/settings.plist").responsePropertyList { response in
+			debugPrint(response)
+			if let plist = response.result.value {
+				if (plist as! [String: Any])["version"] as! NSNumber != (self.settingsDictionary["version"]) as! NSNumber {
+					self.settingsDictionary = plist as! [String: Any]
+					UserDefaults.standard.set(self.settingsDictionary, forKey: "settings")
+					UserDefaults.standard.synchronize()
+					
+				}
+			}
+		}
+	}
+	
 
 	@IBAction func showActionMenu() {
 		let actionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

@@ -1,0 +1,2366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Oxygen</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 15.9994</string>
+			<key>boilingPoint</key>
+			<string> -182.9 °C</string>
+			<key>density</key>
+			<string> 1.429 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -218.3 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>At -183.0DegreeC oxygen is a beautiful pale blue liquid, but at room temperature it is a colorless gas. It&apos;s only 21% of the atmosphere--the 21% we all need if we want to live more than a few minutes longer</string>
+		<key>name</key>
+		<string>Oxygen</string>
+		<key>number</key>
+		<integer>8</integer>
+	</dict>
+	<key>Nitrogen</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 14.0067</string>
+			<key>boilingPoint</key>
+			<string> -195.79 °C</string>
+			<key>density</key>
+			<string> 1.251 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -210.1 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Colorless nitrogen gas makes up 78% of the atmosphere, but here we see it in liquid form at -196DegreeC.  It is boiling off, creating a visible vapor--not of steam, but of water condensed from the surrounding air</string>
+		<key>name</key>
+		<string>Nitrogen</string>
+		<key>number</key>
+		<integer>7</integer>
+	</dict>
+	<key>Lithium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 6.941</string>
+			<key>boilingPoint</key>
+			<string> 1342 °C</string>
+			<key>density</key>
+			<string> 0.535 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 180.54 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The lightest metal, lithium easily floats on water, which it reacts with, skittering around releasing hydrogen gas. It&apos;s soft enough to cut with hand shears, leaving marks such as you see on this sample</string>
+		<key>name</key>
+		<string>Lithium</string>
+		<key>number</key>
+		<integer>3</integer>
+	</dict>
+	<key>Hydrogen</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 1.00794</string>
+			<key>boilingPoint</key>
+			<string> -252.87 °C</string>
+			<key>density</key>
+			<string> 0.0899 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -259.14 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>By weight, 75% of the visible universe is hydrogen, a colorless gas. In space, vast quantities interact with starlight to create spectacular sights such as the Eagle Nebula (seen by the Hubble Space Telescope). Scroll down to see examples of Hydrogen.</string>
+		<key>name</key>
+		<string>Hydrogen</string>
+		<key>number</key>
+		<integer>1</integer>
+	</dict>
+	<key>Helium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 4.002602</string>
+			<key>boilingPoint</key>
+			<string> -268.93 °C</string>
+			<key>density</key>
+			<string> 0.1785 g/l*</string>
+			<key>meltingPoint</key>
+			<string> N/A*</string>
+		</dict>
+		<key>desc</key>
+		<string>Ordinarily a colorless, inert gas, helium glows pale peach when an electric current runs through it.  A glass blower bent a tube to the shape of the letters He and filled it with pure helium.  I lit it with high voltage</string>
+		<key>name</key>
+		<string>Helium</string>
+		<key>number</key>
+		<integer>2</integer>
+	</dict>
+	<key>Fluorine</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 18.9984032</string>
+			<key>boilingPoint</key>
+			<string> -188.12 °C</string>
+			<key>density</key>
+			<string> 1.696 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -219.6 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Fluorine is a pale yellow gas that reacts violently with virtually everything, including glass.  There&apos;s probably some in this fused quartz bulb (if it hasn&apos;t eaten its way out yet)</string>
+		<key>name</key>
+		<string>Fluorine</string>
+		<key>number</key>
+		<integer>9</integer>
+	</dict>
+	<key>Carbon</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 12.0107</string>
+			<key>boilingPoint</key>
+			<string> 4027 °C*</string>
+			<key>density</key>
+			<string> 2.26 g/cm3*</string>
+			<key>meltingPoint</key>
+			<string> 3550 °C*</string>
+		</dict>
+		<key>desc</key>
+		<string>A diamond is forever, unless you heat it too much and it burns up into carbon dioxide gas.  Graphite is also pure carbon and widely used in pencils, but not nearly as pretty.  In this poster, pretty trumps practical</string>
+		<key>name</key>
+		<string>Carbon</string>
+		<key>number</key>
+		<integer>6</integer>
+	</dict>
+	<key>Beryllium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 9.012182</string>
+			<key>boilingPoint</key>
+			<string> 2470 °C</string>
+			<key>density</key>
+			<string> 1.848 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1287 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This pure broken crystal of refined beryllium ordinarily would be melted down and turned into strong, lightweight parts for missiles and spacecraft.  It is expensive and toxic, but unbeatable when cost is no object</string>
+		<key>name</key>
+		<string>Beryllium</string>
+		<key>number</key>
+		<integer>4</integer>
+	</dict>
+	<key>Boron</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 10.811</string>
+			<key>boilingPoint</key>
+			<string> 4000 °C</string>
+			<key>density</key>
+			<string> 2.46 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2075 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Boron is found in the common mineral borax, but is rarely seen in pure form, as in these polycrystalline lumps.  While extremely hard, boron is too brittle in pure form to have any practical applications</string>
+		<key>name</key>
+		<string>Boron</string>
+		<key>number</key>
+		<integer>5</integer>
+	</dict>
+	<key>Actinium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 227*</string>
+			<key>boilingPoint</key>
+			<string> 3200 °C</string>
+			<key>density</key>
+			<string> 10.07 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1050 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Invisibly tiny amounts of actinium occur in some radioactive minerals, hence this picture of a radioactive rock. Actinium is used in thermoelectric generators, where its short half-life lets it generate intense heat</string>
+		<key>name</key>
+		<string>Actinium</string>
+		<key>number</key>
+		<integer>89</integer>
+	</dict>
+	<key>Aluminum</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 26.981538</string>
+			<key>boilingPoint</key>
+			<string> 2519 °C</string>
+			<key>density</key>
+			<string> 2.7 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 660.32 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>These nodules were created by pouring molten aluminum into a bucket of water.  There was no reason to do this other than my desire to create a sample to photograph for a certain periodic table poster.  Scroll down to see examples of Aluminum.</string>
+		<key>name</key>
+		<string>Aluminum</string>
+		<key>number</key>
+		<integer>13</integer>
+	</dict>
+	<key>Americium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 243*</string>
+			<key>boilingPoint</key>
+			<string> 2011 °C</string>
+			<key>density</key>
+			<string> 13.67 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1176 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>A radioactive button like this is inside most smoke detectors.  A trace of americium creates charged particles that betray the smoke.  Americium is thus the only man-made element available in grocery stores</string>
+		<key>name</key>
+		<string>Americium</string>
+		<key>number</key>
+		<integer>95</integer>
+	</dict>
+	<key>Antimony</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 121.76</string>
+			<key>boilingPoint</key>
+			<string> 1587 °C</string>
+			<key>density</key>
+			<string> 6.697 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 630.63 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Beautiful, sparkling lumps of broken crystal like this are how bulk antimony is commonly sold.  Most of it is melted down and added to lead to make bullets and batteries or alloyed with other metals. Scroll down to see examples of Antimony.</string>
+		<key>name</key>
+		<string>Antimony</string>
+		<key>number</key>
+		<integer>51</integer>
+	</dict>
+	<key>Argon</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 39.948</string>
+			<key>boilingPoint</key>
+			<string> -185.8 °C</string>
+			<key>density</key>
+			<string> 1.784 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -189.3 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>A noble gas, argon is inert and colorless until an electric current excites it to a rich sky-blue glow.  As one of the least expensive noble gases, dense argon is often used as a shield gas to protect against oxidation</string>
+		<key>name</key>
+		<string>Argon</string>
+		<key>number</key>
+		<integer>18</integer>
+	</dict>
+	<key>Arsenic</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 74.9216</string>
+			<key>boilingPoint</key>
+			<string> 614 °C*</string>
+			<key>density</key>
+			<string> 5.727 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 817 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Arsenic was the poison of choice until its detection became easy.  Combined with gallium it forms a semiconductor used in creating high-speed integrated circuits for supercomputers and cell phones</string>
+		<key>name</key>
+		<string>Arsenic</string>
+		<key>number</key>
+		<integer>33</integer>
+	</dict>
+	<key>Astatine</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 210*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> 302 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Astatine occurs in vanishingly small quantities in the natural decay chains of uranium and thorium minerals.  You can&apos;t see any of it in this rock, but a few atoms are (probably) there from time to time</string>
+		<key>name</key>
+		<string>Astatine</string>
+		<key>number</key>
+		<integer>85</integer>
+	</dict>
+	<key>Barium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 137.327</string>
+			<key>boilingPoint</key>
+			<string> 1870 °C</string>
+			<key>density</key>
+			<string> 3.51 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 727 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Barium makes many people think of enemas, unfortunately. They&apos;re recalling barium sulfate, an excellent x-ray contrast medium.  Barium in pure form is a metal, used as a &quot;getter&quot; in high-vacuum components</string>
+		<key>name</key>
+		<string>Barium</string>
+		<key>number</key>
+		<integer>56</integer>
+	</dict>
+	<key>Berkelium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 247*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> 14.78 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1050 °C*</string>
+		</dict>
+		<key>desc</key>
+		<string>Berkelium is named after its place of discovery--the University of California at Berkeley.  It has no applications, and, while an isotope with a half-life of 1380 years exists, no one seems to be making any</string>
+		<key>name</key>
+		<string>Berkelium</string>
+		<key>number</key>
+		<integer>97</integer>
+	</dict>
+	<key>Bismuth</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 208.98038</string>
+			<key>boilingPoint</key>
+			<string> 1564 °C</string>
+			<key>density</key>
+			<string> 9.78 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 271.3 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Bismuth loves to form beautiful crystals.  You can make small ones without even trying, but one this big requires very pure bismuth and careful control of the cooling rate as the crystal is formed</string>
+		<key>name</key>
+		<string>Bismuth</string>
+		<key>number</key>
+		<integer>83</integer>
+	</dict>
+	<key>Bohrium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 264*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Bohrium is not boring, it&apos;s just named after Niels Bohr, who figured out the electron structure of atoms and thus explained the periodic table. (OK, bohrium, with a half-life under half a second, actually is boring.)Scroll down to see examples of Bohrium.</string>
+		<key>name</key>
+		<string>Bohrium</string>
+		<key>number</key>
+		<integer>107</integer>
+	</dict>
+	<key>Bromine</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 79.904</string>
+			<key>boilingPoint</key>
+			<string> 59 °C</string>
+			<key>density</key>
+			<string> 3.12 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> -7.3 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Bromine is liquid at room temperature but evaporates very rapidly into a purple-brown, choking gas that smells rather like chlorine.  Sodium bromide, the bromine analog of table salt, is often used in hot tubs</string>
+		<key>name</key>
+		<string>Bromine</string>
+		<key>number</key>
+		<integer>35</integer>
+	</dict>
+	<key>Cadmium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 112.411</string>
+			<key>boilingPoint</key>
+			<string> 767 °C</string>
+			<key>density</key>
+			<string> 8.65 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 321.07 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Fish are not normally cast out of pure cadmium, but if you&apos;re making a periodic table poster, why not?  The hint of yellow is a bit of cadmium oxide, a favorite pigment of the impressionist painters, notably Monet</string>
+		<key>name</key>
+		<string>Cadmium</string>
+		<key>number</key>
+		<integer>48</integer>
+	</dict>
+	<key>Calcium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 40.078</string>
+			<key>boilingPoint</key>
+			<string> 1484 °C</string>
+			<key>density</key>
+			<string> 1.55 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 842 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Say calcium and most people think of chalk and bones, but in pure form it is a firm, silvery metal that reacts slowly with water to give off hydrogen gas.  Pure metallic calcium has few applications and is rarely seen</string>
+		<key>name</key>
+		<string>Calcium</string>
+		<key>number</key>
+		<integer>20</integer>
+	</dict>
+	<key>Californium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 251*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> 15.1 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 900 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Californium is named after the state of California, home of UC Berkeley where it was discovered.  It is used as a convenient portable neutron source for detection of precious metals and in oil well logging</string>
+		<key>name</key>
+		<string>Californium</string>
+		<key>number</key>
+		<integer>98</integer>
+	</dict>
+	<key>Cerium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 140.116</string>
+			<key>boilingPoint</key>
+			<string> 3360 °C</string>
+			<key>density</key>
+			<string> 6.689 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 798 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Cerium is one of the least expensive rare earths and is the major component of &quot;mischmetal&quot;, used in lighter flints because it catches fire easily when struck.  Larger blocks are used for sparking special effects</string>
+		<key>name</key>
+		<string>Cerium</string>
+		<key>number</key>
+		<integer>58</integer>
+	</dict>
+	<key>Cesium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 132.90545</string>
+			<key>boilingPoint</key>
+			<string> 671 °C</string>
+			<key>density</key>
+			<string> 1.879 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 28.44 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The cesium in this ampoule melts if you hold it in your hand for a minute, yielding the prettiest liquid gold.  If the ampoule were to break in your hand, the resulting explosion would be extremely unpleasant</string>
+		<key>name</key>
+		<string>Cesium</string>
+		<key>number</key>
+		<integer>55</integer>
+	</dict>
+	<key>Chlorine</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 35.453</string>
+			<key>boilingPoint</key>
+			<string> -34.04 °C</string>
+			<key>density</key>
+			<string> 3.214 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -101.5 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>A pale yellow-green gas, chlorine killed soldiers in WWI. Today it mainly purifies drinking water and swimming pools.  Combined with sodium, chlorine makes common table salt and is thus essential to life. Scroll down to see examples of Chlorine.</string>
+		<key>name</key>
+		<string>Chlorine</string>
+		<key>number</key>
+		<integer>17</integer>
+	</dict>
+	<key>Chromium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 51.9961</string>
+			<key>boilingPoint</key>
+			<string> 2671 °C</string>
+			<key>density</key>
+			<string> 7.14 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1907 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Many shiny things are chrome-plated; these chips show the result if you keep plating until a thick slab is built up.  This process, called electrowinning, is how high-purity chromium is obtained from solution</string>
+		<key>name</key>
+		<string>Chromium</string>
+		<key>number</key>
+		<integer>24</integer>
+	</dict>
+	<key>Cobalt</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 58.9332</string>
+			<key>boilingPoint</key>
+			<string> 2927 °C</string>
+			<key>density</key>
+			<string> 8.9 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1495 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Cobalt is used in pigments, notably cobalt blue, and in high-strength, high-temperature steel alloys.  High purity cobalt is obtained by electrolyzing cobalt ions out of solution, resulting in bumpy plate like this</string>
+		<key>name</key>
+		<string>Cobalt</string>
+		<key>number</key>
+		<integer>27</integer>
+	</dict>
+	<key>Copernicium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 285*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Ununbium is a placeholder assigned until the element has been given a final name.  Its discovery has been reliably claimed, but remains to be independently verified before a name is officially assigned</string>
+		<key>name</key>
+		<string>Copernicium</string>
+		<key>number</key>
+		<integer>112</integer>
+	</dict>
+	<key>Copper</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 63.546</string>
+			<key>boilingPoint</key>
+			<string> 2927 °C</string>
+			<key>density</key>
+			<string> 8.92 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1084.62 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Copper is incredibly useful in industry for wiring, heat sinks and coins, and in brass and bronze alloys.  But this sample is completely useless; it&apos;s simply a pretty hand-hammered ball, pleasant to hold and behold</string>
+		<key>name</key>
+		<string>Copper</string>
+		<key>number</key>
+		<integer>29</integer>
+	</dict>
+	<key>Curium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 247*</string>
+			<key>boilingPoint</key>
+			<string> 3110 °C</string>
+			<key>density</key>
+			<string> 13.51 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1345 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Curium is named after Marie and Pierre Curie, who discovered radium and polonium, but not curium.  It has some specialized applications in research, but is not generally available outside a few institutions</string>
+		<key>name</key>
+		<string>Curium</string>
+		<key>number</key>
+		<integer>96</integer>
+	</dict>
+	<key>Darmstadtium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 281*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Darmstadt is the latest city to get an element named after itself.  Not many more are in the running, since you need to build huge nuclear accelerators, and elements get harder to make the higher you go</string>
+		<key>name</key>
+		<string>Darmstadtium</string>
+		<key>number</key>
+		<integer>110</integer>
+	</dict>
+	<key>Dubnium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 262*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Dubna, Russia hosts one of the few institutions creating new elements.  It took a while, but after some lobbying they have their own element, just like Berkeley.  But Berkeley has its state and country too</string>
+		<key>name</key>
+		<string>Dubnium</string>
+		<key>number</key>
+		<integer>105</integer>
+	</dict>
+	<key>Dysprosium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 162.5</string>
+			<key>boilingPoint</key>
+			<string> 2567 °C</string>
+			<key>density</key>
+			<string> 8.551 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1412 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Dysprosium compounds are used in the coatings of many hard disk drives to record digital data as field orientations in nanoscale magnetic domains.  Other than that, dysprosium has few applications</string>
+		<key>name</key>
+		<string>Dysprosium</string>
+		<key>number</key>
+		<integer>66</integer>
+	</dict>
+	<key>Einsteinium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 252*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> 860 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The most famous scientist of all time, Albert Einstein, obviously deserves to have an element named after him.  Unfortunately his has a half-life of 472 days and no known applications.  Better luck next time?Scroll down to see examples of Einsteinium.</string>
+		<key>name</key>
+		<string>Einsteinium</string>
+		<key>number</key>
+		<integer>99</integer>
+	</dict>
+	<key>Erbium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 167.259</string>
+			<key>boilingPoint</key>
+			<string> 2868 °C</string>
+			<key>density</key>
+			<string> 9.066 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1497 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Erbium is used to dope fiber optic cables to improve their information carrying capability, which it does by helping to amplify the signal.  It can also impart interesting colors to pottery glazes</string>
+		<key>name</key>
+		<string>Erbium</string>
+		<key>number</key>
+		<integer>68</integer>
+	</dict>
+	<key>Europium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 151.964</string>
+			<key>boilingPoint</key>
+			<string> 1527 °C</string>
+			<key>density</key>
+			<string> 5.244 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 822 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Europium compounds are widely used in phosphors for cathode ray TV screens and in compact fluorescent bulbs.  Pure crystals like this are useful only as a source of europium to be turned into compounds</string>
+		<key>name</key>
+		<string>Europium</string>
+		<key>number</key>
+		<integer>63</integer>
+	</dict>
+	<key>Fermium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 257*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> 1527 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Fermium, named for physicist Enrico Fermi, has a half-life of 11 days and no applications.  Fermi worked to create the first nuclear chain reaction in a squash court under the University of Chicago stadium</string>
+		<key>name</key>
+		<string>Fermium</string>
+		<key>number</key>
+		<integer>100</integer>
+	</dict>
+	<key>Francium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 223*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Uranium and thorium minerals produce francium in vanishingly small quantities via their natural radioisotope decay chains.  At most a few atoms at a time exist in a rock like this, and you can&apos;t see any of them.  Scroll down to see examples of Francium.</string>
+		<key>name</key>
+		<string>Francium</string>
+		<key>number</key>
+		<integer>87</integer>
+	</dict>
+	<key>Gadolinium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 157.25</string>
+			<key>boilingPoint</key>
+			<string> 3250 °C</string>
+			<key>density</key>
+			<string> 7.901 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1313 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Gadolinium compounds (not metal like this) are injected into patients receiving MRI scans to improve contrast.  Several isotopes are also mixed with uranium fuel in nuclear reactors to absorb neutrons</string>
+		<key>name</key>
+		<string>Gadolinium</string>
+		<key>number</key>
+		<integer>64</integer>
+	</dict>
+	<key>Gallium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 69.723</string>
+			<key>boilingPoint</key>
+			<string> 2204 °C</string>
+			<key>density</key>
+			<string> 5.904 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 29.76 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Pick up gallium and it will melt in your hand: it liquefies at slightly above room temperature.  A hair dryer created this Dali-esque cube.  Alloys of gallium, indium and tin are replacing mercury in thermometers</string>
+		<key>name</key>
+		<string>Gallium</string>
+		<key>number</key>
+		<integer>31</integer>
+	</dict>
+	<key>Germanium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 72.64</string>
+			<key>boilingPoint</key>
+			<string> 2820 °C</string>
+			<key>density</key>
+			<string> 5.323 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 938.3 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Bulk commercial germanium is sold in ingot bars: This is the broken end of one, showing its internal crystal structure.  Germanium is used in light emitting diodes and semiconductors, just like silicon above it</string>
+		<key>name</key>
+		<string>Germanium</string>
+		<key>number</key>
+		<integer>32</integer>
+	</dict>
+	<key>Gold</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 196.96655</string>
+			<key>boilingPoint</key>
+			<string> 2856 °C</string>
+			<key>density</key>
+			<string> 19.3 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1064.18 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Gold is one of the few elements you can find just lying on the ground.  This one-ounce nugget of pure gold was found in Alaska in 1890 by Hogamorth Marion, while on a trip to sell shoes to Eskimos.  Seriously</string>
+		<key>name</key>
+		<string>Gold</string>
+		<key>number</key>
+		<integer>79</integer>
+	</dict>
+	<key>Hafnium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 178.49</string>
+			<key>boilingPoint</key>
+			<string> 4603 °C</string>
+			<key>density</key>
+			<string> 13.31 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2233 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This remarkable image shows the inside surface of a huge high-purity hafnium crystal bar from Russia.  The vapor deposition process used to make this bar yields the purest hafnium known</string>
+		<key>name</key>
+		<string>Hafnium</string>
+		<key>number</key>
+		<integer>72</integer>
+	</dict>
+	<key>Hassium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 277*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Hassium is named for Hessen, the state in Germany that is home to the institute at which it was discovered.  It has a half-life of a few seconds, which is to say there&apos;s never been much of it, and isn&apos;t any right...now</string>
+		<key>name</key>
+		<string>Hassium</string>
+		<key>number</key>
+		<integer>108</integer>
+	</dict>
+	<key>Holmium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 164.93032</string>
+			<key>boilingPoint</key>
+			<string> 2700 °C</string>
+			<key>density</key>
+			<string> 8.795 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1474 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Holmium is yet another rare earth lanthanide with important magnetic properties. It finds application in the pole pieces of the powerful magnets used for medical imaging.  Scroll down to see examples of Holmium.</string>
+		<key>name</key>
+		<string>Holmium</string>
+		<key>number</key>
+		<integer>67</integer>
+	</dict>
+	<key>Indium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 114.818</string>
+			<key>boilingPoint</key>
+			<string> 2072 °C</string>
+			<key>density</key>
+			<string> 7.31 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 156.6 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The commercial unit of trade for indium is the one-kilogram bar, which is a lot of indium.  Its major uses are in low-melting-point alloys that replace mercury in thermometers, and in flat screen televisions</string>
+		<key>name</key>
+		<string>Indium</string>
+		<key>number</key>
+		<integer>49</integer>
+	</dict>
+	<key>Iodine</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 126.90447</string>
+			<key>boilingPoint</key>
+			<string> 184.3 °C</string>
+			<key>density</key>
+			<string> 4.94 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 113.7 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Iodine sublimates into a beautiful violet vapor when heated: There&apos;s a torch under the plate in this photo. Iodine and iodine solutions were used as disinfectants before better antiseptic agents were found</string>
+		<key>name</key>
+		<string>Iodine</string>
+		<key>number</key>
+		<integer>53</integer>
+	</dict>
+	<key>Iridium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 192.217</string>
+			<key>boilingPoint</key>
+			<string> 4428 °C</string>
+			<key>density</key>
+			<string> 22.56 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2466 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Iridium is extremely hard to melt: This lump only made it about half way to being melted, hence its odd shape.  This property of iridium makes it useful in high-temperature situations, such as spark plug electrodes</string>
+		<key>name</key>
+		<string>Iridium</string>
+		<key>number</key>
+		<integer>77</integer>
+	</dict>
+	<key>Iron</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 55.845</string>
+			<key>boilingPoint</key>
+			<string> 2861 °C</string>
+			<key>density</key>
+			<string> 7.874 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1538 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This meteorite, part of one that fell in Xiquipilco, Mexico in ancient times, is made mostly of iron.  Locals created iron tools from it for generations before the first samples made their way out in the 1700s</string>
+		<key>name</key>
+		<string>Iron</string>
+		<key>number</key>
+		<integer>26</integer>
+	</dict>
+	<key>Krypton</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 83.798</string>
+			<key>boilingPoint</key>
+			<string> -153.22 °C</string>
+			<key>density</key>
+			<string> 3.75 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -157.36 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Krypton is inert but glows a lovely pale mauve color when excited with a high voltage electric current.  Expensive incandescent bulbs use krypton as a filler gas due to its high thermal conductivity</string>
+		<key>name</key>
+		<string>Krypton</string>
+		<key>number</key>
+		<integer>36</integer>
+	</dict>
+	<key>Lanthanum</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 138.9055</string>
+			<key>boilingPoint</key>
+			<string> 3464 °C</string>
+			<key>density</key>
+			<string> 6.146 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 920 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Mixed with other rare earths lanthanum is used in flints for lighters.  Lanthanum compounds are used in electron microscopy to resolve individual atoms and in movie lighting to illuminate vast areas</string>
+		<key>name</key>
+		<string>Lanthanum</string>
+		<key>number</key>
+		<integer>57</integer>
+	</dict>
+	<key>Lawrencium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 262*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> 1627 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Lawrencium, named for atom smasher Ernest Lawrence of South Dakota, is the last element with a half-life longer than an hour (3.6 hours to be exact).  From here on out the elements get pretty sketchy</string>
+		<key>name</key>
+		<string>Lawrencium</string>
+		<key>number</key>
+		<integer>103</integer>
+	</dict>
+	<key>Lead</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 207.2</string>
+			<key>boilingPoint</key>
+			<string> 1749 °C</string>
+			<key>density</key>
+			<string> 11.34 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 327.46 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Lead pipes have been in use for thousands of years.  In some cases the same pipe the whole time.  This exotic six-way union was hand made by an apprentice decades ago, and it duly impressed the master</string>
+		<key>name</key>
+		<string>Lead</string>
+		<key>number</key>
+		<integer>82</integer>
+	</dict>
+	<key>Lutetium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 174.967</string>
+			<key>boilingPoint</key>
+			<string> 3402 °C</string>
+			<key>density</key>
+			<string> 9.841 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1663 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Lutetium has almost no applications.  As a result it used to be the most expensive element in the world.  These days it is easily available as a side product of other lanthanide production and its price has fallen</string>
+		<key>name</key>
+		<string>Lutetium</string>
+		<key>number</key>
+		<integer>71</integer>
+	</dict>
+	<key>Magnesium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 24.305</string>
+			<key>boilingPoint</key>
+			<string> 1090 °C</string>
+			<key>density</key>
+			<string> 1.738 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 650 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>These magnesium nodules grow during the refining process.  Usually they are melted down into useful products such as lightweight race car components and fire starters.  Thin strips light easily and burn brightly</string>
+		<key>name</key>
+		<string>Magnesium</string>
+		<key>number</key>
+		<integer>12</integer>
+	</dict>
+	<key>Manganese</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 54.938049</string>
+			<key>boilingPoint</key>
+			<string> 2061 °C</string>
+			<key>density</key>
+			<string> 7.47 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1246 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>These rough slabs are created by electroplating manganese out of a solution until enough metal builds up to break off.  The bumpy surface occurs naturally as the current finds the path of least resistance</string>
+		<key>name</key>
+		<string>Manganese</string>
+		<key>number</key>
+		<integer>25</integer>
+	</dict>
+	<key>Meitnerium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 268*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Lise Meitner did not share the Nobel Prize for atomic fission with Otto Hahn, as many thought she should have, but she did get the last laugh--her own element, a far less fleeting honor than a mere Nobel</string>
+		<key>name</key>
+		<string>Meitnerium</string>
+		<key>number</key>
+		<integer>109</integer>
+	</dict>
+	<key>Mendelevium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 258*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> 827 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Mendelevium lives for 51 days and has no uses.  Dmitri Mendeleev invented the periodic table and lives forever.  So far all of the elements named after people have proved to be less important than the people</string>
+		<key>name</key>
+		<string>Mendelevium</string>
+		<key>number</key>
+		<integer>101</integer>
+	</dict>
+	<key>Mercury</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 200.59</string>
+			<key>boilingPoint</key>
+			<string> 356.73 °C</string>
+			<key>density</key>
+			<string> 13.534 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> -38.83 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Mercury is the only metal element liquid at room temperature.  It would be great fun to play with if it weren&apos;t so poisonous.  This pool was shaped by carefully bending the black-painted foil it was resting on</string>
+		<key>name</key>
+		<string>Mercury</string>
+		<key>number</key>
+		<integer>80</integer>
+	</dict>
+	<key>Molybdenum</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 95.94</string>
+			<key>boilingPoint</key>
+			<string> 4639 °C</string>
+			<key>density</key>
+			<string> 10.28 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2623 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Pure molybdenum is used in specialized high temperature applications because it maintains its strength better than molybdenum steel, a common high-strength alloy.   Large pure bars like this are unusual.  Scroll down to see examples of Molybdenum.</string>
+		<key>name</key>
+		<string>Molybdenum</string>
+		<key>number</key>
+		<integer>42</integer>
+	</dict>
+	<key>Neodymium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 144.24</string>
+			<key>boilingPoint</key>
+			<string> 3.1×103 °C</string>
+			<key>density</key>
+			<string> 7.01 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1021 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Neodymium-iron-boron alloys are the basis for the most powerful permanent magnets, used in headphones, disk drives, and motors, and commonly known as neodymium magnets or rare earth magnets</string>
+		<key>name</key>
+		<string>Neodymium</string>
+		<key>number</key>
+		<integer>60</integer>
+	</dict>
+	<key>Neon</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 20.1797</string>
+			<key>boilingPoint</key>
+			<string> -246.08 °C</string>
+			<key>density</key>
+			<string> 0.9 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -248.59 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Neon signs really are made with neon, like this Ne-shaped tube filled with this inert gas.  A high voltage transformer sends an electric current through the tube, creating a characteristic bright neon-red arc</string>
+		<key>name</key>
+		<string>Neon</string>
+		<key>number</key>
+		<integer>10</integer>
+	</dict>
+	<key>Neptunium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 237*</string>
+			<key>boilingPoint</key>
+			<string> 4×103 °C</string>
+			<key>density</key>
+			<string> 20.45 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 644 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Traces of neptunium have been found in uranium minerals like this sample, but not enough that you could ever see it.  Neptunium is highly radioactive and has only a few exotic applications in nuclear research</string>
+		<key>name</key>
+		<string>Neptunium</string>
+		<key>number</key>
+		<integer>93</integer>
+	</dict>
+	<key>Nickel</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 58.6934</string>
+			<key>boilingPoint</key>
+			<string> 2913 °C</string>
+			<key>density</key>
+			<string> 8.908 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1455 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>These buttons, created by electrowinning, are the main form in which pure nickel is sold commercially.  A typical use is in electroplating baths, where they are slowly dissolved and redeposited on products</string>
+		<key>name</key>
+		<string>Nickel</string>
+		<key>number</key>
+		<integer>28</integer>
+	</dict>
+	<key>Niobium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 92.90638</string>
+			<key>boilingPoint</key>
+			<string> 4744 °C</string>
+			<key>density</key>
+			<string> 8.57 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2477 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This is high purity niobium crystal ribbon from Russia.  New methods have made this form obsolete, and most was melted down.  It is used in earrings and tongue studs because it can be colored by oxidation</string>
+		<key>name</key>
+		<string>Niobium</string>
+		<key>number</key>
+		<integer>41</integer>
+	</dict>
+	<key>Nobelium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 259*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> 827 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Alfred Nobel created the Nobel Prize, but never got one himself.  At least he now has an element, though with a half-life of 12.6 hours and no applications his is not one of the more distinguished elements</string>
+		<key>name</key>
+		<string>Nobelium</string>
+		<key>number</key>
+		<integer>102</integer>
+	</dict>
+	<key>Osmium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 190.23</string>
+			<key>boilingPoint</key>
+			<string> 5012 °C</string>
+			<key>density</key>
+			<string> 22.59 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 3033 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Ultra dense osmium is alloyed with other precious metals to make them harder and stronger.  It sometimes occurs naturally combined with iridium, and such osmiridium mixtures are used in fountain pen tips</string>
+		<key>name</key>
+		<string>Osmium</string>
+		<key>number</key>
+		<integer>76</integer>
+	</dict>
+	<key>Palladium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 106.42</string>
+			<key>boilingPoint</key>
+			<string> 2963 °C</string>
+			<key>density</key>
+			<string> 12.023 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1554.9 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Palladium is far more expensive than silver, yet it is sometimes used to imitate silver in outdoor situations because it does not tarnish.  Side by side with silver, palladium is distinctly yellower and darker</string>
+		<key>name</key>
+		<string>Palladium</string>
+		<key>number</key>
+		<integer>46</integer>
+	</dict>
+	<key>Phosphorus</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 30.973761</string>
+			<key>boilingPoint</key>
+			<string> 280.5 °C*</string>
+			<key>density</key>
+			<string> 1.823 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 44.2 °C*</string>
+		</dict>
+		<key>desc</key>
+		<string>Phosphorus occurs in white (extremely dangerous), red (safer and common in matches) and black (rare, most stable) forms.  This exotic violet form is a mixture of red and black, not a true allotrope itself. Scroll down to see examples of Phosphorus.</string>
+		<key>name</key>
+		<string>Phosphorus</string>
+		<key>number</key>
+		<integer>15</integer>
+	</dict>
+	<key>Platinum</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 195.078</string>
+			<key>boilingPoint</key>
+			<string> 3825 °C</string>
+			<key>density</key>
+			<string> 21.09 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1768.3 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Pure platinum mesh, like mosquito netting except more expensive, is one example of platinum&apos;s use as labware impervious to nearly all chemical attack.  It is also used in coins, which are similarly expensive</string>
+		<key>name</key>
+		<string>Platinum</string>
+		<key>number</key>
+		<integer>78</integer>
+	</dict>
+	<key>Plutonium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 244*</string>
+			<key>boilingPoint</key>
+			<string> 3230 °C</string>
+			<key>density</key>
+			<string> 19.816 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 640 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This plutonium pacemaker battery case is empty--fortunately.  If it were full, possession of it anywhere outside a body would be a crime.  All no-longer-needed plutonium batteries must go home to Los Alamos</string>
+		<key>name</key>
+		<string>Plutonium</string>
+		<key>number</key>
+		<integer>94</integer>
+	</dict>
+	<key>Polonium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 209*</string>
+			<key>boilingPoint</key>
+			<string> 962 °C</string>
+			<key>density</key>
+			<string> 9.196 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 254 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Radioactive polonium foil is used in antistatic brushes as an electron source.  The foil is silver with a thin plating of polonium, and an even thinner plating of gold over that.  The gold is what you actually see</string>
+		<key>name</key>
+		<string>Polonium</string>
+		<key>number</key>
+		<integer>84</integer>
+	</dict>
+	<key>Potassium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 39.0983</string>
+			<key>boilingPoint</key>
+			<string> 759 °C</string>
+			<key>density</key>
+			<string> 0.856 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 63.38 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The purple tint on these soft potassium cubes is a very thin oxide coating.  Exposed to air they turn black in seconds.  Exposed to water they would explode, sending off characteristic purple-red flaming drops</string>
+		<key>name</key>
+		<string>Potassium</string>
+		<key>number</key>
+		<integer>19</integer>
+	</dict>
+	<key>Praseodymium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 140.90765</string>
+			<key>boilingPoint</key>
+			<string> 3290 °C</string>
+			<key>density</key>
+			<string> 6.64 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 931 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Metallic praseodymium like this is not much used, but when mixed into glass it provides a precise blue color that filters out the yellow glow of molten glass, allowing glassblowers to see their work clearly</string>
+		<key>name</key>
+		<string>Praseodymium</string>
+		<key>number</key>
+		<integer>59</integer>
+	</dict>
+	<key>Promethium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 145*</string>
+			<key>boilingPoint</key>
+			<string> 3×103 °C</string>
+			<key>density</key>
+			<string> 7.264 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1.1×103 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Naturally radioactive promethium was briefly used as a replacement for radium in self-luminous paint, before tritium took over.  This button was produced using left-over stock kept for making diving watches</string>
+		<key>name</key>
+		<string>Promethium</string>
+		<key>number</key>
+		<integer>61</integer>
+	</dict>
+	<key>Protactinium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 231.03588</string>
+			<key>boilingPoint</key>
+			<string> 4000 °C</string>
+			<key>density</key>
+			<string> 15.37 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1572 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Protactinium occurs in vanishingly small quantities in the natural decay chains of uranium and thorium minerals.  At most a few atoms at a time exist in a rock like this, and you can&apos;t see any of them.  Scroll down to see examples of Protactinium.</string>
+		<key>name</key>
+		<string>Protactinium</string>
+		<key>number</key>
+		<integer>91</integer>
+	</dict>
+	<key>Radium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 226*</string>
+			<key>boilingPoint</key>
+			<string> 1737 °C</string>
+			<key>density</key>
+			<string> 5 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 700 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Radium was widely used in self-luminous clock and watch hands, until too many watch factory workers had died of it.  This antique watch is still quite radioactive, and will stay that way for thousands of years</string>
+		<key>name</key>
+		<string>Radium</string>
+		<key>number</key>
+		<integer>88</integer>
+	</dict>
+	<key>Radon</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 222*</string>
+			<key>boilingPoint</key>
+			<string> -61.7 °C</string>
+			<key>density</key>
+			<string> 9.73 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -71 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Radon is an invisible, radioactive gas, thus hard to photograph.  This granite ball reminds us that the source of most radon in people&apos;s basements is the decay of traces of uranium and thorium in granite bedrock</string>
+		<key>name</key>
+		<string>Radon</string>
+		<key>number</key>
+		<integer>86</integer>
+	</dict>
+	<key>Rhenium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 186.207</string>
+			<key>boilingPoint</key>
+			<string> 5596 °C</string>
+			<key>density</key>
+			<string> 21.02 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 3186 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This is quite a lot of rhenium, and it&apos;s not clear why anyone would make such a thick, heavy bar of it.  Typical uses involve thin wires, fine powders, or chemical compounds, not half-inch-square solid bars</string>
+		<key>name</key>
+		<string>Rhenium</string>
+		<key>number</key>
+		<integer>75</integer>
+	</dict>
+	<key>Rhodium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 102.9055</string>
+			<key>boilingPoint</key>
+			<string> 3695 °C</string>
+			<key>density</key>
+			<string> 12.45 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1964 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Rhodium is very expensive, yet cheap jewelry is often rhodium-plated because so little is needed to make an opaque, super-shiny coating.  Solid rhodium jewelry is never seen: it would be impossibly costly</string>
+		<key>name</key>
+		<string>Rhodium</string>
+		<key>number</key>
+		<integer>45</integer>
+	</dict>
+	<key>Roentgenium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 272*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Roentgenium is named for Wilhelm Conrad Ro&quot;ntgen, who discovered x-rays.  His element is highly radioactive, but disappointingly it does not, despite its name, emit x-rays when it decays</string>
+		<key>name</key>
+		<string>Roentgenium</string>
+		<key>number</key>
+		<integer>111</integer>
+	</dict>
+	<key>Rubidium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 85.4678</string>
+			<key>boilingPoint</key>
+			<string> 688 °C</string>
+			<key>density</key>
+			<string> 1.532 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 39.31 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This ampoule contains a gram of highly reactive rubidium metal.  Broken open it would catch fire rapidly.  Rubidium is commonly used in cheaper atomic clocks (the most accurate ones use cesium)</string>
+		<key>name</key>
+		<string>Rubidium</string>
+		<key>number</key>
+		<integer>37</integer>
+	</dict>
+	<key>Ruthenium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 101.07</string>
+			<key>boilingPoint</key>
+			<string> 4150 °C</string>
+			<key>density</key>
+			<string> 12.37 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2334 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This button of pure solid ruthenium was created by the easiest known method--melting ruthenium powder in an argon-arc furnace.  Jewelry is often ruthenium-plated when a dark, pewter-colored shine is desired</string>
+		<key>name</key>
+		<string>Ruthenium</string>
+		<key>number</key>
+		<integer>44</integer>
+	</dict>
+	<key>Rutherfordium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 261*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Rutherfordium, half-life 65 seconds, is one of two elements in a row named after an Ernest (Rutherford in this case).  Sorry, I can&apos;t say much more about it--except that none is likely to exist right now</string>
+		<key>name</key>
+		<string>Rutherfordium</string>
+		<key>number</key>
+		<integer>104</integer>
+	</dict>
+	<key>Samarium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 150.36</string>
+			<key>boilingPoint</key>
+			<string> 1803 °C</string>
+			<key>density</key>
+			<string> 7.353 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1072 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Samarium-cobalt magnets made possible the first lightweight head-phones, but have been replaced by neodymium-iron-boron magnets, which are even stronger.  The metal in pure form has few applications</string>
+		<key>name</key>
+		<string>Samarium</string>
+		<key>number</key>
+		<integer>62</integer>
+	</dict>
+	<key>Scandium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 44.95591</string>
+			<key>boilingPoint</key>
+			<string> 2830 °C</string>
+			<key>density</key>
+			<string> 2.985 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1541 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>These vacuum distilled scandium crystals are destined for use in daylight spectrum metal halide arc lights.  A few percent of scandium strengthens aluminum for bicycle frames and baseball bats.  Scroll down to see examples of Scandium.</string>
+		<key>name</key>
+		<string>Scandium</string>
+		<key>number</key>
+		<integer>21</integer>
+	</dict>
+	<key>Seaborgium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 266*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Glenn T. Seaborg is the only person ever to have an element named after him while he was still alive.  He was responsible for discovering nearly a dozen super-heavy elements, making this a fitting honor</string>
+		<key>name</key>
+		<string>Seaborgium</string>
+		<key>number</key>
+		<integer>106</integer>
+	</dict>
+	<key>Selenium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 78.96</string>
+			<key>boilingPoint</key>
+			<string> 685 °C</string>
+			<key>density</key>
+			<string> 4.819 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 221 °C*</string>
+		</dict>
+		<key>desc</key>
+		<string>Selenium occurs in (fairly) pure form in nature. This native selenium is exactly as it came out of the ground.  It is used in many light-sensing applications: photocopiers, automatic light switches and light meters</string>
+		<key>name</key>
+		<string>Selenium</string>
+		<key>number</key>
+		<integer>34</integer>
+	</dict>
+	<key>Silicon</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 28.0855</string>
+			<key>boilingPoint</key>
+			<string> 2.9×103 °C</string>
+			<key>density</key>
+			<string> 2.33 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1414 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The first stage of silicon refining produces this irregular blob.  After additional purification the silicon is grown into large single crystals to be cut into wafers, after which computer chips are etched onto the surface</string>
+		<key>name</key>
+		<string>Silicon</string>
+		<key>number</key>
+		<integer>14</integer>
+	</dict>
+	<key>Silver</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 107.8682</string>
+			<key>boilingPoint</key>
+			<string> 2162 °C</string>
+			<key>density</key>
+			<string> 10.49 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 961.78 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Silver has been used in coins since antiquity: This tetradrachm is from Greece, 261BC and is about 95% pure.  In 0 AD this coin was older than the United States is today.  Was it in someone&apos;s collection then?Scroll down to see examples of Silver.</string>
+		<key>name</key>
+		<string>Silver</string>
+		<key>number</key>
+		<integer>47</integer>
+	</dict>
+	<key>Sodium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 22.98977</string>
+			<key>boilingPoint</key>
+			<string> 883 °C</string>
+			<key>density</key>
+			<string> 0.968 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 97.72 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>These soft, silvery sodium chunks were cut with a knife and stored under oil.  In air they turn white in seconds; exposed to water they generate hydrogen gas and explode in flaming balls of molten sodium</string>
+		<key>name</key>
+		<string>Sodium</string>
+		<key>number</key>
+		<integer>11</integer>
+	</dict>
+	<key>Strontium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 87.62</string>
+			<key>boilingPoint</key>
+			<string> 1382 °C</string>
+			<key>density</key>
+			<string> 2.63 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 777 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Strontium is often thought of as radioactive, because Sr-90 is a component of nuclear fallout.  In fact normal strontium is not radioactive and is used in household products such as safe glow-in-the-dark paint</string>
+		<key>name</key>
+		<string>Strontium</string>
+		<key>number</key>
+		<integer>38</integer>
+	</dict>
+	<key>Sulfur</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 32.065</string>
+			<key>boilingPoint</key>
+			<string> 444.72 °C</string>
+			<key>density</key>
+			<string> 1.96 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 115.21 °C*</string>
+		</dict>
+		<key>desc</key>
+		<string>Sulfur is one of the few elements found pure in nature.  This &quot;native&quot; sulfur is probably of volcanic origin.  Also called brimstone, it oxidizes and is responsible for the characteristic smell of many volcanoes</string>
+		<key>name</key>
+		<string>Sulfur</string>
+		<key>number</key>
+		<integer>16</integer>
+	</dict>
+	<key>Tantalum</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 180.9479</string>
+			<key>boilingPoint</key>
+			<string> 5458 °C</string>
+			<key>density</key>
+			<string> 16.65 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 3017 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Tiny amounts of tantalum are used in the capacitors in all high tech devices.  This slab would be enough for thousands of cell phones and laptop computers.  It&apos;s also used for medical implants like skull plates</string>
+		<key>name</key>
+		<string>Tantalum</string>
+		<key>number</key>
+		<integer>73</integer>
+	</dict>
+	<key>Technetium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 98*</string>
+			<key>boilingPoint</key>
+			<string> 4265 °C</string>
+			<key>density</key>
+			<string> 11.5 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 2157 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Technetium is a radioactive element, the only one in this area of the periodic table.  Short-lived isotopes are used in gamma ray imaging of the skeleton since it attaches itself to areas of active bone growth</string>
+		<key>name</key>
+		<string>Technetium</string>
+		<key>number</key>
+		<integer>43</integer>
+	</dict>
+	<key>Tellurium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 127.6</string>
+			<key>boilingPoint</key>
+			<string> 988 °C</string>
+			<key>density</key>
+			<string> 6.24 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 449.51 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Tellurium is hardly ever used in pure form, but these beautiful slender crystals are how it is distributed.  Research is hindered by the fact that if you absorb even tiny amounts, you smell of garlic for months</string>
+		<key>name</key>
+		<string>Tellurium</string>
+		<key>number</key>
+		<integer>52</integer>
+	</dict>
+	<key>Terbium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 158.92534</string>
+			<key>boilingPoint</key>
+			<string> 3230 °C</string>
+			<key>density</key>
+			<string> 8.219 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1356 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Terbium is a vital ingredient of magnetorestrictive alloys, ones that change length when exposed to a magnetic field.  Such alloys are used in loudspeakers designed to push against solids rather than against air</string>
+		<key>name</key>
+		<string>Terbium</string>
+		<key>number</key>
+		<integer>65</integer>
+	</dict>
+	<key>Thallium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 204.3833</string>
+			<key>boilingPoint</key>
+			<string> 1473 °C</string>
+			<key>density</key>
+			<string> 11.85 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 304 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Thallium was used in a few murders before people caught on to its characteristic symptoms.  This sizable lump could do in quite a few people, but isn&apos;t it pretty?  The colors are from layers of thallium oxide</string>
+		<key>name</key>
+		<string>Thallium</string>
+		<key>number</key>
+		<integer>81</integer>
+	</dict>
+	<key>Thorium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 232.0381</string>
+			<key>boilingPoint</key>
+			<string> 4820 °C</string>
+			<key>density</key>
+			<string> 11.724 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1750 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This foil is what remained after useful shapes were stamped out, but what those shapes were useful for remains a mystery to me. Pure thorium metal like this is quite rare, and not easily obtained</string>
+		<key>name</key>
+		<string>Thorium</string>
+		<key>number</key>
+		<integer>90</integer>
+	</dict>
+	<key>Thulium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 168.93421</string>
+			<key>boilingPoint</key>
+			<string> 1950 °C</string>
+			<key>density</key>
+			<string> 9.321 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1545 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Thulium is among the most obscure elements in the periodic table.  It has very few applications.  Some people consider it the most useless of all naturally occurring elements, though others will rush to its defense</string>
+		<key>name</key>
+		<string>Thulium</string>
+		<key>number</key>
+		<integer>69</integer>
+	</dict>
+	<key>Tin</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 118.71</string>
+			<key>boilingPoint</key>
+			<string> 2602 °C</string>
+			<key>density</key>
+			<string> 7.31 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 231.93 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The classic tin soldier was sometimes made of pure tin, but more often tin-lead or lead-antimony alloys, or, shudder, just plastic.  I cast this one out of 99.99% pure tin in an antique mold meant for kids to use</string>
+		<key>name</key>
+		<string>Tin</string>
+		<key>number</key>
+		<integer>50</integer>
+	</dict>
+	<key>Titanium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 47.867</string>
+			<key>boilingPoint</key>
+			<string> 3287 °C</string>
+			<key>density</key>
+			<string> 4.507 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1668 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This titanium blisk (bladed impeller disk) is from the intake stage of a jet engine, where the light weight and high strength of titanium are key.  Titanium is expensive because it must be cast under inert atmosphere</string>
+		<key>name</key>
+		<string>Titanium</string>
+		<key>number</key>
+		<integer>22</integer>
+	</dict>
+	<key>Tungsten</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 183.84</string>
+			<key>boilingPoint</key>
+			<string> 5555 °C</string>
+			<key>density</key>
+			<string> 19.25 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 3422 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Tungsten is extremely hard to melt, so when large pieces are needed it is often sintered into solid form from loose powder, like this cube.  The biggest application by far is tungsten wire for incandescent light bulbs</string>
+		<key>name</key>
+		<string>Tungsten</string>
+		<key>number</key>
+		<integer>74</integer>
+	</dict>
+	<key>Ununhexium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 292*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Ununhexium is a placeholder assigned until the element has been given a final name.  Its discovery has been reliably claimed, but remains to be independently verified before a name is officially assigned</string>
+		<key>name</key>
+		<string>Ununhexium</string>
+		<key>number</key>
+		<integer>116</integer>
+	</dict>
+	<key>Ununoctium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 294*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Ununoctium is a placeholder assigned until the element has been given a final name.  Its discovery has been reliably claimed, but remains to be independently verified before a name is officially assigned</string>
+		<key>name</key>
+		<string>Ununoctium</string>
+		<key>number</key>
+		<integer>118</integer>
+	</dict>
+	<key>Ununpentium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 288*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Ununpentium is a placeholder assigned until the element has been given a final name.  Its discovery has been reliably claimed, but remains to be independently verified before a name is officially assigned</string>
+		<key>name</key>
+		<string>Ununpentium</string>
+		<key>number</key>
+		<integer>115</integer>
+	</dict>
+	<key>Ununquadium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 289*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Ununquadium is a placeholder assigned until the element has been given a final name.  Its discovery has been reliably claimed, but remains to be independently verified before a name is officially assigned</string>
+		<key>name</key>
+		<string>Ununquadium</string>
+		<key>number</key>
+		<integer>114</integer>
+	</dict>
+	<key>Ununseptium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> N/A</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Ununseptium is a placeholder assigned until the element has been given a final name.  As of late 2006 it is the only element through 118 whose discovery has not yet been claimed</string>
+		<key>name</key>
+		<string>Ununseptium</string>
+		<key>number</key>
+		<integer>117</integer>
+	</dict>
+	<key>Ununtrium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 284*</string>
+			<key>boilingPoint</key>
+			<string> N/A</string>
+			<key>density</key>
+			<string> N/A</string>
+			<key>meltingPoint</key>
+			<string> N/A</string>
+		</dict>
+		<key>desc</key>
+		<string>Ununtrium is a placeholder assigned until the element has been given a final name.  Its discovery has been reliably claimed, but remains to be independently verified before a name is officially assigned</string>
+		<key>name</key>
+		<string>Ununtrium</string>
+		<key>number</key>
+		<integer>113</integer>
+	</dict>
+	<key>Uranium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 238.02891</string>
+			<key>boilingPoint</key>
+			<string> 3927 °C</string>
+			<key>density</key>
+			<string> 19.05 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1135 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This is a chunk of depleted uranium metal, which is used in armor-piercing ammunition and counterweights. Only 20% less radioactive than natural uranium, it creates deadly hazards when used in anger</string>
+		<key>name</key>
+		<string>Uranium</string>
+		<key>number</key>
+		<integer>92</integer>
+	</dict>
+	<key>Vanadium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 50.9415</string>
+			<key>boilingPoint</key>
+			<string> 3407 °C</string>
+			<key>density</key>
+			<string> 6.11 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1910 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This curl of vanadium was cut from a cylinder on a lathe.  A few percent of vanadium in steel creates hard, tough alloys, but the pure metal has few applications.  Traces of it give emerald a green color</string>
+		<key>name</key>
+		<string>Vanadium</string>
+		<key>number</key>
+		<integer>23</integer>
+	</dict>
+	<key>Xenon</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 131.293</string>
+			<key>boilingPoint</key>
+			<string> -108 °C</string>
+			<key>density</key>
+			<string> 5.9 g/l*</string>
+			<key>meltingPoint</key>
+			<string> -111.8 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>The xenon gas in this tube is being excited by a high voltage discharge, creating a lovely pale violet glow.  Xenon-filled tubes driven by high voltage capacitors are the basis for modern photographic flashes</string>
+		<key>name</key>
+		<string>Xenon</string>
+		<key>number</key>
+		<integer>54</integer>
+	</dict>
+	<key>Ytterbium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 173.04</string>
+			<key>boilingPoint</key>
+			<string> 1196 °C</string>
+			<key>density</key>
+			<string> 6.57 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 819 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Ytterbium has useful catalytic properties and is finding increasing use in the chemical industry due to its low toxicity and relative abundance.  It is the last of four elements named after the town of Ytterby, Sweden</string>
+		<key>name</key>
+		<string>Ytterbium</string>
+		<key>number</key>
+		<integer>70</integer>
+	</dict>
+	<key>Yttrium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 88.90585</string>
+			<key>boilingPoint</key>
+			<string> 3345 °C</string>
+			<key>density</key>
+			<string> 4.472 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1526 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Yttrium is rarely seen in pure form and has no applications as a metal.  Yttrium-aluminum-garnet (YAG) is important in lasers and yttrium is also used in the phosphors of color television sets (the old CRT kind)</string>
+		<key>name</key>
+		<string>Yttrium</string>
+		<key>number</key>
+		<integer>39</integer>
+	</dict>
+	<key>Zinc</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 65.409</string>
+			<key>boilingPoint</key>
+			<string> 907 °C</string>
+			<key>density</key>
+			<string> 7.14 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 419.53 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>Sacrificial zinc anodes are used to protect steel tanks, rails and ship hulls from rusting. Since zinc oxidizes more easily than iron, it corrodes first.  When the anode is mostly consumed, it can simply be replaced</string>
+		<key>name</key>
+		<string>Zinc</string>
+		<key>number</key>
+		<integer>30</integer>
+	</dict>
+	<key>Zirconium</key>
+	<dict>
+		<key>data</key>
+		<dict>
+			<key>atomicWeight</key>
+			<string> 91.224</string>
+			<key>boilingPoint</key>
+			<string> 4409 °C</string>
+			<key>density</key>
+			<string> 6.511 g/cm3</string>
+			<key>meltingPoint</key>
+			<string> 1855 °C</string>
+		</dict>
+		<key>desc</key>
+		<string>This spectacular crystal bar of pure zirconium was created by thermal decomposition of zirconium iodide. Important in the nuclear industry, zirconium&apos;s latest application is in body-piercing jewelry</string>
+		<key>name</key>
+		<string>Zirconium</string>
+		<key>number</key>
+		<integer>40</integer>
+	</dict>
+</dict>
+</plist>

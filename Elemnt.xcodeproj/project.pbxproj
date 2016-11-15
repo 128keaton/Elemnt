@@ -281,6 +281,7 @@
 		8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8569B61DBD5BEC00815BF5 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = SOURCE_ROOT; };
+		8A8FCD411DDBCD4900D9FA93 /* remote_data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = remote_data.plist; sourceTree = "<group>"; };
 		BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elemnt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -433,6 +434,7 @@
 		8A66C6DE1DBD575D00341493 = {
 			isa = PBXGroup;
 			children = (
+				8A8FCD411DDBCD4900D9FA93 /* remote_data.plist */,
 				8A66C6E51DBD576C00341493 /* Elemnt */,
 				8A66C6F91DBD578000341493 /* Products */,
 				6FF1E70EACFE17319D3C13D2 /* Pods */,

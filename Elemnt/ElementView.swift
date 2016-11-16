@@ -19,6 +19,7 @@ class DetailViewController: UITableViewController {
 	@IBOutlet var density: UILabel!
 	@IBOutlet var boilingPoint: UILabel!
 	@IBOutlet var meltingPoint: UILabel!
+	var removeMe: UILabel!
 	var colors: UIImageColors!
 
 	var imageData: Data!
@@ -26,6 +27,13 @@ class DetailViewController: UITableViewController {
 		// Update the user interface for the detail item.
 
 		if let detail = self.detailItem {
+			if removeMe != nil{
+					removeMe.removeFromSuperview()
+			}
+		
+			for views in self.tableView.subviews{
+				views.alpha = 1.0
+			}
 			self.title = detail["name"] as! String!
 			if let textView = self.textArea, let elementImage = self.imageView {
 				var element = [String: Any]()
@@ -64,7 +72,21 @@ class DetailViewController: UITableViewController {
 				
 
 			}
+		}else{
+			for views in self.tableView.subviews{
+				views.alpha = 0.0
+			}
+			
+			let noSelectionLabel = UILabel(frame: self.tableView.frame)
+			noSelectionLabel.backgroundColor = UIColor.black
+			noSelectionLabel.textColor = UIColor.white
+			noSelectionLabel.textAlignment = .center
+			noSelectionLabel.text = "Select an element"
+			removeMe = noSelectionLabel
+			noSelectionLabel.center = CGPoint(x: self.view.center.x / 1.8, y: self.view.center.y)
+			self.view.addSubview(noSelectionLabel)
 		}
+		
 	}
 
 
@@ -122,6 +144,7 @@ class DetailViewController: UITableViewController {
 	{
 		//fix for gradient wierdness when rotating
 
+		print("rotated")
 		if self.detailItem != nil && self.colors != nil {
 			DispatchQueue.init(label: "128keaton",
 			                   qos: .background,

@@ -74,17 +74,14 @@ class DetailViewController: UITableViewController {
 			}
 		}else{
 			for views in self.tableView.subviews{
+	
 				views.alpha = 0.0
+			
 			}
 			
-			let noSelectionLabel = UILabel(frame: self.tableView.frame)
-			noSelectionLabel.backgroundColor = UIColor.black
-			noSelectionLabel.textColor = UIColor.white
-			noSelectionLabel.textAlignment = .center
-			noSelectionLabel.text = "Select an element"
-			removeMe = noSelectionLabel
-			noSelectionLabel.center = CGPoint(x: self.view.center.x / 1.8, y: self.view.center.y)
-			self.view.addSubview(noSelectionLabel)
+
+	
+			
 		}
 		
 	}

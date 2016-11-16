@@ -434,6 +434,7 @@
 		8A66C6DE1DBD575D00341493 = {
 			isa = PBXGroup;
 			children = (
+				8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */,
 				8A8FCD411DDBCD4900D9FA93 /* remote_data.plist */,
 				8A66C6E51DBD576C00341493 /* Elemnt */,
 				8A66C6F91DBD578000341493 /* Products */,
@@ -453,7 +454,6 @@
 				8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */,
 				8A8569B61DBD5BEC00815BF5 /* AboutView.swift */,
 				8A66C7161DBD57DA00341493 /* ElementsList.swift */,
-				8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */,
 				8A66C7131DBD57BD00341493 /* ElementView.swift */,
 				8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */,
 				8A66C71E1DBD57F700341493 /* Assets.xcassets */,

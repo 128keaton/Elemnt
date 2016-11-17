@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>version</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>enableSpelling</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

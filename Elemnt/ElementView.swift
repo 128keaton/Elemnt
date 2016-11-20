@@ -19,14 +19,24 @@ class DetailViewController: UITableViewController {
 	@IBOutlet var density: UILabel!
 	@IBOutlet var boilingPoint: UILabel!
 	@IBOutlet var meltingPoint: UILabel!
+    
+    @IBOutlet var shareButton: UIBarButtonItem?
+    
+    
 	var removeMe: UILabel!
 	var colors: UIImageColors!
 
 	var imageData: Data!
+    override func viewDidAppear(_ animated: Bool) {
+          self.navigationController?.navigationItem.leftBarButtonItem = nil
+    }
 	func configureView() {
+      
 		// Update the user interface for the detail item.
-
+        shareButton?.isEnabled = false
+        self.title = "Pick an element"
 		if let detail = self.detailItem {
+            shareButton?.isEnabled = true
 			if removeMe != nil{
 					removeMe.removeFromSuperview()
 			}
@@ -104,6 +114,7 @@ class DetailViewController: UITableViewController {
 		alertView.addAction(reportAction)
 		alertView.addAction(shareAction)
 		alertView.addAction(cancelAction)
+        alertView.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
 		self.present(alertView, animated: true, completion: nil)
 	}
 
@@ -118,12 +129,12 @@ class DetailViewController: UITableViewController {
 		let objectsToShare = [textToShare, image!] as [Any]
 		let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
-
+        
 		activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+        activityVC.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
 
-
-		activityVC.popoverPresentationController?.sourceView = self.view
-		self.present(activityVC, animated: true, completion: nil)
+        
+		self.navigationController?.present(activityVC, animated: true, completion: nil)
 
 	}
 	override func viewDidLoad() {

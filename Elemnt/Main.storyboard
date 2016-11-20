@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -99,7 +99,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-wh-A8j">
-                                    <rect key="frame" x="123" y="70" width="128" height="128"/>
+                                    <rect key="frame" x="124" y="70" width="128" height="128"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="128" id="Zv9-cg-Wf5"/>
                                         <constraint firstAttribute="height" constant="128" id="gOI-aG-0OL"/>
@@ -255,7 +255,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" editable="NO" text="Select an element to begin" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JF-M4-5PY">
-                                                    <rect key="frame" x="8" y="8" width="359" height="189.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="189"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -293,6 +293,7 @@
                         <outlet property="density" destination="u3G-Uy-zId" id="zaq-Ox-hEj"/>
                         <outlet property="imageView" destination="m7h-wh-A8j" id="7VA-Nr-5cq"/>
                         <outlet property="meltingPoint" destination="AIf-bK-3yD" id="L2w-th-fNy"/>
+                        <outlet property="shareButton" destination="AAJ-uX-2Eb" id="ePM-hF-dVz"/>
                         <outlet property="textArea" destination="6JF-M4-5PY" id="cJ4-pi-7pw"/>
                     </connections>
                 </tableViewController>
@@ -394,7 +395,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx3-6d-RyQ">
-                                <rect key="frame" x="110" y="307" width="141" height="53"/>
+                                <rect key="frame" x="111" y="307" width="141" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="SYf-i2-Glb"/>
                                     <constraint firstAttribute="height" constant="53" id="lPS-zA-V3y"/>
@@ -424,7 +425,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1He-Tt-JS2">
-                                <rect key="frame" x="16" y="318" width="34" height="30"/>
+                                <rect key="frame" x="17" y="318" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="zdX-ex-5b1" kind="unwind" unwindAction="returnToHomeWithSegue:" id="con-Az-orh"/>
@@ -500,6 +501,6 @@
         <image name="sorted-alphabetically" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Emr-NU-hSz"/>
+        <segue reference="uCY-tI-f4P"/>
     </inferredMetricsTieBreakers>
 </document>

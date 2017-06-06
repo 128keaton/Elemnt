@@ -36,7 +36,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			let controllers = split.viewControllers
 			self.detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? DetailViewController
 		}
-
+		
+		if #available(iOS 11.0, *) {
+			self.navigationController?.navigationBar.prefersLargeTitles = true
+		}
+		
 		searchController.searchResultsUpdater = self
 		searchController.dimsBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "112"
@@ -95,7 +99,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	}
 	func downloadSettings() {
-		if let settings = UserDefaults.standard.object(forKey: "settings"){
+		if let settings = UserDefaults.standard.object(forKey: "settings") {
 			settingsDictionary = settings as! [String: Any]
 		}
 		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/settings.plist").responsePropertyList { response in
@@ -114,20 +118,20 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		var dictionary: NSMutableDictionary?
 		
 		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/remote_data.plist").responsePropertyList { response in
-		
+			
 			if let plist = response.result.value {
 				print("downloading data")
 				dictionary = plist as? NSMutableDictionary
 				
-					
 				
-			}else{
+				
+			} else {
 				if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
 					dictionary = NSMutableDictionary(contentsOfFile: path)
 				}
 			}
 		}
-		if dictionary == nil{
+		if dictionary == nil {
 			if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
 				dictionary = NSMutableDictionary(contentsOfFile: path)
 			}
@@ -136,7 +140,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		
 	}
 	
-
+	
 	@IBAction func showActionMenu() {
 		let actionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 		let spellFunction = UIAlertAction(title: "Spell in elements", style: .default, handler: { (UIAlertAction) in
@@ -149,8 +153,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			self.dismiss(animated: true, completion: nil)
 		})
 
-		if settingsDictionary["enableSpelling"] as! NSNumber != 0{
-				actionMenu.addAction(spellFunction)
+		if settingsDictionary["enableSpelling"] as! NSNumber != 0 {
+			actionMenu.addAction(spellFunction)
 		}
 		actionMenu.addAction(aboutFunction)
 		actionMenu.addAction(cancelFunction)
@@ -250,7 +254,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 					print(boilingPoint!)
 
 
-					let dataDictionary = ["atomicWeight": atomicWeight?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "\(elementName)\n", with: "").replacingOccurrences(of: "Atomic Weight", with: "").replacingOccurrences(of: "\n", with: ""), "density": density?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Density", with: "").replacingOccurrences(of: "\n", with: ""), "meltingPoint": meltingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Melting Point", with: "").replacingOccurrences(of: "\n", with: ""), "boilingPoint": boilingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Boiling Point", with: "").replacingOccurrences(of: "\n", with: "")]
+					let dataDictionary = ["atomicWeight": atomicWeight?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "\(String(describing: elementName))\n", with: "").replacingOccurrences(of: "Atomic Weight", with: "").replacingOccurrences(of: "\n", with: ""), "density": density?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Density", with: "").replacingOccurrences(of: "\n", with: ""), "meltingPoint": meltingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Melting Point", with: "").replacingOccurrences(of: "\n", with: ""), "boilingPoint": boilingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Boiling Point", with: "").replacingOccurrences(of: "\n", with: "")]
 
 					actualDescription = actualDescription?.replacingOccurrences(of: "Full technical data\n", with: "")
 					actualDescription = actualDescription?.replacingOccurrences(of: ".Scroll down to see examples of \(elementName!).", with: "")
@@ -266,16 +270,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 					testDict.write(toFile: path, atomically: true)
 
 				}
-
-
-
 			}
-
 		}
-
-
-
-
 	}
 
 
@@ -283,7 +279,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	func setupData(mode: DataMode) {
 		dataArray?.removeAll()
 		sortedArray?.removeAll()
-	
+		
 		self.dataDictionary = self.downloadElements()
 		
 		for name in (dataDictionary?.allKeys)! {
@@ -399,7 +395,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 		}
 
-		cell.name?.text = name as? String
+		cell.name?.text = (name! as String)
 		return cell
 	}
 

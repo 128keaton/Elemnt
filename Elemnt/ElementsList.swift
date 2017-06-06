@@ -24,9 +24,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	var filteredNumberArray: [String]? = []
 	var filteredArray: [String]? = []
 	var settingsDictionary: [String: Any] = ["enableSpelling": 0, "version": 0]
+	
+	var sortedAtomically = false
+	
 
 	let searchController = UISearchController(searchResultsController: nil)
-
+	
+	
+	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -40,23 +45,38 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		if #available(iOS 11.0, *) {
 			self.navigationController?.navigationBar.prefersLargeTitles = true
 		}
+		let sortTap = UITapGestureRecognizer(target: self, action: #selector(resort))
+		sortTap.numberOfTapsRequired = 2
+		self.navigationController?.navigationBar.addGestureRecognizer(sortTap)
+		
+		let titleTap = UITapGestureRecognizer(target: self, action: #selector(openTitleMenu))
+		titleTap.numberOfTapsRequired = 1
+		self.navigationController?.navigationBar.addGestureRecognizer(titleTap)
+		
+		titleTap.require(toFail: sortTap)
+		
 		
 		searchController.searchResultsUpdater = self
 		searchController.dimsBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "112"
 		searchController.searchBar.sizeToFit()
 		searchController.searchBar.barStyle = .black
+		searchController.searchBar.barTintColor = UIColor.black
 		searchController.searchBar.delegate = self
 		searchController.searchBar.scopeButtonTitles = ["Number", "Title"]
 
 		definesPresentationContext = true
 		tableView.tableHeaderView = searchController.searchBar
 		extendedLayoutIncludesOpaqueBars = true
-
+		
 		setupData(mode: .Alphabetically)
 
 		downloadSettings()
 
+	}
+	
+	@objc func openTitleMenu(){
+		self.showActionMenu()
 	}
 	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
 		if searchBar.selectedScopeButtonIndex == 0 {
@@ -75,6 +95,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return 0
 	}
+	
 	func filterContentForSearchText(searchText: String, scope: DataMode) {
 
 		let predicate = NSPredicate(format: "SELF beginswith[c] %@", searchText)
@@ -85,10 +106,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		filteredNumberArray = dataArray?.filter({ (element) -> Bool in
 			return predicate.evaluate(with: String(getAtomicNumber(forValue: element)))
 		})
-
-
-
-
 
 		if scope == .Alphabetically {
 			filteredArray = filteredNameArray
@@ -133,12 +150,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		return dictionary!
 	}
 	
-	@IBAction func showActionMenu() {
+	func showActionMenu() {
 		let actionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-		let spellFunction = UIAlertAction(title: "Spell in elements", style: .default, handler: { (UIAlertAction) in
+		let spellFunction = UIAlertAction(title: "Spell in elements (beta)", style: .default, handler: { (UIAlertAction) in
 			self.performSegue(withIdentifier: "showSpell", sender: self)
 		})
-		let aboutFunction = UIAlertAction(title: "About Elemnt", style: .default, handler: { (UIAlertAction) in
+		let aboutFunction = UIAlertAction(title: "About", style: .default, handler: { (UIAlertAction) in
 			self.performSegue(withIdentifier: "showAbout", sender: self)
 		})
 		let cancelFunction = UIAlertAction(title: "Cancel", style: .destructive, handler: { (UIAlertAction) in
@@ -153,14 +170,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		actionMenu.popoverPresentationController?.sourceView = self.view
 		self.present(actionMenu, animated: true, completion: nil)
 	}
-	@IBAction func resort(sender: UIBarButtonItem) {
-		//stupid, I know, but LAAAAZY
-		if sender.image == #imageLiteral(resourceName: "sorted-numerically") {
-			sender.image = #imageLiteral(resourceName: "sorted-alphabetically")
+	@objc func resort() {
+		if sortedAtomically == true{
+			sortedAtomically = false
 			setupData(mode: .Alphabetically)
-
-		} else {
-			sender.image = #imageLiteral(resourceName: "sorted-numerically")
+		}else{
+			sortedAtomically = true
 			setupData(mode: .Numerically)
 		}
 	}

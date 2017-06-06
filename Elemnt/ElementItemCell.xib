@@ -36,7 +36,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="t2M-pO-3JB"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                         <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>

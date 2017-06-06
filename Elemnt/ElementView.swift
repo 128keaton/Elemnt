@@ -8,8 +8,9 @@
 
 import UIKit
 import ChameleonFramework
+import MessageUI
 
-class DetailViewController: UITableViewController {
+class DetailViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet var textArea: UITextView!
     @IBOutlet var imageView: UIImageView!
@@ -23,6 +24,7 @@ class DetailViewController: UITableViewController {
     @IBOutlet var shareButton: UIBarButtonItem?
     
     
+    var mailController: MFMailComposeViewController? = nil
     var removeMe: UILabel!
     var colors: UIImageColors!
 
@@ -30,10 +32,13 @@ class DetailViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.navigationItem.leftBarButtonItem = nil
         self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = false
+        }
     }
     
     func configureView() {
-         self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
+        self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
         
         // Update the user interface for the detail item.
         shareButton?.isEnabled = false
@@ -112,15 +117,26 @@ class DetailViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: { action in
             self.dismiss(animated: true, completion: nil)
         })
-        //  alertView.addAction(reportAction)
+        alertView.addAction(reportAction)
         alertView.addAction(shareAction)
         alertView.addAction(cancelAction)
         alertView.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         self.present(alertView, animated: true, completion: nil)
     }
+    func getMailController(element: String) -> MFMailComposeViewController {
+        let mailController = MFMailComposeViewController()
+        mailController.mailComposeDelegate = self
+        mailController.setToRecipients(["hello@128keaton.com"])
+        mailController.setSubject("Issue with \(element)")
+        mailController.setMessageBody("<p>Hello, I have an issue with \(element). <br> <b>Replace this with the issue</b></p> ", isHTML: true)
+        return mailController
+    }
 
     func report() {
-        
+        if self.mailController == nil {
+            self.mailController = self.getMailController(element: self.title!)
+        }
+        self.navigationController?.present(self.mailController!, animated: true, completion: nil)
     }
     func share() {
         
@@ -145,7 +161,14 @@ class DetailViewController: UITableViewController {
         
         self.configureView()
         self.imageView.layer.cornerRadius = 8
-
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = false
+        }
+        
+        
+        
+        
     }
     @objc func rotated() {
         // fix for gradient wierdness when rotating
@@ -195,6 +218,11 @@ class DetailViewController: UITableViewController {
         }
     }
 
-
+    
+    /* MFMailControllerDelegate */
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
 

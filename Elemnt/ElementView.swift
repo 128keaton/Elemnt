@@ -69,36 +69,14 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                 boilingPoint.text = data["boilingPoint"]
                 meltingPoint.text = data["meltingPoint"]
                 
-                DispatchQueue.init(label: "128keaton",
-                                   qos: .background,
-                                   target: nil).async {
-                    self.colors = UIImage(named: "\(detail["name"]!).JPG")?.getColors()
-                                    
-                                    
-                                    
-                    DispatchQueue.main.sync {
-                        let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
-                        self.imageView.tintColor = color
-                        let realColor = self.imageView.tintColor
-                        UIView.animate(withDuration: 0.3, animations: {
-                            self.colorView.backgroundColor = realColor
-                            
-                        })
-                        //CAUSE NESTING BRAH
-                        //SUPER NESTING!
-                    }
-                }
-                
+                self.initializeGradient()
                 
             }
         } else {
             for views in self.tableView.subviews {
-                
                 views.alpha = 0.0
-                
             }
         }
-        
     }
 
 
@@ -123,6 +101,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         alertView.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         self.present(alertView, animated: true, completion: nil)
     }
+    
     func getMailController(element: String) -> MFMailComposeViewController {
         let mailController = MFMailComposeViewController()
         mailController.mailComposeDelegate = self
@@ -172,13 +151,16 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
     }
     @objc func rotated() {
         // fix for gradient wierdness when rotating
+        self.initializeGradient()
+
+    }
+    
+    func initializeGradient() {
         if self.detailItem != nil && self.colors != nil {
             DispatchQueue.init(label: "128keaton",
                                qos: .background,
                                target: nil).async {
-
-                let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
-                                
+                let color = UIColor.init(gradientStyle: UIGradientStyle.leftToRight, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
                                 
                 DispatchQueue.main.sync {
                     self.imageView.tintColor = color
@@ -190,7 +172,6 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                 }
             }
         }
-
     }
 
 

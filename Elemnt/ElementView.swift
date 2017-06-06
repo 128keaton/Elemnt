@@ -29,8 +29,11 @@ class DetailViewController: UITableViewController {
     var imageData: Data!
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.navigationItem.leftBarButtonItem = nil
+        self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
     }
+    
     func configureView() {
+         self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
         
         // Update the user interface for the detail item.
         shareButton?.isEnabled = false
@@ -66,10 +69,11 @@ class DetailViewController: UITableViewController {
                                    target: nil).async {
                     self.colors = UIImage(named: "\(detail["name"]!).JPG")?.getColors()
                                     
-                    let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
-                    self.imageView.tintColor = color
+                                    
                                     
                     DispatchQueue.main.sync {
+                        let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
+                        self.imageView.tintColor = color
                         let realColor = self.imageView.tintColor
                         UIView.animate(withDuration: 0.3, animations: {
                             self.colorView.backgroundColor = realColor
@@ -88,10 +92,6 @@ class DetailViewController: UITableViewController {
                 views.alpha = 0.0
                 
             }
-            
-            
-            
-            
         }
         
     }
@@ -100,6 +100,7 @@ class DetailViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
+    
     @IBAction func showSelectionMenu() {
         let alertView = UIAlertController(title: "Share or report?", message: "", preferredStyle: .actionSheet)
         let reportAction = UIAlertAction(title: "Report incorrect", style: .default, handler: { action in
@@ -111,7 +112,7 @@ class DetailViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: { action in
             self.dismiss(animated: true, completion: nil)
         })
-        alertView.addAction(reportAction)
+        //  alertView.addAction(reportAction)
         alertView.addAction(shareAction)
         alertView.addAction(cancelAction)
         alertView.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
@@ -154,9 +155,10 @@ class DetailViewController: UITableViewController {
                                target: nil).async {
 
                 let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
-                self.imageView.tintColor = color
-
+                                
+                                
                 DispatchQueue.main.sync {
+                    self.imageView.tintColor = color
                     let realColor = self.imageView.tintColor
                     UIView.animate(withDuration: 0.3, animations: {
                         self.view.backgroundColor = realColor

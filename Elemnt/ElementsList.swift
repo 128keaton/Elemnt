@@ -31,6 +31,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	let searchController = UISearchController(searchResultsController: nil)
 	
 	
+	override func viewDidAppear(_ animated: Bool) {
+		self.addGestures()
+	}
 	
 
 	override func viewDidLoad() {
@@ -45,15 +48,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		if #available(iOS 11.0, *) {
 			self.navigationController?.navigationBar.prefersLargeTitles = true
 		}
-		let sortTap = UITapGestureRecognizer(target: self, action: #selector(resort))
-		sortTap.numberOfTapsRequired = 2
-		self.navigationController?.navigationBar.addGestureRecognizer(sortTap)
-		
-		let titleTap = UITapGestureRecognizer(target: self, action: #selector(openTitleMenu))
-		titleTap.numberOfTapsRequired = 1
-		self.navigationController?.navigationBar.addGestureRecognizer(titleTap)
-		
-		titleTap.require(toFail: sortTap)
 		
 		
 		searchController.searchResultsUpdater = self
@@ -73,6 +67,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 		downloadSettings()
 
+	}
+	
+	func addGestures(){
+		let sortTap = UITapGestureRecognizer(target: self, action: #selector(resort))
+		sortTap.numberOfTapsRequired = 2
+		self.navigationController?.navigationBar.addGestureRecognizer(sortTap)
+		
+		let titleTap = UITapGestureRecognizer(target: self, action: #selector(openTitleMenu))
+		titleTap.numberOfTapsRequired = 1
+		self.navigationController?.navigationBar.addGestureRecognizer(titleTap)
+		
+		titleTap.require(toFail: sortTap)
+		
 	}
 	
 	@objc func openTitleMenu(){
@@ -170,6 +177,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		actionMenu.popoverPresentationController?.sourceView = self.view
 		self.present(actionMenu, animated: true, completion: nil)
 	}
+	
 	@objc func resort() {
 		if sortedAtomically == true{
 			sortedAtomically = false
@@ -289,6 +297,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showDetail" {
+			self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
 			var name: NSString?
 			let indexPath = self.tableView.indexPathForSelectedRow
 			if searchController.isActive == true && searchController.searchBar.text != "" {

@@ -21,10 +21,8 @@ class EleSpell: UIViewController {
 	var imageURLS: [String]? = []
 	func parseURL(string: String) {
 		let string = removeSpecialCharsFromString(text: string)
-		print("parsine \(string)")
-		
+        
 		Alamofire.request("http://periodictable.com/MSP/ElementBanners?preset=" + string.replacingOccurrences(of: " ", with: "%20")).responseString { response in
-			print("requesting")
 			let document = HTMLDocument(string: response.result.value!)
 			let bigTable = document.nodes(matchingSelector: "table")
 			if bigTable.get(index: 3) != nil &&  string != "" && string.contains("!") != true {
@@ -42,7 +40,6 @@ class EleSpell: UIViewController {
 					}
 				}
 				if self.images?.count != 0 {
-					print(self.images?.count ?? 0)
 					self.showImage()
 
 				}

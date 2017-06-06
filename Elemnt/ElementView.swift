@@ -28,20 +28,20 @@ class DetailViewController: UITableViewController {
 
     var imageData: Data!
     override func viewDidAppear(_ animated: Bool) {
-          self.navigationController?.navigationItem.leftBarButtonItem = nil
+        self.navigationController?.navigationItem.leftBarButtonItem = nil
     }
     func configureView() {
-      
+        
         // Update the user interface for the detail item.
         shareButton?.isEnabled = false
         self.title = "Pick an element"
         if let detail = self.detailItem {
             shareButton?.isEnabled = true
-            if removeMe != nil{
-                    removeMe.removeFromSuperview()
+            if removeMe != nil {
+                removeMe.removeFromSuperview()
             }
-        
-            for views in self.tableView.subviews{
+            
+            for views in self.tableView.subviews {
                 views.alpha = 1.0
             }
             self.title = detail["name"] as! String!
@@ -52,7 +52,7 @@ class DetailViewController: UITableViewController {
                 }
 
                 
-                    textView.text = element["desc"] as! String!
+                textView.text = element["desc"] as! String!
                 elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
 
                 let data = element["data"] as! [String: String]
@@ -61,36 +61,36 @@ class DetailViewController: UITableViewController {
                 boilingPoint.text = data["boilingPoint"]
                 meltingPoint.text = data["meltingPoint"]
                 
-                    DispatchQueue.init(label: "128keaton",
-                                       qos: .background,
-                                       target: nil).async {
-                        self.colors = UIImage(named: "\(detail["name"]!).JPG")?.getColors()
-                                                
-                        let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
-                        self.imageView.tintColor = color
-    
-                        DispatchQueue.main.sync {
-                            let realColor = self.imageView.tintColor
-                            UIView.animate(withDuration: 0.3, animations: {
-                                self.colorView.backgroundColor = realColor
-
-                                           })
-                            //CAUSE NESTING BRAH
-                            //SUPER NESTING!
-                        }
+                DispatchQueue.init(label: "128keaton",
+                                   qos: .background,
+                                   target: nil).async {
+                    self.colors = UIImage(named: "\(detail["name"]!).JPG")?.getColors()
+                                    
+                    let color = UIColor.init(gradientStyle: UIGradientStyle.topToBottom, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
+                    self.imageView.tintColor = color
+                                    
+                    DispatchQueue.main.sync {
+                        let realColor = self.imageView.tintColor
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.colorView.backgroundColor = realColor
+                            
+                        })
+                        //CAUSE NESTING BRAH
+                        //SUPER NESTING!
                     }
+                }
                 
-
+                
             }
-        }else{
-            for views in self.tableView.subviews{
-    
+        } else {
+            for views in self.tableView.subviews {
+                
                 views.alpha = 0.0
-            
+                
             }
             
-
-    
+            
+            
             
         }
         
@@ -100,7 +100,7 @@ class DetailViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
-    @IBAction func showSelectionMenu(){
+    @IBAction func showSelectionMenu() {
         let alertView = UIAlertController(title: "Share or report?", message: "", preferredStyle: .actionSheet)
         let reportAction = UIAlertAction(title: "Report incorrect", style: .default, handler: { action in
             self.report()
@@ -118,7 +118,7 @@ class DetailViewController: UITableViewController {
         self.present(alertView, animated: true, completion: nil)
     }
 
-    func report(){
+    func report() {
         
     }
     func share() {
@@ -140,19 +140,14 @@ class DetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-            NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
         self.configureView()
         self.imageView.layer.cornerRadius = 8
 
-
-
     }
-    @objc func rotated()
-    {
-        //fix for gradient wierdness when rotating
-
-        print("rotated")
+    @objc func rotated() {
+        // fix for gradient wierdness when rotating
         if self.detailItem != nil && self.colors != nil {
             DispatchQueue.init(label: "128keaton",
                                qos: .background,
@@ -166,8 +161,7 @@ class DetailViewController: UITableViewController {
                     UIView.animate(withDuration: 0.3, animations: {
                         self.view.backgroundColor = realColor
                         self.colorView.backgroundColor = realColor
-                                   })
-
+                    })
                 }
             }
         }
@@ -195,7 +189,7 @@ class DetailViewController: UITableViewController {
     var detailItem: NSDictionary! {
         didSet {
             // Update the view.
-                self.configureView()
+            self.configureView()
         }
     }
 

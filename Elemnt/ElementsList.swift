@@ -103,7 +103,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			settingsDictionary = settings as! [String: Any]
 		}
 		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/settings.plist").responsePropertyList { response in
-			debugPrint(response)
 			if let plist = response.result.value {
 				if (plist as! [String: Any])["version"] as! NSNumber != (self.settingsDictionary["version"]) as! NSNumber {
 					self.settingsDictionary = plist as! [String: Any]
@@ -116,15 +115,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	}
 	func downloadElements() -> NSMutableDictionary {
 		var dictionary: NSMutableDictionary?
-		
 		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/remote_data.plist").responsePropertyList { response in
 			
 			if let plist = response.result.value {
-				print("downloading data")
 				dictionary = plist as? NSMutableDictionary
-				
-				
-				
 			} else {
 				if let path = Bundle.main.path(forResource: "data", ofType: "plist") {
 					dictionary = NSMutableDictionary(contentsOfFile: path)
@@ -137,9 +131,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			}
 		}
 		return dictionary!
-		
 	}
-	
 	
 	@IBAction func showActionMenu() {
 		let actionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -177,35 +169,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		var newElementsDictionary: [String: Any]! = [:]
 
 		for i in 0..<10 {
-
-			//	let number = self.getAtomicNumber(forValue: element)
 			var stringNumber: String!
 			if i < 100 && i > 9 {
 				stringNumber = String("0\(i)")
 			} else if i <= 9 {
 				stringNumber = String("00\(i)")
-				print(stringNumber)
 			} else {
 				stringNumber = String(i)
 			}
 			let requestURL = "http://periodictable.com/Elements/\(stringNumber!)/index.html"
-			print(requestURL)
 			Alamofire.request(requestURL).responseString { response in
-
 				let document = HTMLDocument(string: response.result.value!)
-
 				let firstTable = document.firstNode(matchingSelector: "table")
-
 				let ourRow = firstTable?.nodes(matchingSelector: "tr")
-
-
 				let rowTest = ourRow?[10].nodes(matchingSelector: "td")[3]
-
 				let h1 = rowTest?.firstNode(matchingSelector: "h1")
 				let elementName = h1?.textContent
-
-				//	let dataTable = rowTest?.firstNode(matchingSelector: "table")?.nodes(matchingSelector: "tr")
-
 				if elementName != nil {
 					let undescription = rowTest?.textContent
 					var frmt = "Full technical data\n"
@@ -213,52 +192,34 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 					let range = undescription?.range(of: frmt)
 					let removable = undescription?.substring(to: (range?.lowerBound)!)
 					var actualDescription = (undescription?.replacingOccurrences(of: removable!, with: ""))
-
-
-
 					frmt = "\nDensity"
-					//print(undescription)
-
+					
 					var atomicWeight = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "")
 					if let atomicWeightRange = atomicWeight?.range(of: "Density") {
 						atomicWeight = atomicWeight?.substring(to: atomicWeightRange.lowerBound)
 					}
-					print(atomicWeight!)
 
 					var density = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "")
 					if let densityRange = density?.range(of: "Melting") {
 						density = density?.substring(to: densityRange.lowerBound)
 
 					}
-
-					print(density!)
+					
 					var meltingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: "g/cm3", with: "")
 
 					if let meltingPointRange = meltingPoint?.range(of: "Boiling") {
 						meltingPoint = meltingPoint?.substring(to: meltingPointRange.lowerBound)
 					}
-					print(meltingPoint!)
-
-
-
-
 					var boilingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: meltingPoint!, with: "").replacingOccurrences(of: "g/cm3", with: "")
 
 					if let boilingPointRange = boilingPoint?.range(of: "\nFull technical data\n") {
 						boilingPoint = boilingPoint?.substring(to: boilingPointRange.lowerBound)
 					}
-
-
-
-
-					print(boilingPoint!)
-
-
 					let dataDictionary = ["atomicWeight": atomicWeight?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "\(String(describing: elementName))\n", with: "").replacingOccurrences(of: "Atomic Weight", with: "").replacingOccurrences(of: "\n", with: ""), "density": density?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Density", with: "").replacingOccurrences(of: "\n", with: ""), "meltingPoint": meltingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Melting Point", with: "").replacingOccurrences(of: "\n", with: ""), "boilingPoint": boilingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Boiling Point", with: "").replacingOccurrences(of: "\n", with: "")]
 
 					actualDescription = actualDescription?.replacingOccurrences(of: "Full technical data\n", with: "")
 					actualDescription = actualDescription?.replacingOccurrences(of: ".Scroll down to see examples of \(elementName!).", with: "")
-					print("Element: \(elementName!).\nDescription: \(actualDescription!)")
+					
 					let elementDictionary = ["name": elementName!, "desc": actualDescription!, "data": dataDictionary, "number": i] as [String: Any]
 					newElementsDictionary[elementName!] = elementDictionary
 					let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -288,28 +249,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		}
 		if mode == .Alphabetically {
 			sortedArray = dataArray?.sorted(by: { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending })
-
 		} else {
-
-
 			sortedArray = dataArray?.sorted(by: { self.getAtomicNumber(forValue: $0) < self.getAtomicNumber(forValue: $1) })
-
 		}
-
-		print(self.dataArray?.count ?? 0)
 		self.tableView.reloadData()
 	}
 
 	func getAtomicNumber(forValue: String) -> Int {
 		let key = NSString(string: forValue)
-
 		let dictionary = self.dataDictionary?.object(forKey: key) as! [String: Any]
-
 		let number = Int(dictionary["number"] as! NSNumber)
-
 		return number
-
-
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
@@ -318,27 +268,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 
-// MARK: - Segues
+	// MARK: - Segues
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showDetail" {
 			var name: NSString?
 			let indexPath = self.tableView.indexPathForSelectedRow
 			if searchController.isActive == true && searchController.searchBar.text != "" {
-
 				let rawName = filteredArray?[(indexPath?.row)!]
 				name = NSString(string: rawName!)
 			} else {
 				let rawName = sortedArray?[(indexPath?.row)!]
 				name = NSString(string: rawName!)
 			}
-			print(name!)
 
 			if let element = dataDictionary?.object(forKey: name!) {
-				print(element)
 				(segue.destination.childViewControllers[0] as! DetailViewController).detailItem = element as? NSDictionary
 			}
 
@@ -357,12 +303,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		self.performSegue(withIdentifier: "showDetail", sender: self)
 	}
 
-
-
-
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if searchController.isActive && searchController.searchBar.text != "" {
-			print(self.filteredArray?.count ?? 0)
 			return (self.filteredArray?.count)!
 		}
 		return self.sortedArray!.count
@@ -373,33 +315,24 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
 		let cell = tableView.dequeueReusableCell(withIdentifier: "elementCell", for: indexPath) as! ElementItemCell
-
 		var name: NSString?
-
 		if searchController.isActive == true && searchController.searchBar.text != "" {
-
 			let rawName = filteredArray?[indexPath.row]
 			name = NSString(string: rawName!)
 		} else {
 			let rawName = sortedArray?[indexPath.row]
 			name = NSString(string: rawName!)
 		}
-
-
+		
 		if let element = dataDictionary?.object(forKey: name!) {
 			let element = element as! NSDictionary
 			cell.number?.text = "\(element["number"]!)"
 			cell.elementImage?.loadImageNamed(name: name! as String)
-
 		}
-
 		cell.name?.text = (name! as String)
 		return cell
 	}
-
-
 }
 
 

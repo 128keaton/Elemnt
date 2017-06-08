@@ -10,9 +10,11 @@ import UIKit
 import CoreData
 import HTMLReader
 import Alamofire
+import MobileCoreServices
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate {
-
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UITableViewDragDelegate {
+	
+	
 	var detailViewController: DetailViewController? = nil
 	var managedObjectContext: NSManagedObjectContext? = nil
 
@@ -27,7 +29,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	
 	var sortedAtomically = false
 	
-
+	
 	let searchController = UISearchController(searchResultsController: nil)
 	
 	
@@ -35,7 +37,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		self.addGestures()
 	}
 	
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.register(UINib(nibName: "ElementItemCell", bundle: nil), forCellReuseIdentifier: "elementCell")
@@ -50,6 +52,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		}
 		
 		
+		
 		searchController.searchResultsUpdater = self
 		searchController.dimsBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "112"
@@ -61,6 +64,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 		definesPresentationContext = true
 		tableView.tableHeaderView = searchController.searchBar
+		if #available(iOS 11.0, *) {
+			tableView.dragDelegate = self
+		}
 		extendedLayoutIncludesOpaqueBars = true
 		
 		setupData(mode: .Alphabetically)
@@ -69,7 +75,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	}
 	
-	func addGestures(){
+	func addGestures() {
 		let sortTap = UITapGestureRecognizer(target: self, action: #selector(resort))
 		sortTap.numberOfTapsRequired = 2
 		self.navigationController?.navigationBar.addGestureRecognizer(sortTap)
@@ -82,7 +88,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		
 	}
 	
-	@objc func openTitleMenu(){
+	@objc func openTitleMenu() {
 		self.showActionMenu()
 	}
 	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
@@ -179,10 +185,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	}
 	
 	@objc func resort() {
-		if sortedAtomically == true{
+		if sortedAtomically == true {
 			sortedAtomically = false
 			setupData(mode: .Alphabetically)
-		}else{
+		} else {
 			sortedAtomically = true
 			setupData(mode: .Numerically)
 		}
@@ -282,6 +288,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		let key = NSString(string: forValue)
 		let dictionary = self.dataDictionary?.object(forKey: key) as! [String: Any]
 		let number = Int(dictionary["number"] as! NSNumber)
+
 		return number
 	}
 	override func viewWillAppear(_ animated: Bool) {
@@ -357,6 +364,43 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		cell.name?.text = (name! as String)
 		return cell
 	}
+	
+	
+	func getImageData(elementName: String) -> URL{
+		// Define a UIImage object
+		let elementImage = UIImage.init(named: "\(elementName).JPG")!
+		let elementImageData = UIImageJPEGRepresentation(elementImage, 0.8)
+		
+		// Write to temporary url *sigh*
+		let temporaryURL = URL(fileURLWithPath: "\(NSTemporaryDirectory())\(elementName).JPG")
+		print(temporaryURL)
+		try! elementImageData?.write(to: temporaryURL)
+		return temporaryURL
+	}
+	
+	@available(iOS 11.0, *)
+	func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
+		var elementName = "Hydrogen"
+		
+		if searchController.isActive == true && searchController.searchBar.text != "" {
+			elementName = (filteredArray?[indexPath.row])!
+		} else {
+			elementName = (sortedArray?[indexPath.row])!
+		}
+		
+		let itemProvider = NSItemProvider(contentsOf:self.getImageData(elementName: elementName) )
+		
+		return [
+			UIDragItem(itemProvider: itemProvider!)
+		]
+	}
+	
+	
+	@available(iOS 11.0, *)
+	func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+		return self.dragItems(for: indexPath)
+	}
+	
 }
 
 

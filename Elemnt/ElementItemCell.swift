@@ -8,10 +8,11 @@
 
 import Foundation
 import UIKit
+
 class ElementItemCell: UITableViewCell {
-	@IBOutlet var number: UILabel?
-	@IBOutlet var name: UILabel?
-	@IBOutlet var elementImage: AsyncImageView?
-	
-	
+    @IBOutlet var number: UILabel?
+    @IBOutlet var name: UILabel?
+    @IBOutlet var elementImage: AsyncImageView?
+    
 }
+

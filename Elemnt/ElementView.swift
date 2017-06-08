@@ -49,9 +49,6 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                 removeMe.removeFromSuperview()
             }
             
-            for views in self.tableView.subviews {
-                views.alpha = 1.0
-            }
             self.title = detail["name"] as! String!
             if let textView = self.textArea, let elementImage = self.imageView {
                 var element = [String: Any]()
@@ -59,24 +56,27 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                     element[key as! String] = value
                 }
 
+                UIView.animate(withDuration: 0.3, animations: {
+                    textView.text = element["desc"] as! String!
+                    elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
+                    
+                    let data = element["data"] as! [String: String]
+                    self.atomicWeight.text = data["atomicWeight"]
+                    self.density.text = data["density"]
+                    self.boilingPoint.text = data["boilingPoint"]
+                    self.meltingPoint.text = data["meltingPoint"]
+                })
                 
-                textView.text = element["desc"] as! String!
-                elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
-
-                let data = element["data"] as! [String: String]
-                atomicWeight.text = data["atomicWeight"]
-                density.text = data["density"]
-                boilingPoint.text = data["boilingPoint"]
-                meltingPoint.text = data["meltingPoint"]
                 
                 self.initializeGradient()
                 
+                
             }
         } else {
-            for views in self.tableView.subviews {
-                views.alpha = 0.0
-            }
+            print("no data")
+            
         }
+        
     }
 
 
@@ -137,7 +137,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        
+        let _ = Int(1)
         self.configureView()
         self.imageView.layer.cornerRadius = 8
         
@@ -156,17 +156,19 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
     }
     
     func initializeGradient() {
-        if self.detailItem != nil && self.colors != nil {
+        if self.detailItem != nil {
+            let frame = self.colorView.frame
             DispatchQueue.init(label: "128keaton",
                                qos: .background,
                                target: nil).async {
-                let color = UIColor.init(gradientStyle: UIGradientStyle.leftToRight, withFrame: self.colorView.frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
+                self.colors = UIImage(named: "\(self.detailItem["name"] ?? "Hydrogen").JPG")?.getColors()
+                let color = UIColor.init(gradientStyle: UIGradientStyle.leftToRight, withFrame: frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
                                 
                 DispatchQueue.main.sync {
                     self.imageView.tintColor = color
                     let realColor = self.imageView.tintColor
                     UIView.animate(withDuration: 0.3, animations: {
-                        self.view.backgroundColor = realColor
+                        // self.view.backgroundColor = realColor
                         self.colorView.backgroundColor = realColor
                     })
                 }

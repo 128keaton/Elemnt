@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,17 +89,19 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-wh-A8j">
-                                    <rect key="frame" x="8" y="70" width="128" height="128"/>
+                                    <rect key="frame" x="8" y="39" width="128" height="128"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="128" id="Zv9-cg-Wf5"/>
-                                        <constraint firstAttribute="height" constant="128" id="gOI-aG-0OL"/>
+                                        <constraint firstAttribute="width" secondItem="m7h-wh-A8j" secondAttribute="height" multiplier="1:1" id="6aM-hA-R61"/>
+                                        <constraint firstAttribute="width" constant="128" id="XK9-ZT-KPA"/>
+                                        <constraint firstAttribute="height" constant="128" id="zfm-BG-dAn"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="m7h-wh-A8j" firstAttribute="top" secondItem="2xe-ck-sqj" secondAttribute="top" constant="70" id="Wad-GV-oId"/>
                                 <constraint firstItem="m7h-wh-A8j" firstAttribute="centerX" secondItem="2xe-ck-sqj" secondAttribute="centerX" constant="-115.5" id="duE-1k-eNl"/>
+                                <constraint firstItem="m7h-wh-A8j" firstAttribute="leading" secondItem="2xe-ck-sqj" secondAttribute="leading" constant="8" id="fRd-qW-hm1"/>
+                                <constraint firstItem="m7h-wh-A8j" firstAttribute="centerY" secondItem="2xe-ck-sqj" secondAttribute="centerY" id="ypx-Gt-CrY"/>
                             </constraints>
                         </view>
                         <sections>

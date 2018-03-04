@@ -117,16 +117,17 @@ class EleSpell: UIViewController {
 	func showImage() {
 
 		agrume = Agrume(image: self.stitchImages(images: self.images!, isVertical: false), backgroundBlurStyle: .dark)
-		agrume.useActionMenu = true
+		agrume.useToolbar = true
 		if(UIDevice.current.userInterfaceIdiom == .phone){
 			agrume.showFrom(self, backgroundSnapshotVC: self)
 		}else{
 			agrume.showFrom(self, backgroundSnapshotVC: self)
 		}
 
-		agrume.didTapActivityButton = { [unowned self] image in
+		agrume.didTapActivityButton = { image, metadata in
 			self.shouldShare(image: image)
 		}
+
 		self.images?.removeAll()
 		self.imageURLS?.removeAll()
 

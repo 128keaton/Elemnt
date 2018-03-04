@@ -287,7 +287,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	func getAtomicNumber(forValue: String) -> Int {
 		let key = NSString(string: forValue)
 		let dictionary = self.dataDictionary?.object(forKey: key) as! [String: Any]
-		let number = Int(dictionary["number"] as! NSNumber)
+		let number = Int(truncating: dictionary["number"] as! NSNumber)
 
 		return number
 	}

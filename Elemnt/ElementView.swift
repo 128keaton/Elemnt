@@ -20,23 +20,25 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
     @IBOutlet var density: UILabel!
     @IBOutlet var boilingPoint: UILabel!
     @IBOutlet var meltingPoint: UILabel!
-    
+
     @IBOutlet var shareButton: UIBarButtonItem?
-    
-    
+
+
     var mailController: MFMailComposeViewController? = nil
     var removeMe: UILabel!
     var colors: UIImageColors!
 
     var imageData: Data!
+    
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.navigationItem.leftBarButtonItem = nil
         self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
         if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = false
+            self.navigationController?.navigationBar.prefersLargeTitles = true
         }
     }
-    
+
+
     func configureView() {
         self.navigationController?.navigationBar.gestureRecognizers?.removeAll()
         
@@ -48,7 +50,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
             if removeMe != nil {
                 removeMe.removeFromSuperview()
             }
-            
+
             self.title = detail["name"] as! String!
             if let textView = self.textArea, let elementImage = self.imageView {
                 var element = [String: Any]()
@@ -59,31 +61,28 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                 UIView.animate(withDuration: 0.3, animations: {
                     textView.text = element["desc"] as! String!
                     elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
-                    
+
                     let data = element["data"] as! [String: String]
                     self.atomicWeight.text = data["atomicWeight"]
                     self.density.text = data["density"]
                     self.boilingPoint.text = data["boilingPoint"]
                     self.meltingPoint.text = data["meltingPoint"]
                 })
-                
-                
+
                 self.initializeGradient()
-                
-                
             }
         } else {
             print("no data")
-            
+
         }
-        
+
     }
 
 
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
-    
+
     @IBAction func showSelectionMenu() {
         let alertView = UIAlertController(title: "Share or report?", message: "", preferredStyle: .actionSheet)
         let reportAction = UIAlertAction(title: "Report incorrect", style: .default, handler: { action in
@@ -101,7 +100,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         alertView.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         self.present(alertView, animated: true, completion: nil)
     }
-    
+
     func getMailController(element: String) -> MFMailComposeViewController {
         let mailController = MFMailComposeViewController()
         mailController.mailComposeDelegate = self
@@ -118,18 +117,18 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         self.navigationController?.present(self.mailController!, animated: true, completion: nil)
     }
     func share() {
-        
+
         let textToShare = "Check out " + (self.detailItem["name"] as! String) + " on Elemnt!"
         let image = self.imageView.image
 
         let objectsToShare = [textToShare, image!] as [Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
-        
+
         activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
         activityVC.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
 
-        
+
         self.navigationController?.present(activityVC, animated: true, completion: nil)
 
     }
@@ -140,21 +139,21 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         let _ = Int(1)
         self.configureView()
         self.imageView.layer.cornerRadius = 8
-        
+
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = false
         }
-        
-        
-        
-        
+
+
+
+
     }
     @objc func rotated() {
         // fix for gradient wierdness when rotating
         self.initializeGradient()
 
     }
-    
+
     func initializeGradient() {
         if self.detailItem != nil {
             let frame = self.colorView.frame
@@ -163,7 +162,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                                target: nil).async {
                 self.colors = UIImage(named: "\(self.detailItem["name"] ?? "Hydrogen").JPG")?.getColors()
                 let color = UIColor.init(gradientStyle: UIGradientStyle.leftToRight, withFrame: frame, andColors: [UIColor(cgColor: (self.colors?.primaryColor.cgColor)!), UIColor.black])
-                                
+
                 DispatchQueue.main.sync {
                     self.imageView.tintColor = color
                     let realColor = self.imageView.tintColor
@@ -201,9 +200,9 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         }
     }
 
-    
+
     /* MFMailControllerDelegate */
-    
+
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }

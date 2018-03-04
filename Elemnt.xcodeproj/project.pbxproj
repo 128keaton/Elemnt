@@ -133,13 +133,13 @@
 		8A66C7181DBD57DA00341493 /* ElementsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66C7161DBD57DA00341493 /* ElementsList.swift */; };
 		8A66C71B1DBD57E700341493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C7191DBD57E700341493 /* LaunchScreen.storyboard */; };
 		8A66C71C1DBD57E700341493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C71A1DBD57E700341493 /* Main.storyboard */; };
-		8A66C71F1DBD57F700341493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C71E1DBD57F700341493 /* Assets.xcassets */; };
 		8A8569AD1DBD585400815BF5 /* UIImageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66C6F31DBD576C00341493 /* UIImageColors.swift */; };
 		8A8569AE1DBD585900815BF5 /* ElementItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66C6EF1DBD576C00341493 /* ElementItemCell.swift */; };
 		8A8569B01DBD587D00815BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */; };
 		8A8569B51DBD5BCA00815BF5 /* ElementItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A66C6F01DBD576C00341493 /* ElementItemCell.xib */; };
 		8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8569B61DBD5BEC00815BF5 /* AboutView.swift */; };
 		8A8FCD401DDBC9E700D9FA93 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */; };
+		8AC5AC16204BD22D00D988D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AC5AC15204BD22D00D988D9 /* Assets.xcassets */; };
 		C2218B5DE797ADA8C77668A4 /* Pods_Elemnt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */; };
 /* End PBXBuildFile section */
 
@@ -277,11 +277,11 @@
 		8A66C7161DBD57DA00341493 /* ElementsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementsList.swift; sourceTree = "<group>"; usesTabs = 1; };
 		8A66C7191DBD57E700341493 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A66C71A1DBD57E700341493 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8A66C71E1DBD57F700341493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A8569AF1DBD587D00815BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8569B61DBD5BEC00815BF5 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		8A8FCD3F1DDBC9E700D9FA93 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = SOURCE_ROOT; };
 		8A8FCD411DDBCD4900D9FA93 /* remote_data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = remote_data.plist; sourceTree = "<group>"; };
+		8AC5AC15204BD22D00D988D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA9F916B84F9B455D5BAA4A5 /* Pods_Elemnt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elemnt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -456,9 +456,9 @@
 				8A66C7161DBD57DA00341493 /* ElementsList.swift */,
 				8A66C7131DBD57BD00341493 /* ElementView.swift */,
 				8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */,
-				8A66C71E1DBD57F700341493 /* Assets.xcassets */,
 				8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */,
 				8A66C7151DBD57DA00341493 /* Info.plist */,
+				8AC5AC15204BD22D00D988D9 /* Assets.xcassets */,
 			);
 			path = Elemnt;
 			sourceTree = "<group>";
@@ -540,7 +540,7 @@
 				TargetAttributes = {
 					8A66C6F71DBD578000341493 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Z48RKT6B3T;
+						DevelopmentTeam = JMQ9Y3A8K6;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -627,7 +627,6 @@
 				8A5FAEFF1DBFABF700E3972D /* Erbium.JPG in Resources */,
 				8A5FAF411DBFABF700E3972D /* Silver.JPG in Resources */,
 				8A5FAF2D1DBFABF700E3972D /* Plutonium.JPG in Resources */,
-				8A66C71F1DBD57F700341493 /* Assets.xcassets in Resources */,
 				8A5FAF051DBFABF700E3972D /* Gallium.JPG in Resources */,
 				8A5FAF171DBFABF700E3972D /* Lutetium.JPG in Resources */,
 				8A5FAF401DBFABF700E3972D /* Silicon.JPG in Resources */,
@@ -656,6 +655,7 @@
 				8A5FAF091DBFABF700E3972D /* Hassium.JPG in Resources */,
 				8A49D09C1DC03C520064B454 /* data.plist in Resources */,
 				8A5FAEF11DBFABF700E3972D /* Carbon.JPG in Resources */,
+				8AC5AC16204BD22D00D988D9 /* Assets.xcassets in Resources */,
 				8A5FAEF51DBFABF700E3972D /* Chromium.JPG in Resources */,
 				8A5FAF0F1DBFABF700E3972D /* Iridium.JPG in Resources */,
 				8A5FAF161DBFABF700E3972D /* Lithium.JPG in Resources */,
@@ -867,7 +867,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Z48RKT6B3T;
+				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -927,7 +927,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z48RKT6B3T;
+				DEVELOPMENT_TEAM = JMQ9Y3A8K6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

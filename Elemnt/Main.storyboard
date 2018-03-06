@@ -77,7 +77,7 @@
         <!--Detail View Controller-->
         <scene sceneID="d8e-XN-z6K">
             <objects>
-                <tableViewController id="KEc-aA-PMf" customClass="DetailViewController" customModule="Elemnt" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="detailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KEc-aA-PMf" customClass="DetailViewController" customModule="Elemnt" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" dataMode="static" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" id="FSV-FH-uOL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-wh-A8j">
-                                    <rect key="frame" x="8" y="99" width="128" height="128"/>
+                                    <rect key="frame" x="8" y="101" width="128" height="128"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="128" id="TRD-Cp-BAh"/>
                                     </constraints>
@@ -96,9 +96,9 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="m7h-wh-A8j" secondAttribute="bottom" constant="29" id="0Bk-2F-nea"/>
+                                <constraint firstAttribute="bottom" secondItem="m7h-wh-A8j" secondAttribute="bottom" constant="27" id="0Bk-2F-nea"/>
                                 <constraint firstItem="m7h-wh-A8j" firstAttribute="leading" secondItem="2xe-ck-sqj" secondAttribute="leading" constant="8" id="EPn-iA-tvF"/>
-                                <constraint firstItem="m7h-wh-A8j" firstAttribute="top" secondItem="2xe-ck-sqj" secondAttribute="top" constant="99" id="K0f-7J-riH"/>
+                                <constraint firstItem="m7h-wh-A8j" firstAttribute="top" secondItem="2xe-ck-sqj" secondAttribute="top" constant="101" id="K0f-7J-riH"/>
                             </constraints>
                         </view>
                         <sections>
@@ -244,7 +244,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" editable="NO" text="Select an element to begin" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JF-M4-5PY">
-                                                    <rect key="frame" x="16" y="11" width="359" height="189"/>
+                                                    <rect key="frame" x="8" y="6" width="359" height="189"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -253,9 +253,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6JF-M4-5PY" firstAttribute="height" secondItem="jbn-8n-lKL" secondAttribute="height" constant="1" id="EhD-KQ-A0v"/>
-                                                <constraint firstItem="6JF-M4-5PY" firstAttribute="top" secondItem="jbn-8n-lKL" secondAttribute="topMargin" id="PDC-zx-9uZ"/>
+                                                <constraint firstItem="6JF-M4-5PY" firstAttribute="top" secondItem="jbn-8n-lKL" secondAttribute="topMargin" constant="-5" id="PDC-zx-9uZ"/>
                                                 <constraint firstItem="6JF-M4-5PY" firstAttribute="width" secondItem="jbn-8n-lKL" secondAttribute="width" constant="-16" id="gZs-Yi-CGg"/>
-                                                <constraint firstItem="6JF-M4-5PY" firstAttribute="leading" secondItem="jbn-8n-lKL" secondAttribute="leadingMargin" id="jYe-Ow-2yK"/>
+                                                <constraint firstItem="6JF-M4-5PY" firstAttribute="leading" secondItem="jbn-8n-lKL" secondAttribute="leadingMargin" constant="-8" id="jYe-Ow-2yK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

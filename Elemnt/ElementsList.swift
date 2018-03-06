@@ -12,9 +12,7 @@ import HTMLReader
 import Alamofire
 import MobileCoreServices
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UITableViewDragDelegate {
-	
-	
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UITableViewDragDelegate, UIViewControllerPreviewingDelegate {
 	var detailViewController: DetailViewController? = nil
 	var managedObjectContext: NSManagedObjectContext? = nil
 
@@ -26,18 +24,18 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	var filteredNumberArray: [String]? = []
 	var filteredArray: [String]? = []
 	var settingsDictionary: [String: Any] = ["enableSpelling": 0, "version": 0]
-	
+
 	var sortedAtomically = false
-	
-	
+
+
 	let searchController = UISearchController(searchResultsController: nil)
-	
-	
+
+
 	override func viewDidAppear(_ animated: Bool) {
 		self.addGestures()
 	}
-	
-	
+
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.register(UINib(nibName: "ElementItemCell", bundle: nil), forCellReuseIdentifier: "elementCell")
@@ -46,13 +44,27 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			let controllers = split.viewControllers
 			self.detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? DetailViewController
 		}
-		
+
+		setupSearchController()
+
+		definesPresentationContext = true
+		tableView.tableHeaderView = searchController.searchBar
 		if #available(iOS 11.0, *) {
+			tableView.dragDelegate = self
 			self.navigationController?.navigationBar.prefersLargeTitles = true
 		}
-		
-		
-		
+		extendedLayoutIncludesOpaqueBars = true
+		setupData(mode: .Alphabetically)
+		downloadSettings()
+		setupPeekPop()
+	}
+
+	func setupPeekPop() {
+		if(traitCollection.forceTouchCapability == .available) {
+			registerForPreviewing(with: self, sourceView: view)
+		}
+	}
+	func setupSearchController() {
 		searchController.searchResultsUpdater = self
 		searchController.dimsBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "112"
@@ -61,33 +73,21 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		searchController.searchBar.barTintColor = UIColor.black
 		searchController.searchBar.delegate = self
 		searchController.searchBar.scopeButtonTitles = ["Number", "Title"]
-
-		definesPresentationContext = true
-		tableView.tableHeaderView = searchController.searchBar
-		if #available(iOS 11.0, *) {
-			tableView.dragDelegate = self
-		}
-		extendedLayoutIncludesOpaqueBars = true
-		
-		setupData(mode: .Alphabetically)
-
-		downloadSettings()
-
 	}
-	
+
 	func addGestures() {
 		let sortTap = UITapGestureRecognizer(target: self, action: #selector(resort))
 		sortTap.numberOfTapsRequired = 2
 		self.navigationController?.navigationBar.addGestureRecognizer(sortTap)
-		
+
 		let titleTap = UITapGestureRecognizer(target: self, action: #selector(openTitleMenu))
 		titleTap.numberOfTapsRequired = 1
 		self.navigationController?.navigationBar.addGestureRecognizer(titleTap)
-		
+
 		titleTap.require(toFail: sortTap)
-		
+
 	}
-	
+
 	@objc func openTitleMenu() {
 		self.showActionMenu()
 	}
@@ -108,7 +108,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return 0
 	}
-	
+
 	func filterContentForSearchText(searchText: String, scope: DataMode) {
 
 		let predicate = NSPredicate(format: "SELF beginswith[c] %@", searchText)
@@ -146,7 +146,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	func downloadElements() -> NSMutableDictionary {
 		var dictionary: NSMutableDictionary?
 		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/remote_data.plist").responsePropertyList { response in
-			
+
 			if let plist = response.result.value {
 				dictionary = plist as? NSMutableDictionary
 			} else {
@@ -162,7 +162,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		}
 		return dictionary!
 	}
-	
+
 	func showActionMenu() {
 		let actionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 		let spellFunction = UIAlertAction(title: "Spell in elements (beta)", style: .default, handler: { (UIAlertAction) in
@@ -183,7 +183,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		actionMenu.popoverPresentationController?.sourceView = self.view
 		self.present(actionMenu, animated: true, completion: nil)
 	}
-	
+
 	@objc func resort() {
 		if sortedAtomically == true {
 			sortedAtomically = false
@@ -222,7 +222,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 					let removable = undescription?.substring(to: (range?.lowerBound)!)
 					var actualDescription = (undescription?.replacingOccurrences(of: removable!, with: ""))
 					frmt = "\nDensity"
-					
+
 					var atomicWeight = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "")
 					if let atomicWeightRange = atomicWeight?.range(of: "Density") {
 						atomicWeight = atomicWeight?.substring(to: atomicWeightRange.lowerBound)
@@ -233,7 +233,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 						density = density?.substring(to: densityRange.lowerBound)
 
 					}
-					
+
 					var meltingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: "g/cm3", with: "")
 
 					if let meltingPointRange = meltingPoint?.range(of: "Boiling") {
@@ -248,7 +248,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 					actualDescription = actualDescription?.replacingOccurrences(of: "Full technical data\n", with: "")
 					actualDescription = actualDescription?.replacingOccurrences(of: ".Scroll down to see examples of \(elementName!).", with: "")
-					
+
 					let elementDictionary = ["name": elementName!, "desc": actualDescription!, "data": dataDictionary, "number": i] as [String: Any]
 					newElementsDictionary[elementName!] = elementDictionary
 					let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -269,9 +269,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	func setupData(mode: DataMode) {
 		dataArray?.removeAll()
 		sortedArray?.removeAll()
-		
+
 		self.dataDictionary = self.downloadElements()
-		
+
 		for name in (dataDictionary?.allKeys)! {
 
 			dataArray?.append(name as! String)
@@ -330,7 +330,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
 		self.performSegue(withIdentifier: "showDetail", sender: self)
 	}
 
@@ -355,7 +354,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			let rawName = sortedArray?[indexPath.row]
 			name = NSString(string: rawName!)
 		}
-		
+
 		if let element = dataDictionary?.object(forKey: name!) {
 			let element = element as! NSDictionary
 			cell.number?.text = "\(element["number"]!)"
@@ -364,43 +363,74 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		cell.name?.text = (name! as String)
 		return cell
 	}
-	
-	
-	func getImageData(elementName: String) -> URL{
+
+
+	func getImageData(elementName: String) -> URL {
 		// Define a UIImage object
 		let elementImage = UIImage.init(named: "\(elementName).JPG")!
 		let elementImageData = UIImageJPEGRepresentation(elementImage, 0.8)
-		
+
 		// Write to temporary url *sigh*
 		let temporaryURL = URL(fileURLWithPath: "\(NSTemporaryDirectory())\(elementName).JPG")
 		print(temporaryURL)
 		try! elementImageData?.write(to: temporaryURL)
 		return temporaryURL
 	}
-	
+
+
+	func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+		guard let indexPath = self.tableView!.indexPathForRow(at: location) else { return nil }
+		guard let cell = self.tableView!.cellForRow(at: indexPath) else { return nil }
+		guard let elementView = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? DetailViewController else { return nil }
+
+		var name: NSString?
+		if searchController.isActive == true && searchController.searchBar.text != "" {
+			let rawName = filteredArray?[(indexPath.row)]
+			name = NSString(string: rawName!)
+		} else {
+			let rawName = sortedArray?[(indexPath.row)]
+			name = NSString(string: rawName!)
+		}
+
+		if let element = dataDictionary?.object(forKey: name!) {
+			elementView.detailItem = element as? NSDictionary
+		}else{
+			return nil
+		}
+		
+		elementView.preferredContentSize = CGSize(width: 0.0, height: 300)
+		previewingContext.sourceRect = cell.frame
+		
+		return elementView
+	}
+
+	func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+		show(viewControllerToCommit, sender: self)
+	}
+
 	@available(iOS 11.0, *)
 	func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
 		var elementName = "Hydrogen"
-		
+
 		if searchController.isActive == true && searchController.searchBar.text != "" {
 			elementName = (filteredArray?[indexPath.row])!
 		} else {
 			elementName = (sortedArray?[indexPath.row])!
 		}
-		
-		let itemProvider = NSItemProvider(contentsOf:self.getImageData(elementName: elementName) )
-		
+
+		let itemProvider = NSItemProvider(contentsOf: self.getImageData(elementName: elementName))
+
 		return [
 			UIDragItem(itemProvider: itemProvider!)
 		]
 	}
-	
-	
+
+
 	@available(iOS 11.0, *)
 	func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
 		return self.dragItems(for: indexPath)
 	}
-	
+
 }
 
 

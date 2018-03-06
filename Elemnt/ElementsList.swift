@@ -398,7 +398,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			return nil
 		}
 		
-		elementView.preferredContentSize = CGSize(width: 0.0, height: 300)
 		previewingContext.sourceRect = cell.frame
 		
 		return elementView

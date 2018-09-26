@@ -53,6 +53,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			tableView.dragDelegate = self
 			self.navigationController?.navigationBar.prefersLargeTitles = true
 		}
+		
 		extendedLayoutIncludesOpaqueBars = true
 		setupData(mode: .Alphabetically)
 		downloadSettings()
@@ -64,6 +65,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			registerForPreviewing(with: self, sourceView: view)
 		}
 	}
+	
 	func setupSearchController() {
 		searchController.searchResultsUpdater = self
 		searchController.dimsBackgroundDuringPresentation = false
@@ -76,7 +78,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	}
 
 	func addGestures() {
-		let sortTap = UITapGestureRecognizer(target: self, action: #selector(resort))
+	/*	let sortTap = UITapGestureRecognizer(target: self, action: #selector(resort))
 		sortTap.numberOfTapsRequired = 2
 		self.navigationController?.navigationBar.addGestureRecognizer(sortTap)
 
@@ -84,13 +86,13 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 		titleTap.numberOfTapsRequired = 1
 		self.navigationController?.navigationBar.addGestureRecognizer(titleTap)
 
-		titleTap.require(toFail: sortTap)
-
+		titleTap.require(toFail: sortTap)*/
 	}
 
 	@objc func openTitleMenu() {
 		self.showActionMenu()
 	}
+	
 	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
 		if searchBar.selectedScopeButtonIndex == 0 {
 			filterContentForSearchText(searchText: searchController.searchBar.text!, scope: .Numerically)
@@ -129,8 +131,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 	}
 	func downloadSettings() {
+		DispatchQueue.global(qos: .background).async {
 		if let settings = UserDefaults.standard.object(forKey: "settings") {
-			settingsDictionary = settings as! [String: Any]
+			self.settingsDictionary = settings as! [String: Any]
 		}
 		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/settings.plist").responsePropertyList { response in
 			if let plist = response.result.value {
@@ -142,7 +145,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 				}
 			}
 		}
+		}
 	}
+	
 	func downloadElements() -> NSMutableDictionary {
 		var dictionary: NSMutableDictionary?
 		Alamofire.request("https://raw.githubusercontent.com/128keaton/Elemnt/swift/remote_data.plist").responsePropertyList { response in
@@ -219,30 +224,29 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 					var frmt = "Full technical data\n"
 
 					let range = undescription?.range(of: frmt)
-					let removable = undescription?.substring(to: (range?.lowerBound)!)
-					var actualDescription = (undescription?.replacingOccurrences(of: removable!, with: ""))
+					let removable = undescription![..<(range?.lowerBound)!]
+					var actualDescription = (undescription?.replacingOccurrences(of: removable, with: ""))
 					frmt = "\nDensity"
 
 					var atomicWeight = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "")
 					if let atomicWeightRange = atomicWeight?.range(of: "Density") {
-						atomicWeight = atomicWeight?.substring(to: atomicWeightRange.lowerBound)
+						atomicWeight = String(atomicWeight![..<(atomicWeightRange.lowerBound)])
 					}
 
 					var density = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "")
 					if let densityRange = density?.range(of: "Melting") {
-						density = density?.substring(to: densityRange.lowerBound)
-
+						density = String(density![..<(densityRange.lowerBound)])
 					}
 
 					var meltingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: "g/cm3", with: "")
 
 					if let meltingPointRange = meltingPoint?.range(of: "Boiling") {
-						meltingPoint = meltingPoint?.substring(to: meltingPointRange.lowerBound)
+						meltingPoint = String(meltingPoint![..<(meltingPointRange.lowerBound)])
 					}
 					var boilingPoint = rowTest?.textContent.replacingOccurrences(of: "\(elementName!)\n", with: "").replacingOccurrences(of: atomicWeight!, with: "").replacingOccurrences(of: density!, with: "").replacingOccurrences(of: meltingPoint!, with: "").replacingOccurrences(of: "g/cm3", with: "")
 
 					if let boilingPointRange = boilingPoint?.range(of: "\nFull technical data\n") {
-						boilingPoint = boilingPoint?.substring(to: boilingPointRange.lowerBound)
+						boilingPoint = String(boilingPoint![..<(boilingPointRange.lowerBound)])
 					}
 					let dataDictionary = ["atomicWeight": atomicWeight?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "\(String(describing: elementName))\n", with: "").replacingOccurrences(of: "Atomic Weight", with: "").replacingOccurrences(of: "\n", with: ""), "density": density?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Density", with: "").replacingOccurrences(of: "\n", with: ""), "meltingPoint": meltingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Melting Point", with: "").replacingOccurrences(of: "\n", with: ""), "boilingPoint": boilingPoint?.replacingOccurrences(of: "[note]", with: "*").replacingOccurrences(of: "Boiling Point", with: "").replacingOccurrences(of: "\n", with: "")]
 
@@ -316,7 +320,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 			}
 
 			if let element = dataDictionary?.object(forKey: name!) {
-				(segue.destination.childViewControllers[0] as! DetailViewController).detailItem = element as? NSDictionary
+				(segue.destination.children[0] as! DetailViewController).detailItem = element as? NSDictionary
 			}
 
 		}
@@ -368,7 +372,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 	func getImageData(elementName: String) -> URL {
 		// Define a UIImage object
 		let elementImage = UIImage.init(named: "\(elementName).JPG")!
-		let elementImageData = UIImageJPEGRepresentation(elementImage, 0.8)
+		let elementImageData = elementImage.jpegData(compressionQuality: 0.8)
 
 		// Write to temporary url *sigh*
 		let temporaryURL = URL(fileURLWithPath: "\(NSTemporaryDirectory())\(elementName).JPG")

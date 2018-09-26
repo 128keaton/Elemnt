@@ -11,7 +11,6 @@ import ChameleonFramework
 import MessageUI
 
 class DetailViewController: UITableViewController, MFMailComposeViewControllerDelegate {
-
     @IBOutlet var textArea: UITextView!
     @IBOutlet var imageView: UIImageView!
 
@@ -51,7 +50,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                 removeMe.removeFromSuperview()
             }
 
-            self.title = detail["name"] as! String!
+            self.title = detail["name"] as? String
             if let textView = self.textArea, let elementImage = self.imageView {
                 var element = [String: Any]()
                 for (key, value) in detail {
@@ -59,7 +58,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                 }
 
                 UIView.animate(withDuration: 0.3, animations: {
-                    textView.text = element["desc"] as! String!
+                    textView.text = element["desc"] as? String
                     elementImage.image = UIImage(named: "\(detail["name"]!).JPG")
 
                     let data = element["data"] as! [String: String]
@@ -125,7 +124,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
 
-        activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
         activityVC.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
 
 
@@ -135,7 +134,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
         let _ = Int(1)
         self.configureView()
         self.imageView.layer.cornerRadius = 8
@@ -143,11 +142,8 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = false
         }
-
-
-
-
     }
+    
     @objc func rotated() {
         // fix for gradient wierdness when rotating
         self.initializeGradient()
@@ -167,7 +163,7 @@ class DetailViewController: UITableViewController, MFMailComposeViewControllerDe
                     self.imageView.tintColor = color
                     let realColor = self.imageView.tintColor
                     UIView.animate(withDuration: 0.3, animations: {
-                        // self.view.backgroundColor = realColor
+                
                         self.colorView.backgroundColor = realColor
                     })
                 }

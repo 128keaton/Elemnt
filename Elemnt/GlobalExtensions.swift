@@ -29,7 +29,7 @@ enum DataMode {
 }
 
 extension UIImageView {
-	func getFrom(data: Data, contentMode: UIViewContentMode) {
+	func getFrom(data: Data, contentMode: UIView.ContentMode) {
 		
 		
 		let backgroundQueue = DispatchQueue(label: "128keaton",

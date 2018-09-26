@@ -10,6 +10,8 @@
 		8A33D9F61DBFD02000D5A601 /* ElementDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */; };
 		8A49D09A1DC0348B0064B454 /* GlobalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49D0991DC0348B0064B454 /* GlobalExtensions.swift */; };
 		8A49D09C1DC03C520064B454 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A49D09B1DC03C520064B454 /* data.plist */; };
+		8A50E60F215B43AB00D54D95 /* UIKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50E60E215B43AB00D54D95 /* UIKitButton.swift */; };
+		8A50E611215B46F900D54D95 /* RoundedUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50E610215B46F900D54D95 /* RoundedUIImageView.swift */; };
 		8A5FAE601DBEDD4200E3972D /* EleSpell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */; };
 		8A5FAEE01DBFABF700E3972D /* Actinium.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAE641DBFABF600E3972D /* Actinium.JPG */; };
 		8A5FAEE11DBFABF700E3972D /* Aluminum.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FAE651DBFABF600E3972D /* Aluminum.JPG */; };
@@ -149,6 +151,8 @@
 		8A33D9F51DBFD02000D5A601 /* ElementDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementDataView.swift; sourceTree = "<group>"; };
 		8A49D0991DC0348B0064B454 /* GlobalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalExtensions.swift; sourceTree = "<group>"; };
 		8A49D09B1DC03C520064B454 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		8A50E60E215B43AB00D54D95 /* UIKitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitButton.swift; sourceTree = "<group>"; };
+		8A50E610215B46F900D54D95 /* RoundedUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIImageView.swift; sourceTree = "<group>"; };
 		8A5FAE5F1DBEDD4200E3972D /* EleSpell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleSpell.swift; sourceTree = "<group>"; };
 		8A5FAE641DBFABF600E3972D /* Actinium.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Actinium.JPG; sourceTree = "<group>"; };
 		8A5FAE651DBFABF600E3972D /* Aluminum.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aluminum.JPG; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 			children = (
 				8A49D0991DC0348B0064B454 /* GlobalExtensions.swift */,
 				8A66C6F31DBD576C00341493 /* UIImageColors.swift */,
+				8A50E60E215B43AB00D54D95 /* UIKitButton.swift */,
+				8A50E610215B46F900D54D95 /* RoundedUIImageView.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -518,7 +524,6 @@
 				8A66C6F51DBD578000341493 /* Frameworks */,
 				8A66C6F61DBD578000341493 /* Resources */,
 				B4E7352EF6294FDF1FC6D0DD /* [CP] Embed Pods Frameworks */,
-				64A12C2EA4A9C12886576626 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -536,12 +541,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				TargetAttributes = {
 					8A66C6F71DBD578000341493 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = JMQ9Y3A8K6;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -699,21 +704,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		64A12C2EA4A9C12886576626 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Elemnt/Pods-Elemnt-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B4E7352EF6294FDF1FC6D0DD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -767,9 +757,11 @@
 			files = (
 				8A8569AD1DBD585400815BF5 /* UIImageColors.swift in Sources */,
 				8A8569AE1DBD585900815BF5 /* ElementItemCell.swift in Sources */,
+				8A50E60F215B43AB00D54D95 /* UIKitButton.swift in Sources */,
 				8A66C7181DBD57DA00341493 /* ElementsList.swift in Sources */,
 				8A8569B01DBD587D00815BF5 /* AppDelegate.swift in Sources */,
 				8A49D09A1DC0348B0064B454 /* GlobalExtensions.swift in Sources */,
+				8A50E611215B46F900D54D95 /* RoundedUIImageView.swift in Sources */,
 				8A8569B71DBD5BEC00815BF5 /* AboutView.swift in Sources */,
 				8A66C7141DBD57BD00341493 /* ElementView.swift in Sources */,
 				8A33D9F61DBFD02000D5A601 /* ElementDataView.swift in Sources */,
@@ -787,11 +779,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -818,11 +812,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -885,7 +881,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Elemnt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -894,8 +890,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -939,15 +934,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Elemnt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.keatonburleson.elementstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -55,10 +55,8 @@ class EleSpell: UIViewController {
 
 	}
 
-	func removeSpecialCharsFromString(text: String) -> String {
-		let okayChars : Set<Character> =
-			Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-*=(),.:!_".characters)
-		return String(text.characters.filter {okayChars.contains($0) })
+	func removeSpecialCharsFromString(text: String) -> String {        
+		return String(text.filter {"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-*=(),.:!_".contains($0) })
 	}
 	
 	func stitchImages(images: [UIImage], isVertical: Bool) -> UIImage {
@@ -104,7 +102,7 @@ class EleSpell: UIViewController {
 		let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
 
-		activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+		activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
 
 
 		activityVC.popoverPresentationController?.sourceView = self.view
